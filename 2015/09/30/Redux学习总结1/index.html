@@ -39,15 +39,19 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="首先Redux是flux思想的一种实现，他的概念中整个APP在runtime中只有一个全局的store，所有的state都存储在这个store，通过action来改变状态，当状态改变时触发对应的reducer，reducer函数实现对应action的业务逻辑，然后返回一个新的state对象，直接上示例代码解释。
+1234567891011121314//components/UserBox.jsi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redux学习总结1">
+<meta property="og:url" content="http://yoursite.com/2015/09/30/Redux学习总结1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description">
+<meta property="og:description" content="首先Redux是flux思想的一种实现，他的概念中整个APP在runtime中只有一个全局的store，所有的state都存储在这个store，通过action来改变状态，当状态改变时触发对应的reducer，reducer函数实现对应action的业务逻辑，然后返回一个新的state对象，直接上示例代码解释。
+1234567891011121314//components/UserBox.jsi">
+<meta property="og:updated_time" content="2015-09-30T05:26:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Redux学习总结1">
+<meta name="twitter:description" content="首先Redux是flux思想的一种实现，他的概念中整个APP在runtime中只有一个全局的store，所有的state都存储在这个store，通过action来改变状态，当状态改变时触发对应的reducer，reducer函数实现对应action的业务逻辑，然后返回一个新的state对象，直接上示例代码解释。
+1234567891011121314//components/UserBox.jsi">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -57,7 +61,7 @@
   };
 </script>
 
-  <title> Hexo </title>
+  <title> Redux学习总结1 | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -75,9 +79,7 @@
 
 
 
-  <div class="container one-column 
-   page-home 
-">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -145,9 +147,9 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div id="content" class="content"> 
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
@@ -158,9 +160,7 @@
           
           
             
-              <a class="post-title-link" href="/2015/09/30/Redux学习总结1/" itemprop="url">
-                Redux学习总结1
-              </a>
+              Redux学习总结1
             
           
         </h1>
@@ -188,8 +188,7 @@
       
 
       
-        
-          <span itemprop="articleBody"><p>首先Redux是flux思想的一种实现，他的概念中整个APP在runtime中只有一个全局的<code>store</code>，所有的<code>state</code>都存储在这个<code>store</code>，通过<code>action</code>来改变状态，当状态改变时触发对应的<code>reducer</code>，<code>reducer</code>函数实现对应<code>action</code>的业务逻辑，然后返回一个新的<code>state</code>对象，直接上示例代码解释。</p>
+        <span itemprop="articleBody"><p>首先Redux是flux思想的一种实现，他的概念中整个APP在runtime中只有一个全局的<code>store</code>，所有的<code>state</code>都存储在这个<code>store</code>，通过<code>action</code>来改变状态，当状态改变时触发对应的<code>reducer</code>，<code>reducer</code>函数实现对应<code>action</code>的业务逻辑，然后返回一个新的<code>state</code>对象，直接上示例代码解释。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//components/UserBox.js</span></span><br><span class="line"><span class="keyword">import</span> React, &#123; Component,PropTypes &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> UserList <span class="keyword">from</span> <span class="string">'../components/UserList'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">UserBox</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"userBox"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">h1</span>&gt;</span>用户列表<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">UserList</span> <span class="attribute">data</span>=<span class="value">&#123;this.props.data&#125;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    )</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Userbox是其中的一个子组件，再下一层的子组件就不一一贴出来了，学过react的应该都能理解UserList那行代码，那么其中的<code>this.props.data</code>这个数据从哪里来呢</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//containers/UserBox.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span>;</span><br><span class="line"><span class="keyword">import</span> UserBox <span class="keyword">from</span> <span class="string">'../components/UserBox'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Which part of the Redux global state does our component want to receive as props?</span></span><br><span class="line"><span class="comment">// 给子组件的props对象定义数据</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mapStateToProps</span>(<span class="params">state</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'mapStateToProps'</span>,state)</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    data: state.users</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Which action creators does it want to receive by props?</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mapDispatchToProps</span>(<span class="params">dispatch</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(</span><br><span class="line">  mapStateToProps,</span><br><span class="line">  mapDispatchToProps</span><br><span class="line">)(UserBox);</span><br></pre></td></tr></table></figure>
@@ -199,7 +198,6 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//im.js</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Provider &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span>;</span><br><span class="line"><span class="keyword">import</span> UserBox <span class="keyword">from</span> <span class="string">'./containers/UserBox'</span>;</span><br><span class="line"><span class="keyword">import</span> userStore <span class="keyword">from</span> <span class="string">'./store/store'</span>;</span><br><span class="line"></span><br><span class="line">React.render(</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="title">Provider</span> <span class="attribute">store</span>=<span class="value">&#123;userStore&#125;</span> &gt;</span></span><br><span class="line">        &#123;() =&gt; <span class="tag">&lt;<span class="title">UserBox</span> /&gt;</span> &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="title">Provider</span>&gt;</span>,</span><br><span class="line">    document.getElementById('im'));</span></span><br></pre></td></tr></table></figure>
 <p>state其实就是reducer中返回的对象，我在user的reducer中返回了userApp，其中就包含了users属性，根据不同的action的type处理业务逻辑后，返回新的state对象；在store中将它封装起来，在im.js中import进来，render时通过provider将他传入组件。</p>
 </span>
-        
       
     </div>
 
@@ -207,514 +205,39 @@
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/09/29/Laravel-React-Redux/" rel="next">Laravel+React+Redux</a>
+            
+          </div>
+        </div>
+      
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/29/Laravel-React-Redux/" itemprop="url">
-                Laravel+React+Redux
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2015-09-29T23:47:07+08:00" content="2015-09-29">
-            2015-09-29
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><div id="badge-container-robbinhan-chat-42b19f5574beb7f6c76eb8f6575881d9641b99fe" class="hexo-github" style="width: 100%"></div>
-<script src="/hexo-github/badge.js"></script>
-<script type="text/javascript">
-  loadStyle("/hexo-github/style.css");
-  loadStyle("/hexo-github/octicons/octicons.css");
-  new Badge("#badge-container-robbinhan-chat-42b19f5574beb7f6c76eb8f6575881d9641b99fe", "robbinhan", "chat", "42b19f5574beb7f6c76eb8f6575881d9641b99fe", false);
-</script>
-
-<p>之前93阅兵假期间，花了两天时间用laravel+vuejs+nodejs写了个实时聊天的的雏形。最近临近国庆放假想花些时间学习下react，目前初步把react都学习了一遍，学习过程中也了解到很多新的技术，例如虚拟dom，redux，babel，es5-shim，lodash等。</p>
-<p>另外还有flux思想，flux不是个框架，是个架构思想，和mvc不同；redux是对flux思想的一种实现，其余比较火的还有reflux，但是最好还是都先了解下flux思想的内容，其余的实现主要是对facebook的flux使用的简化。</p>
-<p>期间也踩过了许多坑之后有时间会再写一篇总结，这里先放些相关的资源链接。</p>
-<ul>
-<li><a href="http://www.tudou.com/plcover/ah20h1-t4V4/" target="_blank" rel="external">React.js中文视频教程，视频最好配合官网教程一起看</a></li>
-<li><a href="https://facebook.github.io/react/" target="_blank" rel="external">官网教程(英文原版)</a></li>
-<li><a href="http://reactjs.cn/react/index.html" target="_blank" rel="external">react中文教程</a></li>
-<li><a href="http://react-china.org/" target="_blank" rel="external">react中文社区</a></li>
-<li><a href="http://camsong.github.io/redux-in-chinese/" target="_blank" rel="external">redux文档(中文，英文原版在此链接终有)</a></li>
-</ul>
-</span>
-        
+    <div class="post-spread">
       
     </div>
+  </div>
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/29/2015-06-20-php-cli-exit/" itemprop="url">
-                php在cli环境下的exit调用问题
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2015-09-29T23:23:22+08:00" content="2015-09-29">
-            2015-09-29
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>  之前因为汇总数据，写了个shell脚本通过wget方式拉取日志，然后insert到MySQL中，后来由于各种问题重写了个PHP版本（其中各种问题这里就不提了，内部团队分享过）。</p>
-<p>  但是仍然遇到了些问题，最奇葩的是进程莫名终止，由于脚本是crontab每分钟启动，终止也不是必现，可能几天就会出现一次，也可能几月出现一次。</p>
-<p>后来怀疑可能是redis连接终端导致用于加锁的key没有删除，以至于后面启动的脚本执行失败，因为在发现此问题之前我在redis的server端设置30秒闲置就主动断开连接，而日志中显示程序也的确执行了30秒+；于是我就给程序加上一段ping的调用，希望保持连接，也算消停了一段时间。（我的脚本中通过redis给程序执行加锁，日志必须顺序导入，同一时间不能有多个程序执行）。</p>
-<p>上周又发生了程序莫名终止的情况，后来我在恢复数据时偶然发现当第一个进程执行了超过一分钟时，第二个进程启动后由于判断到还有程序在执行要退出，调用了exit函数后第一个进程也随即终止了，我怀疑在cli下会不会调用exit会将所有执行中的命令行PHP程序退出？后来我修改成return就没发生类似问题。</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/29/2015-05-16-learn-swift-1/" itemprop="url">
-                用swift学习IOS开发的一点总结(一)
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2015-09-29T23:21:51+08:00" content="2015-09-29">
-            2015-09-29
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>先列出总结的知识点</p>
-<ul>
-<li>?和！</li>
-<li>as向下转换</li>
-<li>var 和 let的区别</li>
-<li>weak 和 unowned</li>
-</ul>
-<h2 id="?和！">?和！</h2><blockquote>
-<p>swift中的这点可能是借鉴了Ruby(或是其他语言，但是小弟懂的少，还有就是Apple内部好像蛮喜欢Ruby，不然也不会有MacRuby O(∩<em>∩)O~~</em>)；问号代表Optional，也可以认为是将这个值初始化为nil(nil这个对象代表空)，再后面写代码逻辑时需要对此值做if判断是否是nil。而！基本正好相反，它代表强制做某件事。</p>
-<p>所以在开发时可能可能会遇到</p>
-</blockquote>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fatal error: unexpectedly found <span class="literal">nil</span> <span class="keyword">while</span> unwrapping an <span class="type">Optional</span> value</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这种错误一般是运行中发生，表示在处理一个Optional的值，但是这个是nil</p>
-</blockquote>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bound value <span class="keyword">in</span> a conditional binding must be of optional type</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这种错误一般是编译时候发生，表示在if判断的时候遇到，因为判断的值不是Optional初始化过的。</p>
-</blockquote>
-<p><a href="http://letsswift.com/2014/06/swift-questionmark-exclamatorymark/" target="_blank" rel="external">详细讲解请看这篇转载</a></p>
-<h2 id="as向下转型">as向下转型</h2><blockquote>
-<p>比方string to NSString 就用 as 转<br><a href="http://c.biancheng.net/cpp/html/2288.html" target="_blank" rel="external">Swift类型转换</a></p>
-</blockquote>
-<h2 id="var_和_let的区别">var 和 let的区别</h2><blockquote>
-<p>var声明变量，let声明常量</p>
-</blockquote>
-<h2 id="weak_和_unowned">weak 和 unowned</h2><p><a href="http://swifter.tips/retain-cycle/" target="_blank" rel="external">内存管理，WEAK 和 UNOWNED</a></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/29/2015-05-28-chaogu-four-month-summary/" itemprop="url">
-                炒股四月总结
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2015-09-29T23:11:19+08:00" content="2015-09-29">
-            2015-09-29
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/投资/" itemprop="url" rel="index">
-                  <span itemprop="name">投资</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>今年一月底开了户，正式步入了散户的行列，去年下半年开始只是买了些基金，收益很少，赶上这波牛市所以干错开户去了。起初是在雪球上各位大V推荐，先是买了些银行股，因为胆小买的很少，也就几十几十的赚，后来慢慢买的多了，因为觉得买的多赚的多，当中也被套，被套了心里总觉不好受，就恨不得分分钟刷雪球，希望看到某大V对该股进行评论，四个月来总收益也盈利了20%。</p>
-<p>但是总结了下每股的收益发现对于我们这些新的小散在牛市里最好的赚钱方式就是在牛市开始时，找到牛市题材股，然后买题材股中的龙头或者最有潜力的低价股，等到牛市结束时最少也是翻倍的收益，但是其中的每个交易日是非常难熬的。</p>
-<p>今日股市又暴跌，传说07年5月30日也是这样的暴跌，账户里仅存一只还是翻红的，考虑再三决定等这波行情起来解套后清仓，但还是会继续投资其他风险略低的品种，如ETF或者基金。</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/05/10/2015-05-10-isset-and-array_key_exists/" itemprop="url">
-                PHP中isset和array_key_exists的用发的区别
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2015-05-10T14:06:56+08:00" content="2015-05-10">
-            2015-05-10
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Development/" itemprop="url" rel="index">
-                  <span itemprop="name">Development</span>
-                </a>
-              </span>
-
-              
-              
-                ， 
-              
-
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Development/php/" itemprop="url" rel="index">
-                  <span itemprop="name">php</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>平时在PHP判断数组中是否有某个key时都使用isset函数，今天偶然知道isset在判断时，如果key的值等于null时，isset的返回值会是false。这时就可以用上array_key_exists函数来判断，但是不要完全使用这个函数，会影响性能；可以这样写：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">isset</span>(<span class="variable">$a</span>[<span class="variable">$key</span>])||array_key_exists(<span class="variable">$key</span>,<span class="variable">$a</span>);</span><br></pre></td></tr></table></figure></p>
-<p>这样既保留一定性能，也能避免程序中的坑。</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/05/02/2015-05-02-api-to-jekyll/" itemprop="url">
-                api系统设计
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2015-05-02T15:01:56+08:00" content="2015-05-02">
-            2015-05-02
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Development/" itemprop="url" rel="index">
-                  <span itemprop="name">Development</span>
-                </a>
-              </span>
-
-              
-              
-                ， 
-              
-
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Development/php/" itemprop="url" rel="index">
-                  <span itemprop="name">php</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>公司API系统已经很陈旧，有很多潜在的隐患，所以趁着假期空闲准备重新设计套V2版的。框架已经确定，使用近期刚出的号称最快的PHP微系统<a href="http://lumen.laravel.com/" target="_blank" rel="external">lumen</a>，但是如何才是合格或者标准的API系统呢？</p>
-<p>Google一番后在github上找到一份针对larval的api系统的<a href="https://github.com/dingo/api/wiki" target="_blank" rel="external">wiki</a>，可以借鉴参考。但是主要还得兼容V1版的一些东西，不然其他系统改动太大。</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
  </div>
 
         
 
+        
+          <div class="comments" id="comments">
+            
+          </div>
         
       </div>
 
@@ -731,6 +254,15 @@
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
       
 
       <section class="site-overview">
@@ -778,6 +310,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <p class="post-toc-empty">此文章未包含目錄</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
       
 
     </div>
@@ -847,6 +390,165 @@
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
 
   <script type="text/javascript">
     $(document).ready(function () {
