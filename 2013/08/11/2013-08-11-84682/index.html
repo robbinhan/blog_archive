@@ -1,0 +1,570 @@
+<!doctype html>
+<html class="theme-next use-motion ">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+
+
+  <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="de&amp;gt; &amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="史上最强VIM配置（备份）">
+<meta property="og:url" content="http://yoursite.com/2013/08/11/2013-08-11-84682/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="de&amp;gt; &amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;">
+<meta property="og:updated_time" content="2015-10-01T07:01:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="史上最强VIM配置（备份）">
+<meta name="twitter:description" content="de&amp;gt; &amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> 史上最强VIM配置（备份） | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">Hexo</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            標籤
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              史上最强VIM配置（备份）
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>de&gt; &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; Maintainer: amix the lucky stiff &quot; <a href="http://amix.dk" target="_blank" rel="external">http://amix.dk</a> - amix@amix.dk &quot; &quot; Version: 3.6 - 25/08/10 14:40:30 &quot; &quot; Blog_post: &quot; <a href="http://amix.dk/blog/post/19486#The-ultimate-vim-configuration-vimrc" target="_blank" rel="external">http://amix.dk/blog/post/19486#The-ultimate-vim-configuration-vimrc</a> &quot; Syntax_highlighted: &quot; <a href="http://amix.dk/vim/vimrc.html" target="_blank" rel="external">http://amix.dk/vim/vimrc.html</a> &quot; Raw_version: &quot; <a href="http://amix.dk/vim/vimrc.txt" target="_blank" rel="external">http://amix.dk/vim/vimrc.txt</a> &quot; &quot; How_to_Install_on_Unix: &quot; $ mkdir ~/.vim_runtime &quot; $ svn co svn://orangoo.com/vim ~/.vim_runtime &quot; $ cat ~/.vim_runtime/install.sh &quot; $ sh ~/.vim_runtime/install.sh &quot; can be <code>mac</code>, <code>linux</code> or <code>windows</code> &quot; &quot; How_to_Upgrade: &quot; $ svn update ~/.vim_runtime &quot; &quot; Sections: &quot; -&lt; General &quot; -&lt; VIM user interface &quot; -&lt; Colors and Fonts &quot; -&lt; Files and backups &quot; -&lt; Text, tab and indent related &quot; -&lt; Visual mode related &quot; -&lt; Command mode related &quot; -&lt; Moving around, tabs and buffers &quot; -&lt; Statusline &quot; -&lt; Parenthesis/bracket expanding &quot; -&lt; General Abbrevs &quot; -&lt; Editing mappings &quot; &quot; -&lt; Cope &quot; -&lt; Minibuffer plugin &quot; -&lt; Omni complete functions &quot; -&lt; Python section &quot; -&lt; JavaScript section &quot; &quot; &quot; Plugins_Included: &quot; &lt; minibufexpl.vim - <a href="http://www.vim.org/scripts/script.php?script_id=159" target="_blank" rel="external">http://www.vim.org/scripts/script.php?script_id=159</a> &quot; Makes it easy to get an overview of buffers: &quot; info -&lt; :e ~/.vim_runtime/plugin/minibufexpl.vim &quot; &quot; &lt; bufexplorer - <a href="http://www.vim.org/scripts/script.php?script_id=42" target="_blank" rel="external">http://www.vim.org/scripts/script.php?script_id=42</a> &quot; Makes it easy to switch between buffers: &quot; info -&lt; :help bufExplorer &quot; &quot; &lt; yankring.vim - <a href="http://www.vim.org/scripts/script.php?script_id=1234" target="_blank" rel="external">http://www.vim.org/scripts/script.php?script_id=1234</a> &quot; Emacs’s killring, useful when using the clipboard: &quot; info -&lt; :help yankring &quot; &quot; &lt; surround.vim - <a href="http://www.vim.org/scripts/script.php?script_id=1697" target="_blank" rel="external">http://www.vim.org/scripts/script.php?script_id=1697</a> &quot; Makes it easy to work with surrounding text: &quot; info -&lt; :help surround &quot; &quot; &lt; snipMate.vim - <a href="http://www.vim.org/scripts/script.php?script_id=2540" target="_blank" rel="external">http://www.vim.org/scripts/script.php?script_id=2540</a> &quot; Snippets for many languages (similar to TextMate’s): &quot; info -&lt; :help snipMate &quot; &quot; &lt; mru.vim - <a href="http://www.vim.org/scripts/script.php?script_id=521" target="_blank" rel="external">http://www.vim.org/scripts/script.php?script_id=521</a> &quot; Plugin to manage Most Recently Used (MRU) files: &quot; info -&lt; :e ~/.vim_runtime/plugin/mru.vim &quot; &quot; &lt; Command-T - <a href="http://www.vim.org/scripts/script.php?script_id=3025" target="_blank" rel="external">http://www.vim.org/scripts/script.php?script_id=3025</a> &quot; Command-T plug-in provides an extremely fast, intuitive mechanism for opening filesa: &quot; info -&lt; :help CommandT &quot; screencast and web-help -&lt; <a href="http://amix.dk/blog/post/19501" target="_blank" rel="external">http://amix.dk/blog/post/19501</a> &quot; &quot; &quot; Revisions: &quot; &lt; 3.6: Added lots of stuff (colors, Command-T, Vim 7.3 persistent undo etc.) &quot; &lt; 3.5: Paste mode is now shown in status line if you are in paste mode &quot; &lt; 3.4: Added mru.vim &quot; &lt; 3.3: Added syntax highlighting for Mako mako.vim &quot; &lt; 3.2: Turned on python_highlight_all for better syntax &quot; highlighting for Python &quot; &lt; 3.1: Added revisions ;) and bufexplorer.vim &quot; &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; General &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; set encoding=utf-8 set fileencodings=ucs-bom,utf-8,gbk,default,latin1 &quot; use chinese help set helplang=cn &quot; Sets how many lines of history VIM has to remember set history=700 &quot; Enable filetype plugin filetype plugin on filetype indent on &quot; Set to auto read when a file is changed from the outside set autoread &quot; With a map leader it’s possible to do extra key combinations &quot; like w saves the current file let mapleader = &quot;,&quot; let g:mapleader = &quot;,&quot; &quot; Fast saving nmap w :w! &quot; Fast editing of the .vimrc map e :e! ~/.vim_runtime/vimrc &quot; When vimrc is edited, reload it autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; VIM user interface &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; Set 7 lines to the curors - when moving vertical.. set so=7 set wildmenu &quot;Turn on WiLd menu set ruler &quot;Always show current position set cmdheight=2 &quot;The commandbar height set hid &quot;Change buffer - without saving &quot; Set backspace config set backspace=eol,start,indent set whichwrap+=&lt;,&gt;,h,l set ignorecase &quot;Ignore case when searching set smartcase set hlsearch &quot;Highlight search things set incsearch &quot;Make search act like search in modern browsers set nolazyredraw &quot;Don’t redraw while executing macros set magic &quot;Set magic on, for regular expressions set showmatch &quot;Show matching bracets when text indicator is over them set mat=2 &quot;How many tenths of a second to blink &quot; No sound on errors set noerrorbells set novisualbell set t_vb= set tm=500 &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Colors and Fonts &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; syntax enable &quot;Enable syntax hl &quot; Set font according to system if MySys() == &quot;mac&quot; set gfn=Menlo:h14 set shell=/bin/bash elseif MySys() == &quot;windows&quot; set gfn=Bitstream\ Vera\ Sans\ Mono:h10 elseif MySys() == &quot;linux&quot; set gfn=Monospace\ 10 set shell=/bin/bash endif if has(&quot;gui_running&quot;) set guioptions-=T set t_Co=256 set background=dark colorscheme peaksea set nonu else colorscheme zellner set background=dark set nonu endif set encoding=utf8 try lang en_US catch endtry set ffs=unix,dos,mac &quot;Default file types &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Files, backups and undo &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; Turn backup off, since most stuff is in SVN, git anyway… set nobackup set nowb set noswapfile &quot;Persistent undo try if MySys() == &quot;windows&quot; set undodir=C:\Windows\Temp else set undodir=~/.vim_runtime/undodir endif set undofile catch endtry &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Text, tab and indent related &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; set expandtab set shiftwidth=4 set tabstop=4 set smarttab set lbr set tw=500 set ai &quot;Auto indent set si &quot;Smart indet set wrap &quot;Wrap lines &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Visual mode related &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; Really useful! &quot; In visual mode when you press <em> or # to search for the current selection vnoremap </em> :call VisualSearch(‘f’) vnoremap # :call VisualSearch(‘b’) &quot; When you press gv you vimgrep after the selected text vnoremap gv :call VisualSearch(‘gv’) map g :vimgrep // <strong>/<em>. function! CmdLine(str) exe &quot;menu Foo.Bar :&quot; . a:str emenu Foo.Bar unmenu Foo endfunction &quot; From an idea by Michael Naumann function! VisualSearch(direction) range let l:saved_reg = @&quot; execute &quot;normal! vgvy&quot; let l:pattern = escape(@&quot;, ‘\/.</em>$^~[]’) let l:pattern = substitute(l:pattern, &quot;\n$&quot;, &quot;&quot;, &quot;&quot;) if a:direction == ‘b’ execute &quot;normal ?&quot; . l:pattern . &quot;^M&quot; elseif a:direction == ‘gv’ call CmdLine(&quot;vimgrep &quot; . ‘/‘. l:pattern . ‘/‘ . ‘ </strong>/<em>.’) elseif a:direction == ‘f’ execute &quot;normal /&quot; . l:pattern . &quot;^M&quot; endif let @/ = l:pattern let @&quot; = l:saved_reg endfunction &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Command mode related &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; Smart mappings on the command line cno $h e ~/ cno $d e ~/Desktop/ cno $j e ./ cno $c e eCurrentFileDir(&quot;e&quot;) &quot; $q is super useful when browsing on the command line cno $q eDeleteTillSlash() &quot; Bash like keys for the command line cnoremap cnoremap cnoremap cnoremap cnoremap &quot; Useful on some European keyboards map ? $ imap ? $ vmap ? $ cmap ? $ func! Cwd() let cwd = getcwd() return &quot;e &quot; . cwd endfunc func! DeleteTillSlash() let g:cmd = getcmdline() if MySys() == &quot;linux&quot; || MySys() == &quot;mac&quot; let g:cmd_edited = substitute(g:cmd, &quot;\(.</em>[/]\).<em>&quot;, &quot;\1&quot;, &quot;&quot;) else let g:cmd_edited = substitute(g:cmd, &quot;\(.</em>[\\]\).<em>&quot;, &quot;\1&quot;, &quot;&quot;) endif if g:cmd == g:cmd_edited if MySys() == &quot;linux&quot; || MySys() == &quot;mac&quot; let g:cmd_edited = substitute(g:cmd, &quot;\(.</em>[/]\).<em>/&quot;, &quot;\1&quot;, &quot;&quot;) else let g:cmd_edited = substitute(g:cmd, &quot;\(.</em>[\\]\).<em>[\\]&quot;, &quot;\1&quot;, &quot;&quot;) endif endif return g:cmd_edited endfunc func! CurrentFileDir(cmd) return a:cmd . &quot; &quot; . expand(&quot;%:p:h&quot;) . &quot;/&quot; endfunc &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Moving around, tabs and buffers &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; Map space to / (search) and c-space to ? (backgwards search) map / map ? map :noh &quot; Smart way to move btw. windows map j map k map h map l &quot; Close the current buffer map bd :Bclose &quot; Close all the buffers map ba :1,300 bd! &quot; Use the arrows to something usefull map :bn map :bp &quot; Tab configuration map tn :tabnew map te :tabedit map tc :tabclose map tm :tabmove &quot; When pressing cd switch to the directory of the open buffer map cd :cd %:p:h command! Bclose call BufcloseCloseIt() function! BufcloseCloseIt() let l:currentBufNum = bufnr(&quot;%&quot;) let l:alternateBufNum = bufnr(&quot;#&quot;) if buflisted(l:alternateBufNum) buffer # else bnext endif if bufnr(&quot;%&quot;) == l:currentBufNum new endif if buflisted(l:currentBufNum) execute(&quot;bdelete! &quot;.l:currentBufNum) endif endfunction &quot; Specify the behavior when switching between buffers try set switchbuf=usetab set stal=2 catch endtry &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Statusline &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; Always hide the statusline set laststatus=2 &quot; Format the statusline set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c function! CurDir() let curdir = substitute(getcwd(), ‘/Users/amir/‘, &quot;~/&quot;, &quot;g&quot;) return curdir endfunction function! HasPaste() if &amp;paste return ‘PASTE MODE ‘ else return ‘’ endif endfunction &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Parenthesis/bracket expanding &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; vnoremap $1 <code>&amp;lt;a)</code> vnoremap $2 <code>&amp;lt;a]</code> vnoremap $3 <code>&amp;lt;a}</code> vnoremap $$ <code>&amp;lt;a&amp;quot;</code> vnoremap $q <code>&amp;lt;a&#39;</code> vnoremap $e <code>&amp;lt;a&amp;quot;</code> &quot; Map auto complete of (, &quot;, ‘, [ inoremap $1 ()i inoremap $2 []i inoremap $3 {}i inoremap $4 {o}O inoremap $q ‘’i inoremap $e &quot;&quot;i inoremap $t &lt;&gt;i &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; General Abbrevs &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; iab xdate =strftime(&quot;%d/%m/%y %H:%M:%S&quot;) &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Editing mappings &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot;Remap VIM 0 map 0 ^ &quot;Move a line of text using ALT+[jk] or Comamnd+[jk] on mac nmap mz:m+<code>z nmap mz:m-2</code>z vmap :m’&lt;+<code>mzgv</code>yo<code>z vmap :m&#39;&amp;lt;2 cr&amp;gt;</code>&lt;my<code>nmap vmap vmap endif &amp;quot;Delete trailing white space, useful for Python ;) func! DeleteTrailingWS() exe &amp;quot;normal mz&amp;quot; %s/\s\+$//ge exe &amp;quot;normal</code>z&quot; endfunc autocmd BufWrite </em>.py :call DeleteTrailingWS() set guitablabel=%t &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Cope &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; Do :help cope if you are unsure what cope is. It’s super useful! map cc :botright cope map n :cn map p :cp &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; bufExplorer plugin &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; let g:bufExplorerDefaultHelp=0 let g:bufExplorerShowRelativePath=1 map o :BufExplorer &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Minibuffer plugin &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; let g:miniBufExplModSelTarget = 1 let g:miniBufExplorerMoreThanOne = 2 let g:miniBufExplModSelTarget = 0 let g:miniBufExplUseSingleClick = 1 let g:miniBufExplMapWindowNavVim = 1 let g:miniBufExplVSplit = 25 let g:miniBufExplSplitBelow=1 let g:bufExplorerSortBy = &quot;name&quot; autocmd BufRead,BufNew :call UMiniBufExplorer map u :TMiniBufExplorer &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Omni complete functions &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; autocmd FileType css set omnifunc=csscomplete#CompleteCSS &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Spell checking &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot;Pressing ,ss will toggle and untoggle spell checking map ss :setlocal spell! &quot;Shortcuts using map sn ]s map sp [s map sa zg map s? z= &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Python section &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; let python_highlight_all = 1 au FileType python syn keyword pythonDecorator True None False self au BufNewFile,BufRead <em>.jinja set syntax=htmljinja au BufNewFile,BufRead </em>.mako set ft=mako au FileType python inoremap $r return au FileType python inoremap $i import au FileType python inoremap $p print au FileType python inoremap $f #— PH ———————————————-FP2xi au FileType python map 1 /class au FileType python map 2 /def au FileType python map C ?class au FileType python map D ?def &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; JavaScript section &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; au FileType javascript call JavaScriptFold() au FileType javascript setl fen au FileType javascript setl nocindent au FileType javascript imap AJS.log();hi au FileType javascript imap alert();hi au FileType javascript inoremap $r return au FileType javascript inoremap $f //— PH ———————————————-FP2xi function! JavaScriptFold() setl foldmethod=syntax setl foldlevelstart=1 syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend function! FoldText() return substitute(getline(v:foldstart), ‘{.<em>‘, ‘{…}’, ‘’) endfunction setl foldtext=FoldText() endfunction &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; MRU plugin &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; let MRU_Max_Entries = 400 map f :MRU &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Command-T &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; let g:CommandTMaxHeight = 15 set wildignore+=</em>.o,<em>.obj,.git,</em>.pyc noremap j :CommandT noremap y :CommandTFlush &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Vim grep &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; let Grep_Skip_Dirs = ‘RCS CVS SCCS .svn generated’ set grepprg=/bin/grep\ -nH &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; MISC &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; Remove the Windows ^M - when the encodings gets messed up noremap m mmHmt:%s///ge’tzt’m &quot;Quickly open a buffer for scripbble map q :e ~/buffer au BufRead,BufNewFile ~/buffer iab xh1 =========================================== map pp :setlocal paste! map bb :cd .. de&gt;</p><p>本文使用Blog_Backup未注册版本导出，请到soft.pt42.com注册。</p><p></p></span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/08/11/2013-08-11-84637/" rel="prev">Ruby实现自己的kindle推送</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/08/11/2013-08-11-84681/" rel="next">传说中的Lost又出现了</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="John Doe" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">John Doe</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">163</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">分類</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">標籤</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <p class="post-toc-empty">此文章未包含目錄</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>

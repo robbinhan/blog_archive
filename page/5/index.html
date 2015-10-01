@@ -1,0 +1,931 @@
+<!doctype html>
+<html class="theme-next use-motion ">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+
+
+  <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/5/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <div class="container one-column 
+   page-home 
+">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">Hexo</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            標籤
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+  <section id="posts" class="posts-expand">
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84673/" itemprop="url">
+                漫谈MVC架构
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p> &nbsp;&nbsp;&nbsp;最近想认真设计一套PHP框架，虽然这是重复制造轮子，但是我认为至少过程中能帮我进一步了解软件设计，况且我也没找到目前主流开源框架适合我的。 &nbsp;&nbsp;&nbsp;在设计时一定逃不掉的就是MVC了，这个架构已经持续了许多年，至今仍在使用，但是我突然发现在平时的项目中，其实很多人开发时都不能很好的将MVC架构详细区分清楚，有时都会把M层的东西直接写在C层，我有时也会有这种问题，但是我觉得MVC架构模式并没有真正分清开发时的层级关系，我觉得MVCLD才能详细分清各个层的分工。虽然这可能会使初期开发的工作量加大，但是我觉得这会使后期的扩展上更容易。 &nbsp;&nbsp;&nbsp;之后我会将框架的脑图上传。<br><br>2011-11-14修改： 最近对框架的结构重新有了新的认识，之前的MVCLD结构认为是错误的，实际应是MVCSD(Model、View、Control、Service、Dao)，包括对每个层具体做什么有了深入的认识，也修改了之前的脑图。<br> 以下是我不成熟的思想：<img id="D8DB0FFA340A0F2E40BCD216F4700412"> </p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84672/" itemprop="url">
+                PHP发送邮件的随想
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p> &nbsp;今天要写邮件发送的功能，其实这玩意以前也写过，但是很久没用了，也淡忘了。所以想写下来记录了。<br> &nbsp;PHP里用的多的实现方式无非就几种：mail函数，smtp，sendmail。最常用的可能就是smtp了，这玩意儿相对安全，而且配置起来也方便，主要适用socket技术实现，只是碰到一些特殊的邮箱会比较麻烦，如：gmail。mail函数在程序里使用是很方便，但是上线后会经常有问题，而且这个函数好像是将执行脚本的服务器当作邮件服务器来发送的，所以配置起来一定相当麻烦，所以用的人也相对少了。sendmail不太了解，应该是一个Linux下的应用，php通过命令函数来执行其操作。</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84671/" itemprop="url">
+                PHP的OB缓冲区
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>&nbsp; &nbsp;其实之前也看过OB库的缓存使用，但是当时并没有真正理解这个的真正作用是什么，直到前两天项目上出了问题，才真正使用到它，才大概了解到他是用处。</p><p>&nbsp; &nbsp; 这个函数库用的最多的地方可能是在大多数框架的模板模块中，它将从ob_start()开启后的所有输出（echo,print,var_dump等）缓存到内存中，并不直接输出；当你需要缓冲区的内容时可以使用ob_get_contents()函数来获取其所有内容，它将以字符串形式返回，但同样不会自动输出；如果你想要其自动输出缓冲区里的内容可以使用ob_flush()或ob_end_flush()，前者只是将之前的内容输出，后者除了输出还会关闭当前缓冲区，则之后的输出都会正常输出。ob_end_clean() 函数会清空缓冲区，并关闭，但是不会将内容输出 ；他同样也有ob_clean函数。</p><p><br></p><p>详细使用请参考：<a href="http://www.chhua.com/web-note1781" target="_blank" rel="external">http://www.chhua.com/web-note1781</a></p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84670/" itemprop="url">
+                用sae写GTD简易系统
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p> &nbsp;&nbsp;&nbsp;今天有兴致写个GTD的系统，虽然很简易，但基本的GTD概念也都涉及了，设计思路是在网页上安排时间规划，后端有程序执行监控，发现当前时间内有任务则发短信通知到我手机。</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84669/" itemprop="url">
+                看《那些年》读《那些年》
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p><br>看了《那些年》，读了《那些年》，感觉柯腾可能喜欢的沈佳宜并非真正的沈佳宜，而只是的他理想中的沈佳宜，而沈佳宜可能喜欢的是真正的柯腾吧。无论如何，逝去的时光已不可能再追回，我们自己当年的“沈佳宜”可能已经成为了陪你走完下半生的人，也可能已经如小说中那样，另嫁他人，但是还是会偶尔会一起那段懵懂的时光。</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84668/" itemprop="url">
+                PHP pack二进制压缩笔记
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>在之前的与C++交互中，我们使用PHP先做二进制压缩，再将压缩内容通过socket发送。<br>pack中的压缩参数根据字节的大小分为多种情况。<br>长度 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;参数</p><p>1个字节 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C</p><p>2个字节整型 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n</p><p>2个字节字串 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v</p><p>4个字节整型 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N</p><p>4个字节字串 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V</p><p>超过4个字节的字串 &nbsp;&nbsp;a+字串长度<br><br>整型的压缩比较特殊，因为在网络中传输整型时，每台主机存在高低位的差异，所以必需要有网络字节序的转换，n和N就是针对16位和32位字节做转换的。</p><p>&nbsp;</p><p>如果遇到8字节整形传输，并且不使用网络字节序的话，需要做特殊转换</p><pre config="brush:php;toolbar:false;">//拆分64位id，分成2个32位的高低位<br>$int_32 = 4294967295;<br>$low = $id &amp; $int_32;<br>$high = $uid &gt;&gt; 32;<br>$uid_bin_64 = pack(&quot;VV&quot;,$low,$high);</pre><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84667/" itemprop="url">
+                PHP socket笔记
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>经过两次使用PHP的socket与c++交互，感觉需要备份记录。<br>其实，简单来说socket就是以网络形式来操作文件的协议。<br>首先，socket的分阻塞与非阻塞。其概念与同步与异步有相同之处，但也不完全相同。<br>所谓阻塞方式block，顾名思义，就是进程或是线程执行到这些函数时必须等 待某个事件的发生，如果事件没有发生，进程或线程就被阻塞，函数不能立即返回。<br>所谓非阻塞方式non- block，就是进程或线程执行此函数时不必非要等待事件的发生，一旦执行肯定返回，以返回值的不同来反映函数的执行情况，如果事件发生则与阻塞方式相同，若事件没有发生则返回一个代码来告知事件未发生，而进程或线程继续执行，所以效率较高。<br>PHP中有fsockopen的函数，手册上说他也是创建一个socket链接，但是他创建的链接并不能够做监听，并且链接是阻塞执行的；还有个socket函数库，类似socket_connect这样的函数，这个函数库少许复杂，但是功能很齐全，可以支持阻塞与非阻塞。<br></p><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//建立连接</span></span><br><span class="line"><span class="variable">$fsock</span> = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);</span><br><span class="line"><span class="keyword">if</span>(!<span class="variable">$fsock</span>) &#123; </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125; </span><br><span class="line">@socket_set_option(<span class="variable">$fsock</span>, SOL_SOCKET, SO_SNDTIMEO, <span class="keyword">array</span>(sec,<span class="variable">$connectTimeout</span>, <span class="string">"usec"</span> = <span class="number">0</span> ) ); </span><br><span class="line"><span class="variable">$a</span> = @socket_connect(<span class="variable">$fsock</span>, <span class="variable">$hostIp</span>, <span class="variable">$urlInfo</span>[<span class="string">"port"</span>]);</span><br><span class="line"><span class="variable">$ret</span> = socket_select(<span class="variable">$fd_read</span> = <span class="keyword">array</span>(<span class="variable">$fsock</span>), <span class="variable">$fd_write</span>=<span class="keyword">array</span>(<span class="variable">$fsock</span>), <span class="variable">$except</span> = <span class="keyword">NULL</span>, <span class="variable">$connectTimeout</span>, <span class="number">0</span>);</span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$ret</span> != <span class="number">1</span>)&#123; </span><br><span class="line">	trigger_error(<span class="string">"connect error or timeout"</span>);</span><br><span class="line">	@socket_close(<span class="variable">$fsock</span>); </span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">false</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br><p>resource socket_create ( int $domain , int $type , int $protocol )<br><br>这个函数用来创建一个socket资源（此时还没有建立连接），的三个参数是主要用来确认此次连接的网络协议类型（IPV4，传输方式，是否是TCP）<br><br>boolean socket_set_option(resource socket, integer level, integer option, integer value) socket_set_option函数给socket设置一个选项。Level参数设置一个标志级别的常量。有效的值包括：SOL_SOCKET, SOL_TCP和SOL_UDP。Option参数可以参考手册socket_get_option的说明。<br><br>socket_connect函数开始建立连接<br><br>int socket_select ( array &amp;$read , array &amp;$write , array &amp;$except , int $tv_sec [, int $tv_usec = 0 ] )socket_select函数可以完成非阻塞方式工作的程序。<br>$read就是一组资源集合，这个集合中应该包括文件描述符，我们是要监视这些文件描述符的读变化的，即我们关心是否可以从这些文件中读取数据了，如果这个集合中有一个文件可读，select就会返回一个大于0的值，表示有文件可读，如果没有可读的文件，则根据timeout参数再判断是否超时，若超出timeout的时间，select返回0，若发生错误返回负值。可以传入NULL值，表示不关心任何文件的读变化。<br>$write就是一组资源集合，这个集合中应该包括文件描述符，我们是要监视这些文件描述符的写变化的，即我们关心是否可以向这些文件 中写入数据了，如果这个集合中有一个文件可写，select就会返回一个大于0的值，表示有文件可写，如果没有可写的文件，则根据timeout参数再判 断是否超时，若超出timeout的时间，select返回0，若发生错误返回负值。可以传入NULL值，表示不关心任何文件的写变化。<br><br>$except用来监视文件错误异常。<br><br>$tv_sec与$tv_usec是select的超时时间(前面是秒，后面是毫秒)，这个参数至关重要，它可以使select处于三种状态，第一，若将NULL以形参传入，即不传入时间结构，就是将select置于阻塞状态，一定等到监视文件描述符集合中某个文件描述符发生变化为止；第二，若将时间值设为0秒0毫秒，就变成一个纯粹的非阻塞函数，不管文件描述符是否有变化，都立刻返回继续执行，文件无变化返回0，有变化返回一个正值；第三，timeout的值大于0，这就是等待的超时时间，即select在timeout时间内阻塞，超时时间之内有事件到来就返回了，否则在超时后不管怎样一定返回，返回值同上述。</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84666/" itemprop="url">
+                PCNTL 函数
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>pcntl_fork函数是用的最多的，一般用这个库的都是要用这函数的。<br>此函数是用来创造当前进程的子进程的，手册的说法是：“在当前进程当前位置产生分支（子进程）”；此函数成功时，在父进程执行线程内返回产生的子进程的PID，在子进程执行线程内返回0。失败时，在父进程上下文返回-1，不会创建子进程，并且会引发一个PHP错误。<br>&lt;?php<br>$pid = pcntl_fork();//父进程和子进程都会执行下面代码if ($pid == -1) { &nbsp;&nbsp;&nbsp;//错误处理：创建子进程失败时返回-1. &nbsp;&nbsp;&nbsp;&nbsp;die(‘could not fork’);} else if ($pid) { &nbsp;&nbsp;&nbsp;&nbsp;//父进程会得到子进程号，所以这里是父进程执行的逻辑 &nbsp;&nbsp;&nbsp;&nbsp;pcntl_wait($status); //等待子进程中断，防止子进程成为僵尸进程。} else { &nbsp;&nbsp;&nbsp;&nbsp;//子进程得到的$pid为0, 所以这里是子进程执行的逻辑。}<br>?&gt;</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84665/" itemprop="url">
+                $_POST与php://input的区别
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>$_POST 与 php://input可以取到值，$HTTP_RAW_POST_DATA 为空$_POST 以关联数组方式组织提交的数据，并对此进行编码处理，如urldecode，甚至编码转换。php://input 可通过输入流以文件读取方式取得未经处理的POST原始数据</p><p>php://input 允许读取 POST 的原始数据。和 $HTTP_RAW_POST_DATA 比起来，它给内存带来的压力较小，并且不需要任何特殊的 php.ini 设置。php://input 不能用于 enctype=&quot;multipart/form-data&quot;。</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84664/" itemprop="url">
+                学习Rails
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>决定花一月时间学习下Rails，这两天看了点Ruby的语法，感觉也差不多了，就准备学习Rails了，发现Rails这玩意儿确实十分强大，突然感觉，一门语言的强大不仅仅只是性能，在性能不是很差的时候更多应该考虑的是可维护性和快速开发上了。<br></p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/6/">&raquo;</a>
+  </nav>
+
+ </div>
+
+        
+
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="John Doe" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">John Doe</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">163</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">分類</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">標籤</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>

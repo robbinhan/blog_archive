@@ -1,0 +1,1036 @@
+<!doctype html>
+<html class="theme-next use-motion ">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+
+
+  <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <div class="container one-column 
+   page-home 
+">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">Hexo</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            標籤
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+  <section id="posts" class="posts-expand">
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/11/23/2013-11-23-mysql-master-slave-replication-problems-encountered-a-duplicate-primary-key/" itemprop="url">
+                MySQL 主从复制时遇到主键重复问题
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-11-23T03:55:00+08:00" content="2013-11-23">
+            2013-11-23
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>  近期新开发的系统使用了主从来确保线上业务稳定可靠，但是有一次恢复数据时却遇到主从同步挂掉，一查原因才发现原来是插入的主键重复导致主从挂了。<br>  因为从库中已经有数据，其并未丢失，当主库中恢复了数据要往从库同步时发现报主键重复的错误，主从就被停止了。Mysql 配置里可以忽略错误，可是如果忽略了会导致之后数据不一致。<br>  但是平时程序上正常插入数据时如果是在主库就已经主键重复则主库就会报错不会把数据插入，也就不会影响到和从库的同步数据。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/11/22/2013-11-22-watch-the-60-second-economics-of-exploration-notes/" itemprop="url">
+                看《60秒经济学探奇》笔记一
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-11-22T14:53:00+08:00" content="2013-11-22">
+            2013-11-22
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>  经济控制起来很棘手，各国政府都在想办法弄清楚怎么做，1776年，亚当斯密提出让人们自由进行买卖，他认为只有关注自身利益的交易者相互竞争，才能产生良性循环，同样的产品消费者一定会选择便宜的卖家，另一个卖家看到消费者都去别家买自然也就会降价，并且提供更好的服务来满足消费者。<br>  奥地利经济学家哈耶克同样认为政府只有『放手』，让市场经济自由发展才是最好的选择。<br>  当然这需要很长的一段时间，在这期间也可能会停滞，这时就需要政府出手，刺激消费。<br>  <a href="http://v.163.com/movie/2012/8/V/F/M8I8I5FFB_M8I8I8VVF.html" target="_blank" rel="external">视频地址</a></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/11/20/2013-11-20-stage-summary/" itemprop="url">
+                进阶段工作总结
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-11-20T14:13:00+08:00" content="2013-11-20">
+            2013-11-20
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>工作有4年了，近几月升到了主管，负责部门内某块业务的整体工作安排等。升了主管自然是想把自己这块做好，想要定制一些标准，但是实施起来又岂是那么简单的事情；不仅仅是自己团队队员的问题，还有其他部门同事不给力，人手不够，需求不断等一系列问题；又由于刚开始自己还没习惯转换角色，任然是尽可能包揽所有工作，导致比之前还忙碌，经常加班至凌晨两点再休息，终于肺炎，可怜的是肺炎期间还要继续工作。国庆休假结束后觉得应该调整下<br>第一步，将工作内容划分<br>第二步，每周制定工作计划<br>第三步，团队沟通<br>第四步，制定平时开发、调试、上线代吗规范。<br>自己一定要把控所有需求的进度，所有需求内容，预期完成时间，时间有调整等都要通过邮件形式通知到我及我老大。文档必须完善，可能的话统一培训需求提出同事，减少不必要的咨询。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/11/15/2013-11-15-javascript-event-monitor/" itemprop="url">
+                JavaScript 事件监听
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-11-15T15:59:00+08:00" content="2013-11-15">
+            2013-11-15
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/javascript/" itemprop="url" rel="index">
+                  <span itemprop="name">javascript</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>先上代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> element = <span class="built_in">document</span>.getElementById(<span class="string">'element'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> user = &#123;</span><br><span class="line"> firstname: <span class="string">'Wilson'</span>,</span><br><span class="line"> greeting: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   alert(<span class="string">'My name is '</span> + <span class="keyword">this</span>.firstname);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Attach user.greeting as a callback</span></span><br><span class="line">element.addEventListener(<span class="string">'click'</span>, user.greeting);</span><br><span class="line"></span><br><span class="line"><span class="comment">// alert =&gt; 'My name is undefined'</span></span><br></pre></td></tr></table></figure></p>
+<p>初看上去，alert 的内容应该是My name is Wilson，但是函数中却没有取到Wilson，而是输出了undefined，这是为什么呢？<br>因为当我们在addEventListener方法上传递user.greeting作为callback函数的时候，其实只是传递了引用给addEventListener方法，而user对象并没有一起传递过去。事实上，callback方法是在element对象上被调用的，这就意味着此时的 this 对象指的是element，而非 user 对象，因此，this.firstname属性就返回undefined了。</p>
+<p>以下是一种正确调用到Wilson的方式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">element.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  user.greeting();</span><br><span class="line">  <span class="comment">// alert =&gt; 'My name is Wilson'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>但是，上面这种方式在我们想要对element对象移除click事件监听的时候会很麻烦，不能去掉他的 callback 方法。所以更好的方式是使用bind函数来生成一个新的方法，然后再把这个方法传给addEventListener的callback参数中。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Overwrite the original function with</span></span><br><span class="line"><span class="comment">// one bound to the context of 'user'</span></span><br><span class="line">user.greeting = user.greeting.bind(user);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Attach the bound user.greeting as a callback</span></span><br><span class="line">button.addEventListener(<span class="string">'click'</span>, user.greeting);</span><br></pre></td></tr></table></figure></p>
+<p>我们同样是传递一个引用给方法,但是现在我们可以移除事件。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">button.removeEventListener(<span class="string">'click'</span>, user.greeting);</span><br></pre></td></tr></table></figure></p>
+<p>事件的监听分三个阶段，捕获阶段、目标阶段、冒泡阶段。是从 dom 对象的根节点一直往下到目标节点，再回到根节点的流程。</p>
+<p>在捕获阶段如果需要监听经过的每个节点可以设置addEventListener第三个参数为true<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> form = <span class="built_in">document</span>.querySelector(<span class="string">'form'</span>);</span><br><span class="line"></span><br><span class="line">form.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  event.stopPropagation();</span><br><span class="line">&#125;, <span class="literal">true</span>); <span class="comment">// Note: 'true'</span></span><br></pre></td></tr></table></figure></p>
+<p>如果只想在捕获阶段监听经过的每个节点，可以在冒泡阶段设置useCapture属性为false或者undefined</p>
+<p>在节点嵌套情况下，如果在父节点绑定个click 事件监听，但是用户实际上是在子节点click 的，也是可以触发父节点的事件这个就是事件冒泡的原因，比如一个 div 标签绑定了个 click 事件，p 标签在 div 标签中，用户点击了 p 标签，但是实际上会触发 div 的上的 click 事件。</p>
+<p>在目标阶段如果希望不要回到冒泡阶段，使用event.stopPropagation函数来终止冒泡，这样即使父节点有事件监听也不会触发。如果想要停止执行任何当前节点的其他时间监听需要调用event.stopImmediatePropagation方法。</p>
+<p>自定义事件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myEvent = <span class="keyword">new</span> CustomEvent(<span class="string">"myevent"</span>, &#123;</span><br><span class="line">  detail: &#123;</span><br><span class="line">    name: <span class="string">"Wilson"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  bubbles: <span class="literal">true</span>,</span><br><span class="line">  cancelable: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Listen for 'myevent' on an element</span></span><br><span class="line">myElement.addEventListener(<span class="string">'myevent'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  alert(<span class="string">'Hello '</span> + event.detail.name);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Trigger the 'myevent'</span></span><br><span class="line">myElement.dispatchEvent(myEvent);</span><br></pre></td></tr></table></figure></p>
+<p>自定义事件只在 IE9以上的浏览器支持</p>
+<p>一些有用的事件<br>1.load<br>load事件可以在任何资源加载完成的时候触发（包括依赖的资源），比方image, style sheet, script, video, audio file, document , window这些对象都可以。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">image.addEventListener(<span class="string">'load'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  image.classList.add(<span class="string">'has-loaded'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>2.onbeforeunload<br>window.onbeforeunload可以实现让用户确认是否要离开当前页面，以保证尽量不让用户丢失数据。但是onbeforeunload会阻止浏览器缓存页面，因此会让回流用户感到非常慢(<a href="https://developer.mozilla.org/en-US/docs/Using_Firefox_1.5_caching" target="_blank" rel="external">这里有个缓存的方式</a>)，并且onbeforeunload必须不能是异步的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onbeforeunload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (textarea.value != textarea.defaultValue) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Do you want to leave the page and discard changes?'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>还有为了手机设备的touchmove、resize事件，动画结束时触发的transitionEnd事件，以及animationiteration，错误事件error。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/11/10/2013-11-10-achieving-the-http10-long-connection/" itemprop="url">
+                实现HTTP1.0与HTTP1.1长连接
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-11-10T03:24:00+08:00" content="2013-11-10">
+            2013-11-10
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>HTTP1.1支持长连接和Pipelining，客户端可以在一个 TCP 连接中，发多个请求给服务端，并且不必等待响应后再发送第二个请求，但是服务端必须依次顺序处理并响应；HTTP1.1要建立长连接，可以在请求消息中包含Connection: Keep-Alive头域，如果服务器愿意维持这条连接，在响应消息中也会包含一个Connection: Keep-Alive的头域，所以是必须同时包含keep-alive头域；同时，可以加入一些指令描述该长连接的属性，如max，timeout等。</p>
+<p>HTTP1.0中是不支持Host头域指定的，而只有在HTTP1.1中才支持，并且默认必须指定，否则会响应400错误。可能HTTP1.0的时候认为，建立TCP连接的时候已经指定了IP地址，这个IP地址上只有一个host。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/10/25/2013-10-25-php-code-optimization-in-mind/" itemprop="url">
+                PHP代码性能优化一记
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-10-25T12:42:00+08:00" content="2013-10-25">
+            2013-10-25
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>今天别人帮我review了下代码，发现有处代码写的看上去很乱，而且觉的性能也不高，原始代码如下。<br><figure class="highlight php"><figcaption><span>Application.php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Application</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$default_log_handler</span> = <span class="string">'\Monolog\Handler\StreamHandler'</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$default_log_path</span> = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getLogger</span><span class="params">(<span class="variable">$key</span>, <span class="variable">$channel</span> = NULL)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">		    <span class="variable">$this</span>-&gt;default_log_path = APPPATH . <span class="string">"log/"</span> . date(<span class="string">'Ymd'</span>) . <span class="string">'.log'</span>;</span><br><span class="line">        <span class="variable">$monolog_array</span> = Config::load(<span class="string">'monolog'</span>);</span><br><span class="line">        <span class="variable">$log_config_info</span> = <span class="keyword">array</span>();</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$monolog_array</span>[<span class="variable">$key</span>])) &#123;</span><br><span class="line">        		<span class="variable">$log_config_info</span> = <span class="variable">$monolog_array</span>[<span class="variable">$key</span>]</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="variable">$log_handler</span> = <span class="keyword">isset</span>(<span class="variable">$log_config_info</span>[<span class="string">'handler'</span>]) ? <span class="variable">$log_config_info</span>[<span class="string">'handler'</span>] : <span class="variable">$this</span>-&gt;default_log_handler;</span><br><span class="line">        <span class="variable">$log_level</span> = <span class="keyword">isset</span>(<span class="variable">$log_config_info</span>[<span class="string">'level'</span>]) ? <span class="variable">$log_config_info</span>[<span class="string">'level'</span>] : LOG_LEVEL;</span><br><span class="line">        <span class="variable">$log_path</span> = <span class="keyword">isset</span>(<span class="variable">$log_config_info</span>[<span class="string">'path'</span>]) ? <span class="variable">$log_config_info</span>[<span class="string">'path'</span>] : <span class="variable">$this</span>-&gt;default_log_path;</span><br><span class="line">        <span class="variable">$log_channel</span> = !<span class="keyword">isset</span>(<span class="variable">$channel</span>) ? (<span class="keyword">isset</span>(<span class="variable">$log_config_info</span>[<span class="string">'channel'</span>]) ? <span class="variable">$log_config_info</span>[<span class="string">'channel'</span>] : <span class="variable">$key</span>) : <span class="variable">$channel</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">array</span>(<span class="string">'handler'</span> =&gt; <span class="variable">$log_handler</span>, <span class="string">'level'</span> =&gt; <span class="variable">$log_level</span>, <span class="string">'path'</span> =&gt; <span class="variable">$log_path</span>, <span class="string">'channel'</span> =&gt; <span class="variable">$log_channel</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">/*</span><br><span class="line">        $logger = new Logger($log_channel);</span><br><span class="line">        $log_name = $logger-&gt;getLevel($log_level);</span><br><span class="line">        $logger-&gt;pushHandler(new $log_handler($log_path,$log_name));</span><br><span class="line">        return $logger;</span><br><span class="line">        */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>getLogger方法是返回一个 log 对象，为方便测试将下面的对象创建部分先注释，稍后还会调整这部分。现在这段代码看上去非常多的 isset 加三目运算符，阅读感很差，而且每次调用都要设置默认 log 文件名，这会影响性能，之后他优化了下代码，变成如下<br><figure class="highlight php"><figcaption><span>Application2.php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Application2</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="variable">$default_config</span> = <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">'handler'</span> =&gt; <span class="string">'\Monolog\Handler\StreamHandler'</span>,</span><br><span class="line">        <span class="string">'level'</span> =&gt; LOG_LEVEL,</span><br><span class="line">        <span class="string">'path'</span> =&gt; <span class="string">''</span>,</span><br><span class="line">        <span class="string">'channel'</span> =&gt; <span class="string">''</span>,</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">static</span>::<span class="variable">$default_config</span>[<span class="string">'path'</span>] <span class="keyword">or</span> <span class="keyword">static</span>::<span class="variable">$default_config</span>[<span class="string">'path'</span>] = APPPATH . <span class="string">"log/"</span> . date(<span class="string">'Ymd'</span>) . <span class="string">'.log'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getLogger</span><span class="params">(<span class="variable">$key</span>, <span class="variable">$channel</span> = NULL)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="variable">$monolog_array</span> = Config::load(<span class="string">'monolog'</span>);</span><br><span class="line"></span><br><span class="line">        <span class="variable">$log_config_info</span> = &amp; <span class="variable">$monolog_array</span>[<span class="variable">$key</span>] <span class="keyword">or</span> <span class="variable">$log_config_info</span> = <span class="keyword">array</span>();</span><br><span class="line"></span><br><span class="line">        <span class="variable">$log_config_info</span> += <span class="keyword">static</span>::<span class="variable">$default_config</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$channel</span>)</span><br><span class="line">            <span class="variable">$log_config_info</span>[<span class="string">'channel'</span>] = <span class="variable">$channel</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$log_config_info</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/*</span><br><span class="line">        $logger = new Logger($log_channel);</span><br><span class="line">        $log_name = $logger-&gt;getLevel($log_level);</span><br><span class="line">        $logger-&gt;pushHandler(new $log_handler($log_path,$log_name));</span><br><span class="line">        return $logger;</span><br><span class="line">        */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样修改后代码立即清楚许多，并且性能提高了一倍，因为是以数组的形式将加载的配置和默认配置合并，避免了使用 isset 判断，另外使用引用的加载方式提高了很大性能，舍弃使用三目运算符同样加快了执行速度，但是为什么三目运算符会影响到性能呢，别的语言都是三目运算符相对较快呀；此处有一文解释了原因<a href="http://fabien.potencier.org/article/48/the-php-ternary-operator-fast-or-not" target="_blank" rel="external">三目运算符快或慢</a>，其中讲到因为三目运算符执行时候 PHP 会copy 变量再处理，所以速度上就比 if 慢了，如果变量的值占空间小还看不出，如果数据量大就会慢很多，在 PHP5.3版本这个问题比较严重，PHP5.4后调整了些性能，但是三目运算符仍然比 if-else 要慢，所以尽量避免三目运算符的写法。<br>然后是下面的对象创建，每次调用 getLogger 方法都要创建一个对象，但是其实这个对象本质没做什么改变，所以我使用了单例模式，只是每次重新设置他的log_channel，这样减少对象创建的开销，另外每次都要 new 个 handler 对象，但是大部分情况下 handler 对象也是一样的，只是存储的路径及日志级别不同，所以我声明个静态数组来存放生成过的对象，不在每次重复生成，这样大大提高了性能，瞬间提高一个数量级的速度；而且我还修改了下初始化方式，原先他是构造方法每次设置默认日志路径，我换成静态initialize 方式，如果初始化过了就不在调用初始化方法。最终代码如下<br><figure class="highlight php"><figcaption><span>Application.php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Application</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="variable">$default_config</span> = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="variable">$logger_object</span> = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="variable">$handler_object</span> = <span class="keyword">array</span>();</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="variable">$inited</span> = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">init</span><span class="params">()</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">self</span>::<span class="variable">$default_config</span> = <span class="keyword">array</span>(</span><br><span class="line">            <span class="string">'handler'</span> =&gt; <span class="string">'\Monolog\Handler\StreamHandler'</span>,</span><br><span class="line">            <span class="string">'path'</span> =&gt; APPPATH . <span class="string">"log/default_"</span>.date(<span class="string">'Ymd'</span>).<span class="string">'.log'</span>,</span><br><span class="line">            <span class="string">'level'</span> =&gt; LOG_LEVEL,</span><br><span class="line">            <span class="string">'channel'</span> =&gt; <span class="string">''</span>,</span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">self</span>::<span class="variable">$inited</span> = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * get日志对象，默认文件名是default+日期,file_name_prefix配置文件名类型</span><br><span class="line">     * <span class="doctag">@param</span> $key</span><br><span class="line">     * <span class="doctag">@param</span> null $channel</span><br><span class="line">     * <span class="doctag">@return</span> Logger</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getLogger</span><span class="params">(<span class="variable">$key</span>, <span class="variable">$channel</span> = NULL)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">self</span>::<span class="variable">$inited</span> === <span class="keyword">false</span> <span class="keyword">AND</span> <span class="keyword">self</span>::init();</span><br><span class="line"></span><br><span class="line">        <span class="variable">$monolog_array</span> = Config::load(<span class="string">'monolog'</span>);</span><br><span class="line">        <span class="variable">$log_config_info</span> = &amp; <span class="variable">$monolog_array</span>[<span class="variable">$key</span>] <span class="keyword">or</span> <span class="variable">$log_config_info</span> = <span class="keyword">array</span>();</span><br><span class="line"></span><br><span class="line">        <span class="variable">$log_config_info</span> += <span class="keyword">self</span>::<span class="variable">$default_config</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$log_config_info</span>[<span class="string">'file_name_prefix'</span>])) &#123;</span><br><span class="line">            <span class="variable">$log_config_info</span>[<span class="string">'path'</span>] = str_replace(<span class="string">'default'</span>,<span class="variable">$log_config_info</span>[<span class="string">'file_name_prefix'</span>],<span class="variable">$log_config_info</span>[<span class="string">'path'</span>]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$channel</span>) &#123;</span><br><span class="line">            <span class="variable">$log_config_info</span>[<span class="string">'channel'</span>] = <span class="variable">$channel</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="variable">$log_config_info</span>[<span class="string">'channel'</span>] = <span class="variable">$key</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">self</span>::getLoggerObject(<span class="variable">$log_config_info</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>::<span class="variable">$logger_object</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 创建一个单例logger对象，并且把 handler 对象 push 进去</span><br><span class="line">     * <span class="doctag">@param</span> $log_config_info</span><br><span class="line">     * <span class="doctag">@return</span> \Monolog\Logger</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">getLoggerObject</span><span class="params">(&amp;<span class="variable">$log_config_info</span>)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">self</span>::<span class="variable">$logger_object</span> &amp;&amp; is_object(<span class="keyword">self</span>::<span class="variable">$logger_object</span>) &amp;&amp; <span class="keyword">self</span>::<span class="variable">$logger_object</span> <span class="keyword">instanceof</span> \Monolog\Logger) &#123;</span><br><span class="line">            <span class="keyword">self</span>::<span class="variable">$logger_object</span>-&gt;setName(<span class="variable">$log_config_info</span>[<span class="string">'channel'</span>]);</span><br><span class="line">            <span class="keyword">self</span>::pushHandler(<span class="variable">$log_config_info</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">self</span>::<span class="variable">$logger_object</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>::<span class="variable">$logger_object</span> = <span class="keyword">new</span> \Monolog\Logger(<span class="variable">$log_config_info</span>[<span class="string">'channel'</span>]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * push handler处理，push 过的不再 new 对象</span><br><span class="line">     * <span class="doctag">@param</span> $log_config_info</span><br><span class="line">     * <span class="doctag">@return</span> bool</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">pushHandler</span><span class="params">(&amp;<span class="variable">$log_config_info</span>)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="keyword">self</span>::<span class="variable">$handler_object</span>[<span class="variable">$log_config_info</span>[<span class="string">'handler'</span>]])) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">self</span>::<span class="variable">$handler_object</span>[<span class="variable">$log_config_info</span>[<span class="string">'handler'</span>]] = <span class="number">1</span>;</span><br><span class="line">        <span class="variable">$handler</span> = <span class="keyword">new</span> <span class="variable">$log_config_info</span>[<span class="string">'handler'</span>](<span class="variable">$log_config_info</span>[<span class="string">'path'</span>], <span class="variable">$log_config_info</span>[<span class="string">'level'</span>]);</span><br><span class="line">        <span class="keyword">self</span>::<span class="variable">$logger_object</span>-&gt;pushHandler(<span class="variable">$handler</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/09/24/2013-09-24-php-receives-the-request-latency-troubleshooting/" itemprop="url">
+                PHP 接收请求延迟排查
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-09-24T13:44:00+08:00" content="2013-09-24">
+            2013-09-24
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/php/" itemprop="url" rel="index">
+                  <span itemprop="name">php</span>
+                </a>
+              </span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/php/nginx/" itemprop="url" rel="index">
+                  <span itemprop="name">nginx</span>
+                </a>
+              </span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/php/nginx/fpm/" itemprop="url" rel="index">
+                  <span itemprop="name">fpm</span>
+                </a>
+              </span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/php/nginx/fpm/日志/" itemprop="url" rel="index">
+                  <span itemprop="name">日志</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>近期项目中突然出现 PHP 接收到请求延迟或者程序里根本收不到，导致用户体验很差。起初怀疑是机房网关转发的问题，后来考虑是内网转发不应该存在延迟问题；之后因为机房有被流量攻击，所以又猜测是因为流量攻击导致带宽过少，请求就收不到，可是每天都有出现这样的情况，所以还是决定要彻底找到原因并解决。<br>因为我们的环境是LAMP，所以首先开启 nginx 访问日志，记录每一条请求的时间，请求路径，请求 body 参数值， fpm 响应时间，nginx 处理请求的整个响应时间。<br>开启一个小时后查看日志已经收到非常多的请求，但是具体哪条请求有问题还不知道，所以使用强大的 awk + grep + sort 命令过滤处理出最慢的前10条请求，再去 PHP 日志里对应查询，突然发现有些请求在 nginx 端已经收到，但是到了 PHP 端却没有执行，或者是一两分钟后才收到；起初我怀疑是否是 nginx 进程太少，来不及转发到 fpm，就 Google 了号就 nginx 配置问题，发现配置基本都正常，和网上推荐的基本一致，甚至进程还比一般开的还多。这时我把思路放到 fpm 上，我发现服务器正好记录了 fpm 的错误日志，立即查看，看到这么一段警告信息</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">Sep</span> <span class="number">23</span> <span class="number">00</span>:<span class="number">01</span>:<span class="number">54</span>.<span class="number">559027</span> [WARNING] [pool www] server reached max_children setting (<span class="number">40</span>), consider raising it</span><br></pre></td></tr></table></figure>
+<p>这时知道 fpm 子进程可能太少，只有40个子进程；立即查看配置，果然，配置中只开了40个进程，立马调整到100，reload 配置，观察一段时间果然不再有上面的警告出现，但是出现了些如下警告</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">Sep</span> <span class="number">23</span> <span class="number">00</span>:<span class="number">09</span>:<span class="number">12</span>.<span class="number">319416</span> [WARNING] [pool www] seems busy (you may need to increase start_servers, or min/max_spare_servers), spawning <span class="number">8</span> children, there are <span class="number">1</span> idle, and <span class="number">13</span> total children</span><br></pre></td></tr></table></figure>
+<p>原来是进程开多了，服务器内存不够了，关闭其他进程，不再出现上面警告，观察一段时间 nginx 日志，fpm 响应时间和 nginx 响应时间基本一致，当中不存在延迟问题，至此解决延迟和接收不到请求的问题。</p>
+<p>此次发现分析 nginx 日志和 fpm能得到很多信息，也许网站的并发量上不去就能够解决了，之后考虑做个完整的分析系统。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/09/14/2013-09-14-javascritp-anonymous-functions/" itemprop="url">
+                JavaScritp匿名函数
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-09-14T05:44:00+08:00" content="2013-09-14">
+            2013-09-14
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>最近学习 Node 的 Expressjs 框架，看到路由部分，研究了下多文件路由分发的设置方法，突然看到个写法有点搞不懂，不知道最后的小括号代表什么，就 Google 了下，发现还是 js 中比较重要的概念，所以整理记录。以下是 node 中的代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">'./routes/index'</span>)(app);</span><br></pre></td></tr></table></figure></p>
+<p>Google上说这其实就是加载 index 脚本，然后执行运行，并且传入 app 这个对象参数。所以右边小括号的作用其实就是直接执行前面加载进来的代码。再详细说明下</p>
+<p>比如一般我们定义和调用函数是这样的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func1</span>(<span class="params"></span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">	alert(<span class="string">"Hello"</span>);</span><br><span class="line">&#125;</span><br><span class="line">func1();</span><br></pre></td></tr></table></figure></p>
+<p>这时会弹出 alert 框，并输出 Hello 字符。下面我们换种写法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="string">"Hello"</span>);</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+<p>同样也是弹出 alert 框，并输出 Hello 字符。并且这里没有了函数名，这其实是个匿名函数，就是不需要函数名的函数（有点拗口。。。），总而言之吧，他还是个函数，就是有了个特殊的名字。<br>但是发现匿名函数外部还套了层括号，如果把这层括号去掉是否可以呢，答案是否定的。因为 js 会根据运算符的优先级来解析，去掉括号后，发现最右边的小括号优先级搞，他先去解析执行了，然后才会去解析匿名函数，自然是不可能成功的，而且会报错。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/09/12/2013-09-12-ie-in-the-href-attribute-of-the-a-tag-length-limit/" itemprop="url">
+                IE中 a 标签的 href 属性长度限制
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-09-12T10:28:00+08:00" content="2013-09-12">
+            2013-09-12
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>项目中需要在a标签中 href 写下 javascript 调用方法代码，本来都 OK，但是后来突然无法执行了，查了 stackoverflow 知道，IE 对 href 链接的字符长度是有限制的（2083字符），于是改成 bind 事件刑事解决。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/13/2013-08-13-differences-between-php-and-ruby/" itemprop="url">
+                PHP与Ruby的区别所想
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-13T12:47:00+08:00" content="2013-08-13">
+            2013-08-13
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>首先PHP是弱类型的，Ruby是强类型的，当写Ruby时需要注意参数变量的类型，不符合的类型参数即会报错。<br>为什么喜欢Ruby，说实话我也不太能说个所以然，就是觉得Ruby的语法很有趣，写的很开心，用别人的话可能是Ruby的语法很“性感”。<br>例如，一般的语言里循环条件语句会是</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XX==XX</span><br></pre></td></tr></table></figure>
+<p>而在Ruby中可以写成<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">util <span class="constant">XX</span>==<span class="constant">XX</span> <span class="keyword">do</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo;</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/4/">&raquo;</a>
+  </nav>
+
+ </div>
+
+        
+
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="John Doe" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">John Doe</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">163</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">分類</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">標籤</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,573 @@
+<!doctype html>
+<html class="theme-next use-motion ">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+
+
+  <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="今天别人帮我review了下代码，发现有处代码写的看上去很乱，而且觉的性能也不高，原始代码如下。Application.php123456789101112131415161718192021222324252627282930&amp;lt;?phpclass Application&amp;#123;    private $default_log_handler = &apos;\Monolog\Handler\St">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP代码性能优化一记">
+<meta property="og:url" content="http://yoursite.com/2013/10/25/2013-10-25-php-code-optimization-in-mind/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="今天别人帮我review了下代码，发现有处代码写的看上去很乱，而且觉的性能也不高，原始代码如下。Application.php123456789101112131415161718192021222324252627282930&amp;lt;?phpclass Application&amp;#123;    private $default_log_handler = &apos;\Monolog\Handler\St">
+<meta property="og:updated_time" content="2015-10-01T07:01:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP代码性能优化一记">
+<meta name="twitter:description" content="今天别人帮我review了下代码，发现有处代码写的看上去很乱，而且觉的性能也不高，原始代码如下。Application.php123456789101112131415161718192021222324252627282930&amp;lt;?phpclass Application&amp;#123;    private $default_log_handler = &apos;\Monolog\Handler\St">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> PHP代码性能优化一记 | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">Hexo</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            標籤
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              PHP代码性能优化一记
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-10-25T12:42:00+08:00" content="2013-10-25">
+            2013-10-25
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>今天别人帮我review了下代码，发现有处代码写的看上去很乱，而且觉的性能也不高，原始代码如下。<br><figure class="highlight php"><figcaption><span>Application.php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Application</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$default_log_handler</span> = <span class="string">'\Monolog\Handler\StreamHandler'</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$default_log_path</span> = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getLogger</span><span class="params">(<span class="variable">$key</span>, <span class="variable">$channel</span> = NULL)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">		    <span class="variable">$this</span>-&gt;default_log_path = APPPATH . <span class="string">"log/"</span> . date(<span class="string">'Ymd'</span>) . <span class="string">'.log'</span>;</span><br><span class="line">        <span class="variable">$monolog_array</span> = Config::load(<span class="string">'monolog'</span>);</span><br><span class="line">        <span class="variable">$log_config_info</span> = <span class="keyword">array</span>();</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$monolog_array</span>[<span class="variable">$key</span>])) &#123;</span><br><span class="line">        		<span class="variable">$log_config_info</span> = <span class="variable">$monolog_array</span>[<span class="variable">$key</span>]</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="variable">$log_handler</span> = <span class="keyword">isset</span>(<span class="variable">$log_config_info</span>[<span class="string">'handler'</span>]) ? <span class="variable">$log_config_info</span>[<span class="string">'handler'</span>] : <span class="variable">$this</span>-&gt;default_log_handler;</span><br><span class="line">        <span class="variable">$log_level</span> = <span class="keyword">isset</span>(<span class="variable">$log_config_info</span>[<span class="string">'level'</span>]) ? <span class="variable">$log_config_info</span>[<span class="string">'level'</span>] : LOG_LEVEL;</span><br><span class="line">        <span class="variable">$log_path</span> = <span class="keyword">isset</span>(<span class="variable">$log_config_info</span>[<span class="string">'path'</span>]) ? <span class="variable">$log_config_info</span>[<span class="string">'path'</span>] : <span class="variable">$this</span>-&gt;default_log_path;</span><br><span class="line">        <span class="variable">$log_channel</span> = !<span class="keyword">isset</span>(<span class="variable">$channel</span>) ? (<span class="keyword">isset</span>(<span class="variable">$log_config_info</span>[<span class="string">'channel'</span>]) ? <span class="variable">$log_config_info</span>[<span class="string">'channel'</span>] : <span class="variable">$key</span>) : <span class="variable">$channel</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">array</span>(<span class="string">'handler'</span> =&gt; <span class="variable">$log_handler</span>, <span class="string">'level'</span> =&gt; <span class="variable">$log_level</span>, <span class="string">'path'</span> =&gt; <span class="variable">$log_path</span>, <span class="string">'channel'</span> =&gt; <span class="variable">$log_channel</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">/*</span><br><span class="line">        $logger = new Logger($log_channel);</span><br><span class="line">        $log_name = $logger-&gt;getLevel($log_level);</span><br><span class="line">        $logger-&gt;pushHandler(new $log_handler($log_path,$log_name));</span><br><span class="line">        return $logger;</span><br><span class="line">        */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>getLogger方法是返回一个 log 对象，为方便测试将下面的对象创建部分先注释，稍后还会调整这部分。现在这段代码看上去非常多的 isset 加三目运算符，阅读感很差，而且每次调用都要设置默认 log 文件名，这会影响性能，之后他优化了下代码，变成如下<br><figure class="highlight php"><figcaption><span>Application2.php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Application2</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="variable">$default_config</span> = <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">'handler'</span> =&gt; <span class="string">'\Monolog\Handler\StreamHandler'</span>,</span><br><span class="line">        <span class="string">'level'</span> =&gt; LOG_LEVEL,</span><br><span class="line">        <span class="string">'path'</span> =&gt; <span class="string">''</span>,</span><br><span class="line">        <span class="string">'channel'</span> =&gt; <span class="string">''</span>,</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">static</span>::<span class="variable">$default_config</span>[<span class="string">'path'</span>] <span class="keyword">or</span> <span class="keyword">static</span>::<span class="variable">$default_config</span>[<span class="string">'path'</span>] = APPPATH . <span class="string">"log/"</span> . date(<span class="string">'Ymd'</span>) . <span class="string">'.log'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getLogger</span><span class="params">(<span class="variable">$key</span>, <span class="variable">$channel</span> = NULL)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="variable">$monolog_array</span> = Config::load(<span class="string">'monolog'</span>);</span><br><span class="line"></span><br><span class="line">        <span class="variable">$log_config_info</span> = &amp; <span class="variable">$monolog_array</span>[<span class="variable">$key</span>] <span class="keyword">or</span> <span class="variable">$log_config_info</span> = <span class="keyword">array</span>();</span><br><span class="line"></span><br><span class="line">        <span class="variable">$log_config_info</span> += <span class="keyword">static</span>::<span class="variable">$default_config</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$channel</span>)</span><br><span class="line">            <span class="variable">$log_config_info</span>[<span class="string">'channel'</span>] = <span class="variable">$channel</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$log_config_info</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/*</span><br><span class="line">        $logger = new Logger($log_channel);</span><br><span class="line">        $log_name = $logger-&gt;getLevel($log_level);</span><br><span class="line">        $logger-&gt;pushHandler(new $log_handler($log_path,$log_name));</span><br><span class="line">        return $logger;</span><br><span class="line">        */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样修改后代码立即清楚许多，并且性能提高了一倍，因为是以数组的形式将加载的配置和默认配置合并，避免了使用 isset 判断，另外使用引用的加载方式提高了很大性能，舍弃使用三目运算符同样加快了执行速度，但是为什么三目运算符会影响到性能呢，别的语言都是三目运算符相对较快呀；此处有一文解释了原因<a href="http://fabien.potencier.org/article/48/the-php-ternary-operator-fast-or-not" target="_blank" rel="external">三目运算符快或慢</a>，其中讲到因为三目运算符执行时候 PHP 会copy 变量再处理，所以速度上就比 if 慢了，如果变量的值占空间小还看不出，如果数据量大就会慢很多，在 PHP5.3版本这个问题比较严重，PHP5.4后调整了些性能，但是三目运算符仍然比 if-else 要慢，所以尽量避免三目运算符的写法。<br>然后是下面的对象创建，每次调用 getLogger 方法都要创建一个对象，但是其实这个对象本质没做什么改变，所以我使用了单例模式，只是每次重新设置他的log_channel，这样减少对象创建的开销，另外每次都要 new 个 handler 对象，但是大部分情况下 handler 对象也是一样的，只是存储的路径及日志级别不同，所以我声明个静态数组来存放生成过的对象，不在每次重复生成，这样大大提高了性能，瞬间提高一个数量级的速度；而且我还修改了下初始化方式，原先他是构造方法每次设置默认日志路径，我换成静态initialize 方式，如果初始化过了就不在调用初始化方法。最终代码如下<br><figure class="highlight php"><figcaption><span>Application.php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Application</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="variable">$default_config</span> = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="variable">$logger_object</span> = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="variable">$handler_object</span> = <span class="keyword">array</span>();</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="variable">$inited</span> = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">init</span><span class="params">()</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">self</span>::<span class="variable">$default_config</span> = <span class="keyword">array</span>(</span><br><span class="line">            <span class="string">'handler'</span> =&gt; <span class="string">'\Monolog\Handler\StreamHandler'</span>,</span><br><span class="line">            <span class="string">'path'</span> =&gt; APPPATH . <span class="string">"log/default_"</span>.date(<span class="string">'Ymd'</span>).<span class="string">'.log'</span>,</span><br><span class="line">            <span class="string">'level'</span> =&gt; LOG_LEVEL,</span><br><span class="line">            <span class="string">'channel'</span> =&gt; <span class="string">''</span>,</span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">self</span>::<span class="variable">$inited</span> = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * get日志对象，默认文件名是default+日期,file_name_prefix配置文件名类型</span><br><span class="line">     * <span class="doctag">@param</span> $key</span><br><span class="line">     * <span class="doctag">@param</span> null $channel</span><br><span class="line">     * <span class="doctag">@return</span> Logger</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getLogger</span><span class="params">(<span class="variable">$key</span>, <span class="variable">$channel</span> = NULL)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">self</span>::<span class="variable">$inited</span> === <span class="keyword">false</span> <span class="keyword">AND</span> <span class="keyword">self</span>::init();</span><br><span class="line"></span><br><span class="line">        <span class="variable">$monolog_array</span> = Config::load(<span class="string">'monolog'</span>);</span><br><span class="line">        <span class="variable">$log_config_info</span> = &amp; <span class="variable">$monolog_array</span>[<span class="variable">$key</span>] <span class="keyword">or</span> <span class="variable">$log_config_info</span> = <span class="keyword">array</span>();</span><br><span class="line"></span><br><span class="line">        <span class="variable">$log_config_info</span> += <span class="keyword">self</span>::<span class="variable">$default_config</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$log_config_info</span>[<span class="string">'file_name_prefix'</span>])) &#123;</span><br><span class="line">            <span class="variable">$log_config_info</span>[<span class="string">'path'</span>] = str_replace(<span class="string">'default'</span>,<span class="variable">$log_config_info</span>[<span class="string">'file_name_prefix'</span>],<span class="variable">$log_config_info</span>[<span class="string">'path'</span>]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$channel</span>) &#123;</span><br><span class="line">            <span class="variable">$log_config_info</span>[<span class="string">'channel'</span>] = <span class="variable">$channel</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="variable">$log_config_info</span>[<span class="string">'channel'</span>] = <span class="variable">$key</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">self</span>::getLoggerObject(<span class="variable">$log_config_info</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>::<span class="variable">$logger_object</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 创建一个单例logger对象，并且把 handler 对象 push 进去</span><br><span class="line">     * <span class="doctag">@param</span> $log_config_info</span><br><span class="line">     * <span class="doctag">@return</span> \Monolog\Logger</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">getLoggerObject</span><span class="params">(&amp;<span class="variable">$log_config_info</span>)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">self</span>::<span class="variable">$logger_object</span> &amp;&amp; is_object(<span class="keyword">self</span>::<span class="variable">$logger_object</span>) &amp;&amp; <span class="keyword">self</span>::<span class="variable">$logger_object</span> <span class="keyword">instanceof</span> \Monolog\Logger) &#123;</span><br><span class="line">            <span class="keyword">self</span>::<span class="variable">$logger_object</span>-&gt;setName(<span class="variable">$log_config_info</span>[<span class="string">'channel'</span>]);</span><br><span class="line">            <span class="keyword">self</span>::pushHandler(<span class="variable">$log_config_info</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">self</span>::<span class="variable">$logger_object</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>::<span class="variable">$logger_object</span> = <span class="keyword">new</span> \Monolog\Logger(<span class="variable">$log_config_info</span>[<span class="string">'channel'</span>]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * push handler处理，push 过的不再 new 对象</span><br><span class="line">     * <span class="doctag">@param</span> $log_config_info</span><br><span class="line">     * <span class="doctag">@return</span> bool</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">pushHandler</span><span class="params">(&amp;<span class="variable">$log_config_info</span>)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="keyword">self</span>::<span class="variable">$handler_object</span>[<span class="variable">$log_config_info</span>[<span class="string">'handler'</span>]])) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">self</span>::<span class="variable">$handler_object</span>[<span class="variable">$log_config_info</span>[<span class="string">'handler'</span>]] = <span class="number">1</span>;</span><br><span class="line">        <span class="variable">$handler</span> = <span class="keyword">new</span> <span class="variable">$log_config_info</span>[<span class="string">'handler'</span>](<span class="variable">$log_config_info</span>[<span class="string">'path'</span>], <span class="variable">$log_config_info</span>[<span class="string">'level'</span>]);</span><br><span class="line">        <span class="keyword">self</span>::<span class="variable">$logger_object</span>-&gt;pushHandler(<span class="variable">$handler</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/11/10/2013-11-10-achieving-the-http10-long-connection/" rel="prev">实现HTTP1.0与HTTP1.1长连接</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/09/24/2013-09-24-php-receives-the-request-latency-troubleshooting/" rel="next">PHP 接收请求延迟排查</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="John Doe" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">John Doe</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">163</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">分類</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">標籤</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <p class="post-toc-empty">此文章未包含目錄</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
