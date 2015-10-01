@@ -42,8 +42,8 @@
 <meta name="description" content="近期新开发的系统使用了主从来确保线上业务稳定可靠，但是有一次恢复数据时却遇到主从同步挂掉，一查原因才发现原来是插入的主键重复导致主从挂了。  因为从库中已经有数据，其并未丢失，当主库中恢复了数据要往从库同步时发现报主键重复的错误，主从就被停止了。Mysql 配置里可以忽略错误，可是如果忽略了会导致之后数据不一致。  但是平时程序上正常插入数据时如果是在主库就已经主键重复则主库就会报错不会把数据插入">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL 主从复制时遇到主键重复问题">
-<meta property="og:url" content="http://yoursite.com/2013/11/23/2013-11-23-mysql-master-slave-replication-problems-encountered-a-duplicate-primary-key/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:url" content="http://robbinhan.github.io/2013/11/23/2013-11-23-mysql-master-slave-replication-problems-encountered-a-duplicate-primary-key/index.html">
+<meta property="og:site_name" content="Robbinhan's Blog">
 <meta property="og:description" content="近期新开发的系统使用了主从来确保线上业务稳定可靠，但是有一次恢复数据时却遇到主从同步挂掉，一查原因才发现原来是插入的主键重复导致主从挂了。  因为从库中已经有数据，其并未丢失，当主库中恢复了数据要往从库同步时发现报主键重复的错误，主从就被停止了。Mysql 配置里可以忽略错误，可是如果忽略了会导致之后数据不一致。  但是平时程序上正常插入数据时如果是在主库就已经主键重复则主库就会报错不会把数据插入">
 <meta property="og:updated_time" content="2015-10-01T07:01:42.000Z">
 <meta name="twitter:card" content="summary">
@@ -58,7 +58,7 @@
   };
 </script>
 
-  <title> MySQL 主从复制时遇到主键重复问题 | Hexo </title>
+  <title> MySQL 主从复制时遇到主键重复问题 | Robbinhan's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -86,7 +86,7 @@
       <span class="logo">
         <i class="icon-next-logo"></i>
       </span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">Robbinhan's Blog</span>
   </a>
   <span class="logo-line-after"><i></i></span>
 </h1>
@@ -258,8 +258,8 @@
 
       <section class="site-overview">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/default_avatar.jpg" alt="John Doe" itemprop="image"/>
-          <p class="site-author-name" itemprop="name">John Doe</p>
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="robbinhan" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">robbinhan</p>
         </div>
         <p class="site-description motion-element" itemprop="description"></p>
         <nav class="site-state motion-element">
@@ -328,7 +328,7 @@
   <span class="with-love">
     <i class="icon-next-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">robbinhan</span>
 </div>
 
 <div class="powered-by">

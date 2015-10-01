@@ -42,8 +42,8 @@
 <meta name="description" content="近期项目中突然出现 PHP 接收到请求延迟或者程序里根本收不到，导致用户体验很差。起初怀疑是机房网关转发的问题，后来考虑是内网转发不应该存在延迟问题；之后因为机房有被流量攻击，所以又猜测是因为流量攻击导致带宽过少，请求就收不到，可是每天都有出现这样的情况，所以还是决定要彻底找到原因并解决。因为我们的环境是LAMP，所以首先开启 nginx 访问日志，记录每一条请求的时间，请求路径，请求 body">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PHP 接收请求延迟排查">
-<meta property="og:url" content="http://yoursite.com/2013/09/24/2013-09-24-php-receives-the-request-latency-troubleshooting/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:url" content="http://robbinhan.github.io/2013/09/24/2013-09-24-php-receives-the-request-latency-troubleshooting/index.html">
+<meta property="og:site_name" content="Robbinhan's Blog">
 <meta property="og:description" content="近期项目中突然出现 PHP 接收到请求延迟或者程序里根本收不到，导致用户体验很差。起初怀疑是机房网关转发的问题，后来考虑是内网转发不应该存在延迟问题；之后因为机房有被流量攻击，所以又猜测是因为流量攻击导致带宽过少，请求就收不到，可是每天都有出现这样的情况，所以还是决定要彻底找到原因并解决。因为我们的环境是LAMP，所以首先开启 nginx 访问日志，记录每一条请求的时间，请求路径，请求 body">
 <meta property="og:updated_time" content="2015-10-01T07:01:42.000Z">
 <meta name="twitter:card" content="summary">
@@ -58,7 +58,7 @@
   };
 </script>
 
-  <title> PHP 接收请求延迟排查 | Hexo </title>
+  <title> PHP 接收请求延迟排查 | Robbinhan's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -86,7 +86,7 @@
       <span class="logo">
         <i class="icon-next-logo"></i>
       </span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">Robbinhan's Blog</span>
   </a>
   <span class="logo-line-after"><i></i></span>
 </h1>
@@ -314,8 +314,8 @@
 
       <section class="site-overview">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/default_avatar.jpg" alt="John Doe" itemprop="image"/>
-          <p class="site-author-name" itemprop="name">John Doe</p>
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="robbinhan" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">robbinhan</p>
         </div>
         <p class="site-description motion-element" itemprop="description"></p>
         <nav class="site-state motion-element">
@@ -384,7 +384,7 @@
   <span class="with-love">
     <i class="icon-next-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">robbinhan</span>
 </div>
 
 <div class="powered-by">
