@@ -158,6 +158,90 @@
           
           
             
+              <a class="post-title-link" href="/2015/10/01/Redux学习总结2/" itemprop="url">
+                Redux学习总结2
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2015-10-01T16:23:19+08:00" content="2015-10-01">
+            2015-10-01
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><div id="badge-container-robbinhan-master-undefined" class="hexo-github" style="width: 100%"></div>
+<script src="/hexo-github/badge.js"></script>
+<script type="text/javascript">
+  loadStyle("/hexo-github/style.css");
+  loadStyle("/hexo-github/octicons/octicons.css");
+  new Badge("#badge-container-robbinhan-master-undefined", "robbinhan", "master", "", false);
+</script>
+
+<p>今天看到laracasts上的react视频，用react实现了一个简单的GistBox，正好我又在学redux，就试着react+redux做了个小Demo，顺便总结下遇到的坑。</p>
+<p><img src="http://ww3.sinaimg.cn/large/6e0aaaa0gw1ewlpvh6nvxj205n0gz74v.jpg" alt="目录结构"></p>
+<p>在<code>assets</code>目录下写代码，再通过gulp将代码实时编译到<code>public/js</code>下的<code>app.js</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Provider &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./containers/App'</span>;</span><br><span class="line"><span class="keyword">import</span> configureStore <span class="keyword">from</span> <span class="string">'./store/store'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = configureStore;</span><br><span class="line"></span><br><span class="line">React.render(</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="title">Provider</span> <span class="attribute">store</span>=<span class="value">&#123;store&#125;</span> &gt;</span></span><br><span class="line">        &#123;() =&gt; <span class="tag">&lt;<span class="title">App</span> /&gt;</span> &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="title">Provider</span>&gt;</span>,</span><br><span class="line">    document.getElementById('app'));</span></span><br></pre></td></tr></table></figure>
+<p><code>index.js</code>中将store传入<code>App</code>组件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; fetchGists,changeUserName &#125; <span class="keyword">from</span> <span class="string">'../actions/user'</span>;</span><br><span class="line"><span class="keyword">import</span> UserBox <span class="keyword">from</span> <span class="string">'../components/UserBox'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mapStateToProps</span>(<span class="params">state</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'connet state'</span>,state)</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    username: state.gists.username,</span><br><span class="line">    items: state.gists.items || []</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mapDispatchToProps</span>(<span class="params">dispatch</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    handlerSubmit: (username) =&gt; dispatch(fetchGists(username)),</span><br><span class="line">    handlerChange: (username) =&gt; dispatch(changeUserName(username))</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(</span><br><span class="line">  mapStateToProps,</span><br><span class="line">  mapDispatchToProps</span><br><span class="line">)(UserBox);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span>;</span><br><span class="line"><span class="comment">/*</span><br><span class="line"> * action types</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">showGistsRequest</span> (<span class="params">username</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        type: <span class="string">'SHOW_GISTS_REQUEST'</span>,</span><br><span class="line">        username</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">showGistsSuccess</span> (<span class="params">username,json</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        type: <span class="string">'SHOW_GISTS_SUCCESS'</span>,</span><br><span class="line">        username,</span><br><span class="line">        posts: json.map(child =&gt; child.html_url),<span class="comment">//function(child)&#123;return child.data&#125;</span></span><br><span class="line">            receivedAt: <span class="built_in">Date</span>.now()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">showGistsFail</span> (<span class="params">username</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        type: <span class="string">'SHOW_GISTS_FAIL'</span>,</span><br><span class="line">        username</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">changeUserName</span> (<span class="params">username</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    type: <span class="string">'CHANGE_USER_NAME'</span>,</span><br><span class="line">    username</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 来看一下我们写的第一个 thunk action creator！</span></span><br><span class="line"><span class="comment">// 虽然内部操作不同，你可以像其它 action creator 一样使用它：</span></span><br><span class="line"><span class="comment">// store.dispatch(fetchPosts('reactjs'));</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">fetchGists</span>(<span class="params">username</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Thunk middleware 知道如何处理函数。</span></span><br><span class="line">  <span class="comment">// 这里把 dispatch 方法通过参数的形式参给函数，</span></span><br><span class="line">  <span class="comment">// 以此来让它自己也能 dispatch action。</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">dispatch</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 首次 dispatch：更新应用的 state 来通知</span></span><br><span class="line">    <span class="comment">// API 请求发起了。</span></span><br><span class="line"></span><br><span class="line">    dispatch(showGistsRequest(username));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// thunk middleware 调用的函数可以有返回值，</span></span><br><span class="line">    <span class="comment">// 它会被当作 dispatch 方法的返回值传递。</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 这个案例中，我们返回一个等待处理的 promise。</span></span><br><span class="line">    <span class="comment">// 这并不是 redux middleware 所必须的，但是我们的一个约定。</span></span><br><span class="line">    <span class="comment">// </span></span><br><span class="line">    axios.get(<span class="string">`https://api.github.com/users/<span class="subst">$&#123;username&#125;</span>/gists`</span>)</span><br><span class="line">    .then(response =&gt; response.data)</span><br><span class="line">    .then(<span class="function"><span class="keyword">function</span>(<span class="params">json</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'response json'</span>,json); </span><br><span class="line">      dispatch(showGistsSuccess(username, json)); </span><br><span class="line">    &#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">ex</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'parsing failed'</span>, ex)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 在实际应用中，还需要</span></span><br><span class="line">      <span class="comment">// 捕获网络请求的异常。</span></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>connect</code>会将UserBox和store连接；在mapStateToProps中的state参数就是store.getState方法的返回值，mapDispatchToProps方法中定义了一些方法与dispatch绑定，这些方法和state都会通过props传递给子组件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> GistForm <span class="keyword">from</span> <span class="string">'./GistForm'</span>;</span><br><span class="line"><span class="keyword">import</span> GistDiv <span class="keyword">from</span> <span class="string">'./GistDiv'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; fetchGists &#125; <span class="keyword">from</span> <span class="string">'../actions/user'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">UserBox</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"userBox"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">h1</span>&gt;</span>GistBox<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">GistForm</span> <span class="attribute">username</span>=<span class="value">&#123;this.props.username&#125;</span> </span><br><span class="line">        <span class="attribute">handlerSubmit</span>=<span class="value">&#123;this.props.handlerSubmit&#125;</span>   </span><br><span class="line">        <span class="attribute">handlerChange</span>=<span class="value">&#123;this.props.handlerChange&#125;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">GistDiv</span> <span class="attribute">items</span>=<span class="value">&#123;this.props.items&#125;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    )</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>UserBox中将上层通过props传递的方法和参数传递给子组件处理</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">UserList</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">let</span> self = <span class="keyword">this</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'gistform'</span>,self.props)</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">onSubmit</span>=<span class="value">&#123;</span> <span class="attribute">function</span>(<span class="attribute">e</span>) &#123; <span class="attribute">e.preventDefault</span>(); <span class="attribute">self.props.handlerSubmit</span>(<span class="attribute">self.props.username</span>) &#125; &#125; &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"username"</span> </span><br><span class="line">        <span class="attribute">value</span>=<span class="value">&#123;this.props.username&#125;</span> </span><br><span class="line">        <span class="attribute">onChange</span>=<span class="value">&#123;(e)</span> =&gt;</span> self.props.handlerChange(e.target.value)&#125; /&gt;</span><br><span class="line">        <span class="tag">&lt;<span class="title">button</span>&gt;</span>获取<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br><span class="line">    )</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; showGistsRequest,showGistsSuccess,showGistsFail &#125; <span class="keyword">from</span> <span class="string">'../actions/user'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; combineReducers &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * reducer中写每个action的业务逻辑</span><br><span class="line"> * @param  &#123;[type]&#125; state  [description]</span><br><span class="line"> * @param  &#123;[type]&#125; action [description]</span><br><span class="line"> * @return &#123;[type]&#125;        [description]</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">gets</span>(<span class="params">state = &#123;</span><br><span class="line">  isFetching: false,</span><br><span class="line">  items: []</span><br><span class="line">&#125;, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'SHOW_GISTS_REQUEST'</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">      isFetching: <span class="literal">true</span></span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'SHOW_GISTS_SUCCESS'</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">      isFetching: <span class="literal">false</span>,</span><br><span class="line">      items: action.posts,</span><br><span class="line">      lastUpdated: action.receivedAt</span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'SHOW_GISTS_FAIL'</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">      isFetching: <span class="literal">false</span></span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getGists</span>(<span class="params">state = &#123;username:'robbinhan',items:[]&#125;, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'SHOW_GISTS_REQUEST'</span>:</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'SHOW_GISTS_SUCCESS'</span>:</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'SHOW_GISTS_FAIL'</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, gets(state[action.username], action) );</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'CHANGE_USER_NAME'</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state,&#123;</span><br><span class="line">        username: action.username</span><br><span class="line">      &#125;);</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> gistReducer = combineReducers(&#123;</span><br><span class="line">  gists : getGists</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> gistReducer;</span><br></pre></td></tr></table></figure>
+<p>GistForm组件中在input修改输入内容时触发onChange事件，将value传给之前mapDispatchToProps中定义的handlerChange方法，handlerChange方法dispatch给action中的changeUserName方法，并通过reducer来修改state中的属性，onSubmit事件同理，只是其中使用了异步的处理方式，有关异步处理的具体说明请看<a href="http://camsong.github.io/redux-in-chinese/docs/advanced/AsyncActions.html" target="_blank" rel="external">官方手册</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">GistDiv</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">let</span> self = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">let</span> row = self.props.items.map(<span class="function"><span class="keyword">function</span> (<span class="params">url,index</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span>  <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">&#123;url&#125;</span> <span class="attribute">target</span>=<span class="value">"_blank"</span>&gt;</span>&#123;index&#125;<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    &#125;)</span><br><span class="line">    console.log(row)</span><br><span class="line">    return (</span><br><span class="line">     <span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">      &#123; row &#125;</span><br><span class="line">     <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    )</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>GistDiv</code>组件就没什么好说的了，map处理items的数据，渲染出链接</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/09/30/Redux学习总结1/" itemprop="url">
                 Redux学习总结1
               </a>
@@ -834,73 +918,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2014/07/26/2014-07-26-rails-development-summary/" itemprop="url">
-                Rails开发总结
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2014-07-26T14:50:00+08:00" content="2014-07-26">
-            2014-07-26
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>Rails console设置执行环境  RAILS_ENV=production或 -e production</p>
-<p>Rails Asset Pipeline<br>rake assets:precompile RAILS_ENV=production时会对production.rb配置文件中config.assets.precompile配置的内容做预编译，此配置设定的是处application.js, application.css.scss以外的需要编译的文件</p>
-<p>config.serve_static_assets配置是设定是否由rails自己服务静态文件，默认是true，但是production环境一般都是前端有nginx或Apache反向代理服务器的，所以可以设定为false</p>
-<p>config.assets.compile 如果是做了precompile，则此配置需要设置为FALSE，不需要在线编译js或css了</p>
-<p>turbolinks并不会真实的刷新页面，而是用 ajax 请求获得目标页面，然后替换 body 内容。具体内容：<a href="http://chloerei.com/2013/07/14/turbolinks-guide/" target="_blank" rel="external">http://chloerei.com/2013/07/14/turbolinks-guide/</a></p>
-<p>routes.rb中如果想要对默认的路由做修改，需要写在默认路由的上面才会生效</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -939,7 +956,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">163</span>
+              <span class="site-state-item-count">164</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>

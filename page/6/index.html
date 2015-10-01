@@ -158,6 +158,67 @@
           
           
             
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84664/" itemprop="url">
+                学习Rails
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>决定花一月时间学习下Rails，这两天看了点Ruby的语法，感觉也差不多了，就准备学习Rails了，发现Rails这玩意儿确实十分强大，突然感觉，一门语言的强大不仅仅只是性能，在性能不是很差的时候更多应该考虑的是可维护性和快速开发上了。<br></p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2013/08/11/2013-08-11-84663/" itemprop="url">
                 No Title
               </a>
@@ -696,67 +757,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84654/" itemprop="url">
-                ssh连接
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p>在我们最初装好ssh后，连接某台服务器我们需要输入一长串的命令（ssh username@host等 ），然后连上了还要输入password。所以我希望是做到 ssh servername就能自动连上，并且不需要输入password。</p><p>首先我们在自己机器上生成一个私钥和公钥(私钥必须chmod 600)，将带.pub后缀的公钥传到远程主机的~/.ssh/目录下，然后将其内容cat进~/.ssh/<span>authorized_keys文件；然后在我们自己机器上编辑~/.ssh/config文件；</span></p><p><span><br></span></p><p><span>例：</span></p><p><span>Host servername</span></p><p><span> &nbsp;&nbsp;&nbsp;port 22</span></p><p><span> &nbsp;&nbsp;&nbsp;u</span><span>ser username</span></p><p><span> &nbsp;&nbsp;&nbsp;hostip ip</span></p><p><span><span><span> &nbsp;&nbsp;&nbsp;</span>IdentityFile 私钥的路径（名字可以和公钥不同）</span><br></span></p><p><span><span><br></span></span></p><p><span><span>配置完成后应该就可以直接ssh servername连接了，如果你发现远程主机已经有一个pub文件和私钥了，则可以将其私钥的内容拷贝过来保存，然后添加配置一样可以连接。</span></span></p><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -795,7 +795,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">163</span>
+              <span class="site-state-item-count">164</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
