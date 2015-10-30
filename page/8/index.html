@@ -168,6 +168,67 @@
           
           
             
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84645/" itemprop="url">
+                mysql_unbuffered_query
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>mysql_unbuffered_query查询的结果集在mysql_fetch_array数据时，内部不能在执行mysql_query或mysql_unbuffered_query操作<br></p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2013/08/11/2013-08-11-84644/" itemprop="url">
                 为什么需要require 'rubygems'
               </a>
@@ -534,8 +595,8 @@
           
           
             
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84638/" itemprop="url">
-                XMLHttpRequest
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84634/" itemprop="url">
+                阿难说……
               </a>
             
           
@@ -565,7 +626,7 @@
 
       
         
-          <span itemprop="articleBody"><p></p><p> &nbsp;&nbsp;&nbsp;今天帮人解决问题，但是自己都折腾了好久，哎，基本功不扎实啊。</p><p> &nbsp;&nbsp;&nbsp;先说问题：ajax发起请求，因为长时间未响应，需要手动abort请求功能。本来是很简单的功能，用上jQuery，再调用下abort方法，可是居然折腾了近3小时，最后居然是因为用了xmlhttprequest做变量名而导致abort调用无效，因为浏览器中有xmlhttprequest对象，导致使用了关键字，浏览器认为是使用了他自己的对象，导致在readyState状态为4的时候一直调用abort，所以就没效果了。</p><p> &nbsp;&nbsp;&nbsp;周末准备把xmlhttprequest对象好好看下相关资料，jQuery用多了，基本功都忘了啊。。。</p><p></p></span>
+          <span itemprop="articleBody"><p></p><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>我愿化身石桥，愿受五百年风吹，五百年日晒，五百年雨打，只为你从桥上走过。</span></p><p></p></span>
         
       
     </div>
@@ -595,8 +656,8 @@
           
           
             
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84633/" itemprop="url">
-                喜欢一个人是什么感觉
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84637/" itemprop="url">
+                Ruby实现自己的kindle推送
               </a>
             
           
@@ -626,7 +687,7 @@
 
       
         
-          <span itemprop="articleBody"><p></p><p>喜欢一个人到底是什么样的感觉呢，是否会在想到她时让心碰碰乱跳，是否总是觉得自己可以为她疯狂，为她做任何事，哪怕做不到，也会不计后果的为她去拼</p><p></p></span>
+          <span itemprop="articleBody"><p></p><p> &nbsp;&nbsp;&nbsp;项目地址：<a href="https://github.com/lucky215/kindlepush" target="_blank" rel="external">https://github.com/lucky215/kindlepush</a></p><p> &nbsp;&nbsp;&nbsp;&nbsp;自己用Ruby实现了个向kindle推送电子书的小功能，其实原理很简单，所谓的推送，其实就是将电子书以附件的形式发到自己的kindle邮箱就可以了。</p><p></p></span>
         
       
     </div>
@@ -706,67 +767,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84635/" itemprop="url">
-                mysql连接句柄问题
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p> &nbsp;&nbsp;&nbsp;这周帮同事解决了个问题，自己之前到也没遇到过，也学习了。问题是这样的：程序需要在循环中不断切换mysql的链接和数据库选择，但是发现在第二次遇到相同连接，但数据库不同，而且sql语句也应该查不到数据的时候，居然能返回查询数据结果。</p><p> &nbsp;&nbsp;&nbsp;当然，其中也有代码不严谨的问题，例如：mysql对象没有手动销毁，mysql连接没有关闭等等。但是觉得这个可能不是根本原因，所以继续搜索原因。</p><p> &nbsp;&nbsp;&nbsp;后来看了文档发现mysql_connect函数在password之后有个new_link参数，文档说：该值默认是false，当值为true，每一次调用mysql_connect函数，无论前三个参数是否与之前相同，都会创建新连接，反之则返回之前的连接（如果之前的连接没有关闭的话）。</p><p> &nbsp;&nbsp;&nbsp;所以猜想可能正好是这个问题，但是觉得如果真的设置为true，就必须手动关闭mysql连接了，否则可能会出现mysql连接数过大的问题。</p><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -805,7 +805,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">164</span>
+              <span class="site-state-item-count">165</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>

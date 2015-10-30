@@ -168,6 +168,67 @@
           
           
             
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84665/" itemprop="url">
+                $_POST与php://input的区别
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>$_POST 与 php://input可以取到值，$HTTP_RAW_POST_DATA 为空$_POST 以关联数组方式组织提交的数据，并对此进行编码处理，如urldecode，甚至编码转换。php://input 可通过输入流以文件读取方式取得未经处理的POST原始数据</p><p>php://input 允许读取 POST 的原始数据。和 $HTTP_RAW_POST_DATA 比起来，它给内存带来的压力较小，并且不需要任何特殊的 php.ini 设置。php://input 不能用于 enctype=&quot;multipart/form-data&quot;。</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2013/08/11/2013-08-11-84664/" itemprop="url">
                 学习Rails
               </a>
@@ -706,67 +767,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84655/" itemprop="url">
-                单服务器Gitolite配置
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p> &nbsp;&nbsp;单服务器的gitolite非常简单，只需要几步</p><p>1.ssh-keygen</p><p>2.把gitolite从github上clone下来</p><p>3.cd gitolite</p><p>4.src/gl-system-install</p><p>5.gl-setup 带上步骤1生成的后缀为.pub的文件作为第一个参数</p><p>&nbsp;</p><p>ok，搞定</p><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -805,7 +805,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">164</span>
+              <span class="site-state-item-count">165</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>

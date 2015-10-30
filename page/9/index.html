@@ -168,8 +168,8 @@
           
           
             
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84634/" itemprop="url">
-                阿难说……
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84635/" itemprop="url">
+                mysql连接句柄问题
               </a>
             
           
@@ -199,7 +199,7 @@
 
       
         
-          <span itemprop="articleBody"><p></p><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>我愿化身石桥，愿受五百年风吹，五百年日晒，五百年雨打，只为你从桥上走过。</span></p><p></p></span>
+          <span itemprop="articleBody"><p></p><p> &nbsp;&nbsp;&nbsp;这周帮同事解决了个问题，自己之前到也没遇到过，也学习了。问题是这样的：程序需要在循环中不断切换mysql的链接和数据库选择，但是发现在第二次遇到相同连接，但数据库不同，而且sql语句也应该查不到数据的时候，居然能返回查询数据结果。</p><p> &nbsp;&nbsp;&nbsp;当然，其中也有代码不严谨的问题，例如：mysql对象没有手动销毁，mysql连接没有关闭等等。但是觉得这个可能不是根本原因，所以继续搜索原因。</p><p> &nbsp;&nbsp;&nbsp;后来看了文档发现mysql_connect函数在password之后有个new_link参数，文档说：该值默认是false，当值为true，每一次调用mysql_connect函数，无论前三个参数是否与之前相同，都会创建新连接，反之则返回之前的连接（如果之前的连接没有关闭的话）。</p><p> &nbsp;&nbsp;&nbsp;所以猜想可能正好是这个问题，但是觉得如果真的设置为true，就必须手动关闭mysql连接了，否则可能会出现mysql连接数过大的问题。</p><p></p></span>
         
       
     </div>
@@ -261,6 +261,67 @@
       
         
           <span itemprop="articleBody"><p>因项目需要，所以看了PHP的Adapter模式，但是实现起来实在是蠢，核心居然是用的switch。晚上回顾了下Java的Adapter模式，发现真的用的很舒服，但是也想到了为什么PHP不能够用此方法的原因（弱类型导致不能重载）。线上代码： 首先创造两个接口 IRoundPeg.java package com.hanbin.Adapter; public interface IRoundPeg { public void insertIntoHole(String msg); } ISquarePeg .java package com.hanbin.Adapter; public interface ISquarePeg { public void insert(String str); } 再写核心类，各自继承对应的接口 RoundPeg.java /<strong> <em> </em>/ package com.hanbin.Adapter; /</strong> <em> @author Administrator </em> <em>/ public class RoundPeg implements IRoundPeg{ @Override public void insertIntoHole(String msg) { System.out.println(&quot;RoundPeg insertIntoHole():&quot;+msg); } } SquarePeg.java /** </em> <em>/ package com.hanbin.Adapter; /** </em> @author Administrator <em> </em>/ public class SquarePeg implements ISquarePeg { @Override public void insert(String str) { System.out.println(&quot;SquarePeg insert():&quot;+str); } } 适配器类,它继承了两个接口 PegAdapter.java /<strong> <em> </em>/ package com.hanbin.Adapter; /</strong> <em> @author Administrator </em> <em>/ public class PegAdapter implements IRoundPeg, ISquarePeg { private RoundPeg roundPeg; private SquarePeg squarePeg; // 构造方法 public PegAdapter(RoundPeg peg){this.roundPeg = peg;} // 构造方法 public PegAdapter(SquarePeg peg){this.squarePeg = peg;} /</em> (non-Javadoc) <em> @see com.hanbin.Adapter.IRoundPeg#insertIntoHole(java.lang.String) </em>/ @Override public void insertIntoHole(String msg) { // TODO Auto-generated method stub this.squarePeg.insert(msg); } /<em> (non-Javadoc) </em> @see com.hanbin.Adapter.ISquarePeg#insert(java.lang.String) <em>/ @Override public void insert(String str) { // TODO Auto-generated method stub this.roundPeg.insertIntoHole(str); } } 测试类 AdapterTest.java package com.hanbin.Adapter; public class AdapterTest { /** </em> @param args */ public static void main(String[] args) { // TODO Auto-generated method stub PegAdapter peg= new PegAdapter( new RoundPeg() ); peg.insert(&quot;round&quot;); } }</p><p>本文使用Blog_Backup未注册版本导出，请到soft.pt42.com注册。</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84633/" itemprop="url">
+                喜欢一个人是什么感觉
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>喜欢一个人到底是什么样的感觉呢，是否会在想到她时让心碰碰乱跳，是否总是觉得自己可以为她疯狂，为她做任何事，哪怕做不到，也会不计后果的为她去拼</p><p></p></span>
         
       
     </div>
@@ -706,67 +767,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84625/" itemprop="url">
-                No Title
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p>每天能激励我早起，兴奋的去上班就是因为她</p><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -805,7 +805,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">164</span>
+              <span class="site-state-item-count">165</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
