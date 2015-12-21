@@ -168,6 +168,67 @@
           
           
             
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84666/" itemprop="url">
+                PCNTL 函数
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>pcntl_fork函数是用的最多的，一般用这个库的都是要用这函数的。<br>此函数是用来创造当前进程的子进程的，手册的说法是：“在当前进程当前位置产生分支（子进程）”；此函数成功时，在父进程执行线程内返回产生的子进程的PID，在子进程执行线程内返回0。失败时，在父进程上下文返回-1，不会创建子进程，并且会引发一个PHP错误。<br>&lt;?php<br>$pid = pcntl_fork();//父进程和子进程都会执行下面代码if ($pid == -1) { &nbsp;&nbsp;&nbsp;//错误处理：创建子进程失败时返回-1. &nbsp;&nbsp;&nbsp;&nbsp;die(‘could not fork’);} else if ($pid) { &nbsp;&nbsp;&nbsp;&nbsp;//父进程会得到子进程号，所以这里是父进程执行的逻辑 &nbsp;&nbsp;&nbsp;&nbsp;pcntl_wait($status); //等待子进程中断，防止子进程成为僵尸进程。} else { &nbsp;&nbsp;&nbsp;&nbsp;//子进程得到的$pid为0, 所以这里是子进程执行的逻辑。}<br>?&gt;</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2013/08/11/2013-08-11-84665/" itemprop="url">
                 $_POST与php://input的区别
               </a>
@@ -706,67 +767,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84656/" itemprop="url">
-                网络CRLF行终结符
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p>百度百科：<a href="http://baike.baidu.com/view/1157566.html?tp=9_01" target="_blank" rel="external">http://baike.baidu.com/view/1157566.html?tp=9_01</a> <br></p><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -805,7 +805,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">165</span>
+              <span class="site-state-item-count">166</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>

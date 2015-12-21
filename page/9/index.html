@@ -168,6 +168,67 @@
           
           
             
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84636/" itemprop="url">
+                php时区问题
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;网上不知道已经有多少篇介绍php执行有时间差是时区问题导致的文章了，但是是否设置了时区就一定准确了呢？</p><p>答案是不一定。</p><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我就遇到了这样的问题，我的脚本需要请求一个接口，接口会验证请求时间在30秒内的才有效，反复尝试都无法验证通过，对比过时区，都是“Asia/Shanghai”；后来将请求时间记录下来debug发现居然比正常的上海时间快了3分钟，难怪会出错。</p><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;但是问题又来了，已经设置了相同时区，为什么还是会快3分钟？后来发现php中取到的时间和系统时间是相同的，系统设置的时区是</p><pre config="brush:php;toolbar:false;">ZONE=&quot;Asia/Taipei&quot;<br>UTC=true<br>ARC=false</pre><p>如果已台北时间计算就的确快了3分钟左右，并且UTC设置为true，而接口上的服务器设置为false，所以猜想可能是这个问题导致，查找了相关资料发现如果是true，则是按照BIOS设备时间运行，如果是false则会按照操作系统时间运行，我将其改成了false，然后重新尝试，就成功了。</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2013/08/11/2013-08-11-84635/" itemprop="url">
                 mysql连接句柄问题
               </a>
@@ -706,67 +767,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84626/" itemprop="url">
-                No Title
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p>羡慕别人被她夸奖，嫉妒她与别人说话时脸上的笑容是那样的灿烂，恨自己不能坐在她边上，不能实时见到她</p><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -805,7 +805,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">165</span>
+              <span class="site-state-item-count">166</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
