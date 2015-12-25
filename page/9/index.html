@@ -170,6 +170,67 @@
           
           
             
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84637/" itemprop="url">
+                Ruby实现自己的kindle推送
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p> &nbsp;&nbsp;&nbsp;项目地址：<a href="https://github.com/lucky215/kindlepush" target="_blank" rel="external">https://github.com/lucky215/kindlepush</a></p><p> &nbsp;&nbsp;&nbsp;&nbsp;自己用Ruby实现了个向kindle推送电子书的小功能，其实原理很简单，所谓的推送，其实就是将电子书以附件的形式发到自己的kindle邮箱就可以了。</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2013/08/11/2013-08-11-84636/" itemprop="url">
                 php时区问题
               </a>
@@ -292,8 +353,8 @@
           
           
             
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84683/" itemprop="url">
-                Java中如何实现Adapter模式
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84634/" itemprop="url">
+                阿难说……
               </a>
             
           
@@ -323,7 +384,7 @@
 
       
         
-          <span itemprop="articleBody"><p>因项目需要，所以看了PHP的Adapter模式，但是实现起来实在是蠢，核心居然是用的switch。晚上回顾了下Java的Adapter模式，发现真的用的很舒服，但是也想到了为什么PHP不能够用此方法的原因（弱类型导致不能重载）。线上代码： 首先创造两个接口 IRoundPeg.java package com.hanbin.Adapter; public interface IRoundPeg { public void insertIntoHole(String msg); } ISquarePeg .java package com.hanbin.Adapter; public interface ISquarePeg { public void insert(String str); } 再写核心类，各自继承对应的接口 RoundPeg.java /<strong> <em> </em>/ package com.hanbin.Adapter; /</strong> <em> @author Administrator </em> <em>/ public class RoundPeg implements IRoundPeg{ @Override public void insertIntoHole(String msg) { System.out.println(&quot;RoundPeg insertIntoHole():&quot;+msg); } } SquarePeg.java /** </em> <em>/ package com.hanbin.Adapter; /** </em> @author Administrator <em> </em>/ public class SquarePeg implements ISquarePeg { @Override public void insert(String str) { System.out.println(&quot;SquarePeg insert():&quot;+str); } } 适配器类,它继承了两个接口 PegAdapter.java /<strong> <em> </em>/ package com.hanbin.Adapter; /</strong> <em> @author Administrator </em> <em>/ public class PegAdapter implements IRoundPeg, ISquarePeg { private RoundPeg roundPeg; private SquarePeg squarePeg; // 构造方法 public PegAdapter(RoundPeg peg){this.roundPeg = peg;} // 构造方法 public PegAdapter(SquarePeg peg){this.squarePeg = peg;} /</em> (non-Javadoc) <em> @see com.hanbin.Adapter.IRoundPeg#insertIntoHole(java.lang.String) </em>/ @Override public void insertIntoHole(String msg) { // TODO Auto-generated method stub this.squarePeg.insert(msg); } /<em> (non-Javadoc) </em> @see com.hanbin.Adapter.ISquarePeg#insert(java.lang.String) <em>/ @Override public void insert(String str) { // TODO Auto-generated method stub this.roundPeg.insertIntoHole(str); } } 测试类 AdapterTest.java package com.hanbin.Adapter; public class AdapterTest { /** </em> @param args */ public static void main(String[] args) { // TODO Auto-generated method stub PegAdapter peg= new PegAdapter( new RoundPeg() ); peg.insert(&quot;round&quot;); } }</p><p>本文使用Blog_Backup未注册版本导出，请到soft.pt42.com注册。</p><p></p></span>
+          <span itemprop="articleBody"><p></p><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>我愿化身石桥，愿受五百年风吹，五百年日晒，五百年雨打，只为你从桥上走过。</span></p><p></p></span>
         
       
     </div>
@@ -708,67 +769,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84627/" itemprop="url">
-                No Title
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p>人与人之间的相爱可能是因为互相的不了解而产生的神秘感，而为了探索这个神秘的世界，两人在一起了。</p><p>也许也是这个原因，结婚生活后的两人越来越了解对方，神秘感消失，而产生反感，最终分离；也有人在神秘感消失后更加觉得彼此是最合适的伴侣，如此相濡以沫走完一生，这是何等幸福之事；但此事大都不发生在相爱之人身上，而在知己之间，若是此生能遇一红颜知己，死足何惜。</p><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -807,7 +807,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">166</span>
+              <span class="site-state-item-count">170</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>

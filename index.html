@@ -170,6 +170,295 @@
           
           
             
+              <a class="post-title-link" href="/2015/12/25/2015-12-25/" itemprop="url">
+                JavaScript函数声明与函数表达式写法的区别
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2015-12-25T15:27:19+08:00" content="2015-12-25">
+            2015-12-25
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>表面上的差异是“先与后”，使用函数表达式的方式，调用必须在表达式之后，而函数声明则无关前后问题。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">alert(foo); // <span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span></span> &#123;&#125;</span><br><span class="line">alert(bar); // undefined</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span></span> &#123;&#125;</span><br><span class="line">var bar = <span class="function"><span class="keyword">function</span> <span class="title">bar_fn</span><span class="params">()</span></span> &#123;&#125;;</span><br><span class="line">alert(foo); // <span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span></span> &#123;&#125;</span><br><span class="line">alert(bar); // <span class="function"><span class="keyword">function</span> <span class="title">bar_fn</span><span class="params">()</span></span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到 foo 的声明是写在 alert 之后，仍然可以被正确调用，因为 JavaScript 解释器会将其提升到 alert 前面，而以函数表达式创建的函数 bar 则不享受此待遇。</p>
+<p>那么bar 究竟有没有被提升呢，其实用 var 声明的变量都会被提升，只不过是被先赋值为 undefined 罢了，所以第二个 alert 弹出了 undefined。这具体要涉及到js的<em>变量对象</em>和<em>执行环境</em>概念</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hereOrThere</span><span class="params">()</span> </span>&#123; <span class="comment">//function statement</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">'here'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(hereOrThere()); <span class="comment">// alerts 'there'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hereOrThere</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'there'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上代码hereOrThere函数声明两次，声明首先提升了优先级，并且第二次声明覆盖了第一次声明。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hereOrThere = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123; <span class="comment">// function expression</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">'here'</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">alert(hereOrThere()); <span class="comment">// alerts 'here'</span></span><br><span class="line"></span><br><span class="line">hereOrThere = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'there'</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>以上代码hereOrThere表达式写法两次。</p>
+<p>执行顺序是解释器先声明hereOrThere变量，此时值是undefined，然后将返回here的函数赋值，接着alert调用。这里因为是声明的变量，而js中不会对变量提升优先级，所以是顺序执行。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/12/23/2015-12-23/" itemprop="url">
+                Node技术进阶脑图
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2015-12-23T15:27:19+08:00" content="2015-12-23">
+            2015-12-23
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p><img src="http://i.imgur.com/nvmHDJ4.jpg" alt="Nodejs"></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/12/23/2015-12-24/" itemprop="url">
+                Redis数据清理导致连接超时
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2015-12-23T15:27:19+08:00" content="2015-12-23">
+            2015-12-23
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>看到一篇讲解Redis数据清理导致连接超时的问题的文章，之前开发系统时也出现过类似问题，但是一直没有确定具体的原因，当时的情况是crontab下有个每分钟都在执行的php脚本，脚本中是通过redis来做锁的控制，起初一切正常，突然有天脚本“卡住”了，redis中的锁没有删除，导致后续启动的脚本立即被退出；查了日志发现当时出现了连接超时的情况，但是不明白其原因，无奈之下我在程序执行一段后就调用一次ping命令希望能够保持连接，今天的这篇文章也是类似的问题，详细了解到了redis的数据清理机制。</p>
+<blockquote>
+<p>Redis提供了一套“美好”的过期数据清理机制:</p>
+<p>主动过期: Redis对数据是惰性过期，当一个key到了过期时间，Redis也不会马上清理，但如果这个key过期后被再次访问，Redis就会主动将它清理掉。</p>
+<p>被动过期: 如果过期的Key一直没被访问，Redis也不会一直把它放那不管，它会每秒10次的执行以下的清理工作：</p>
+<p>随机从所有带有过期时间的Key里取出20个<br>如果发现有过期的，就清理<br>如果这里有25%的Key都是过期的，就继续回到第一步再来一次</p>
+<p>这套过期机制设计的很赞，可以这样理解：如果当前有超过1/4的Key是过期的话，就不停地清理，直到只剩下1/4不到的Key是要过期的为止，然后就慢慢地随机抽查着清理。</p>
+</blockquote>
+<p>作者后来的解决方法是在业务逻辑中对需要过期处理的key做了分批删除的操作，自己来处理清理数据的工作，避免长时间处理。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/12/22/2015-12-22/" itemprop="url">
+                加密算法
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2015-12-22T20:11:19+08:00" content="2015-12-22">
+            2015-12-22
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>#非对称加密<br>非对称加密具有以下的典型用法：</p>
+<ul>
+<li>对信息保密，防止中间人攻击：将明文通过接收人的公钥加密，传输给接收人，因为只有接收人拥有对应的私钥，别人不可能拥有或者不可能通过公钥推算出私钥，所以传输过程中无法被中间人截获。只有拥有私钥的接收人才能阅读。此用法通常用于交换对称密钥。</li>
+<li>身份验证和防止篡改：权限狗用自己的私钥加密一段授权明文，并将授权明文和加密后的密文，以及公钥一并发送出来，接收方只需要通过公钥将密文解密后与授权明文对比是否一致，就可以判断明文在中途是否被篡改过。此方法用于数字签名。<br>著名的RSA算法就是非对称加密算法，RSA以三个发明人的首字母命名。</li>
+</ul>
+<p>非对称加密算法如此强大可靠，却有一个弊端，就是加解密比较耗时。</p>
+<p>#数字签名</p>
+<p>数字签名是非对称加密和摘要算法两者结合。假设，我们有一段授权文本，需要发布，为了防止中途篡改文本内容，保证文本的完整性，以及文本是由指定的权限狗发的。首先，先将文本内容通过摘要算法，得到摘要，再用权限狗的私钥对摘要进行加密得到密文，将源文本、密文、和私钥对应的公钥一并发布即可。那么如何验证呢？</p>
+<p>验证方首先查看公钥是否是权限狗的，然后用公钥对密文进行解密得到摘要，将文本用同样的摘要算法得到摘要，两个摘要进行比对，如果相等那么一切正常。这个过程只要有一步出问题就视为无效。</p>
+<p>#Base64<br>Base64编码的思想是是采用==64个基本的ASCII码字符对数据进行重新编码==。它将需要编码的数据拆分成字节数组。以3个字节为一组。按顺序排列24 位数据，再把这24位数据分成4组，即每组6位。再在每组的的最高位前补两个0凑足一个字节。这样就把一个3字节为一组的数据重新编码成了4个字节。当所要编码的数据的字节数不是3的整倍数，也就是说在分组时最后一组不够3个字节。这时在最后一组填充1到2个0字节。并在最后编码完成后在结尾添加1到2个 “=”。</p>
+<p>例：将对ABC进行BASE64编码：</p>
+<ol>
+<li><p>首先取ABC对应的ASCII码值。A（65）B（66）C（67）；</p>
+</li>
+<li><p>再取二进制值A（01000001）B（01000010）C（01000011）；</p>
+</li>
+<li><p>然后把这三个字节的二进制码接起来（010000010100001001000011）；</p>
+</li>
+<li><p>再以6位为单位分成4个数据块,并在最高位填充两个0后形成4个字节的编码后的值，（00010000）（00010100）（00001001）（00000011），其中加色部分为真实数据；</p>
+</li>
+<li><p>再把这四个字节数据转化成10进制数得（16）（20）（9）（3）；</p>
+</li>
+<li><p>最后根据BASE64给出的64个基本字符表，查出对应的ASCII码字符（Q）（U）（J）（D），这里的值实际就是数据在字符表中的索引。</p>
+</li>
+</ol>
+<p>解码过程就是把4个字节再还原成3个字节再根据不同的数据形式把字节数组重新整理成数据。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/12/21/2015-12-21/" itemprop="url">
                 程序员最应该有的技能是什么？
               </a>
@@ -587,353 +876,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/29/2015-05-16-learn-swift-1/" itemprop="url">
-                用swift学习IOS开发的一点总结(一)
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2015-09-29T23:21:51+08:00" content="2015-09-29">
-            2015-09-29
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>先列出总结的知识点</p>
-<ul>
-<li>?和！</li>
-<li>as向下转换</li>
-<li>var 和 let的区别</li>
-<li>weak 和 unowned</li>
-</ul>
-<h2 id="?和！">?和！</h2><blockquote>
-<p>swift中的这点可能是借鉴了Ruby(或是其他语言，但是小弟懂的少，还有就是Apple内部好像蛮喜欢Ruby，不然也不会有MacRuby O(∩<em>∩)O~~</em>)；问号代表Optional，也可以认为是将这个值初始化为nil(nil这个对象代表空)，再后面写代码逻辑时需要对此值做if判断是否是nil。而！基本正好相反，它代表强制做某件事。</p>
-<p>所以在开发时可能可能会遇到</p>
-</blockquote>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fatal error: unexpectedly found <span class="literal">nil</span> <span class="keyword">while</span> unwrapping an <span class="type">Optional</span> value</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这种错误一般是运行中发生，表示在处理一个Optional的值，但是这个是nil</p>
-</blockquote>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bound value <span class="keyword">in</span> a conditional binding must be of optional type</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这种错误一般是编译时候发生，表示在if判断的时候遇到，因为判断的值不是Optional初始化过的。</p>
-</blockquote>
-<p><a href="http://letsswift.com/2014/06/swift-questionmark-exclamatorymark/" target="_blank" rel="external">详细讲解请看这篇转载</a></p>
-<h2 id="as向下转型">as向下转型</h2><blockquote>
-<p>比方string to NSString 就用 as 转<br><a href="http://c.biancheng.net/cpp/html/2288.html" target="_blank" rel="external">Swift类型转换</a></p>
-</blockquote>
-<h2 id="var_和_let的区别">var 和 let的区别</h2><blockquote>
-<p>var声明变量，let声明常量</p>
-</blockquote>
-<h2 id="weak_和_unowned">weak 和 unowned</h2><p><a href="http://swifter.tips/retain-cycle/" target="_blank" rel="external">内存管理，WEAK 和 UNOWNED</a></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/29/2015-05-28-chaogu-four-month-summary/" itemprop="url">
-                炒股四月总结
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2015-09-29T23:11:19+08:00" content="2015-09-29">
-            2015-09-29
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/投资/" itemprop="url" rel="index">
-                  <span itemprop="name">投资</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>今年一月底开了户，正式步入了散户的行列，去年下半年开始只是买了些基金，收益很少，赶上这波牛市所以干错开户去了。起初是在雪球上各位大V推荐，先是买了些银行股，因为胆小买的很少，也就几十几十的赚，后来慢慢买的多了，因为觉得买的多赚的多，当中也被套，被套了心里总觉不好受，就恨不得分分钟刷雪球，希望看到某大V对该股进行评论，四个月来总收益也盈利了20%。</p>
-<p>但是总结了下每股的收益发现对于我们这些新的小散在牛市里最好的赚钱方式就是在牛市开始时，找到牛市题材股，然后买题材股中的龙头或者最有潜力的低价股，等到牛市结束时最少也是翻倍的收益，但是其中的每个交易日是非常难熬的。</p>
-<p>今日股市又暴跌，传说07年5月30日也是这样的暴跌，账户里仅存一只还是翻红的，考虑再三决定等这波行情起来解套后清仓，但还是会继续投资其他风险略低的品种，如ETF或者基金。</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/05/10/2015-05-10-isset-and-array_key_exists/" itemprop="url">
-                PHP中isset和array_key_exists的用发的区别
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2015-05-10T14:06:56+08:00" content="2015-05-10">
-            2015-05-10
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Development/" itemprop="url" rel="index">
-                  <span itemprop="name">Development</span>
-                </a>
-              </span>
-
-              
-              
-                ， 
-              
-
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Development/php/" itemprop="url" rel="index">
-                  <span itemprop="name">php</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>平时在PHP判断数组中是否有某个key时都使用isset函数，今天偶然知道isset在判断时，如果key的值等于null时，isset的返回值会是false。这时就可以用上array_key_exists函数来判断，但是不要完全使用这个函数，会影响性能；可以这样写：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">isset</span>(<span class="variable">$a</span>[<span class="variable">$key</span>])||array_key_exists(<span class="variable">$key</span>,<span class="variable">$a</span>);</span><br></pre></td></tr></table></figure></p>
-<p>这样既保留一定性能，也能避免程序中的坑。</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/05/02/2015-05-02-api-to-jekyll/" itemprop="url">
-                api系统设计
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2015-05-02T15:01:56+08:00" content="2015-05-02">
-            2015-05-02
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Development/" itemprop="url" rel="index">
-                  <span itemprop="name">Development</span>
-                </a>
-              </span>
-
-              
-              
-                ， 
-              
-
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Development/php/" itemprop="url" rel="index">
-                  <span itemprop="name">php</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>公司API系统已经很陈旧，有很多潜在的隐患，所以趁着假期空闲准备重新设计套V2版的。框架已经确定，使用近期刚出的号称最快的PHP微系统<a href="http://lumen.laravel.com/" target="_blank" rel="external">lumen</a>，但是如何才是合格或者标准的API系统呢？</p>
-<p>Google一番后在github上找到一份针对larval的api系统的<a href="https://github.com/dingo/api/wiki" target="_blank" rel="external">wiki</a>，可以借鉴参考。但是主要还得兼容V1版的一些东西，不然其他系统改动太大。</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -972,7 +914,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">166</span>
+              <span class="site-state-item-count">170</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>

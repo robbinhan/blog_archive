@@ -262,7 +262,10 @@
 
       
         
-          <span itemprop="articleBody"><p></p><p>读取Redis里的值，判断写的是</p><pre><code>$value = $redis-&gt;get(‘key’);<br>if（!$value）{<br>  $value = ‘no key’;<br>}</code></pre><p>结果档key不存在时，$value也永远不会是no key，因为判断条件永远不会成立，除非设置了key的值，因为PHP里-1也为真。</p><p></p></span>
+          <span itemprop="articleBody"><p>读取Redis里的值，判断写的是</p>
+<figure class="highlight"><figcaption><span>= $redis->get('key');</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if&#65288;!$ret&#65289;&#123;&#10;  $value = &#39;no key&#39;;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>结果当key不存在时，ret返回-1，但是value也永远不会是no key，因为判断条件永远不会成立，除非设置了key的值，因为PHP里-1也为真。目前测试下来5.5、5.6都是如此</p>
+</span>
         
       
     </div>
@@ -525,6 +528,250 @@
 
 
     
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/09/2013-08-09-84474/" itemprop="url">
+                尝试Evernote学习
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-09T09:31:00+08:00" content="2013-08-09">
+            2013-08-09
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>之前很长一段时间都是手机了资料，但是也没仔细看，就算看了也没转化为知识，这次决定好好使用evernote学习下，其实也是老用户了，就是一直没好好用过……</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/09/2013-08-09-84475/" itemprop="url">
+                PHP的逐行输出
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-09T09:31:00+08:00" content="2013-08-09">
+            2013-08-09
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>昨天同事需要我的API数据逐行输出，保证数据完整，因为之前没做过这方面的东西，所以去Google了下，发下PHP的逐行输出都是用ob_flush实现，就是将手动将缓冲区的刷新，但是尝试了却发现好像并没有什么效果，最后也是手动ob_get_length()输出总长度到http的head中来解决的。</p><p>不过倒是感觉现在nginx+fastcgi+php-fpm好像会自动逐行输出，就是在缓冲区满了后会先输出，应该是nginx的机制。</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/09/2013-08-09-84476/" itemprop="url">
+                PHP的==判断
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-09T09:31:00+08:00" content="2013-08-09">
+            2013-08-09
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>判断接口返回值时遇到返回是1XXXXXXX，然后我判断的代码是使用“1==$result”，所以就认为是真，这是若类型的特性，当整形和字符串比较时，只比较第一个字符，而$result第一个字符就是1，所以为真，如果是“’1’==$result”，就返回假，因为都是字符串比较。</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/09/2013-08-09-84467/" itemprop="url">
+                编程的本质之我所想
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-09T09:31:00+08:00" content="2013-08-09">
+            2013-08-09
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>最近突然想到我们编程的根本目的是什么，为什么要发明编程语言。</p><p>我觉得编程语言的发明是为了实现软件，实现软件是为了提高平时日常的效率，也就是提高生产力，那我们平时写程序时就尽量要考虑到复用，而现在越来越火的开源嵌入式开发更加告诉我们，什么是科技改变生活。</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -563,7 +810,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">166</span>
+              <span class="site-state-item-count">170</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
