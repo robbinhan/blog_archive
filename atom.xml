@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://robbinhan.github.io/"/>
-  <updated>2015-12-25T08:11:08.000Z</updated>
+  <updated>2016-03-16T05:13:00.000Z</updated>
   <id>http://robbinhan.github.io/</id>
   
   <author>
@@ -15,39 +15,95 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[JavaScript函数声明与函数表达式写法的区别]]></title>
-    <link href="http://robbinhan.github.io/2015/12/25/2015-12-25/"/>
-    <id>http://robbinhan.github.io/2015/12/25/2015-12-25/</id>
-    <published>2015-12-25T07:27:19.000Z</published>
-    <updated>2015-12-25T08:11:08.000Z</updated>
-    <content type="html"><![CDATA[<p>表面上的差异是“先与后”，使用函数表达式的方式，调用必须在表达式之后，而函数声明则无关前后问题。</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">alert(foo); // <span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span></span> &#123;&#125;</span><br><span class="line">alert(bar); // undefined</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span></span> &#123;&#125;</span><br><span class="line">var bar = <span class="function"><span class="keyword">function</span> <span class="title">bar_fn</span><span class="params">()</span></span> &#123;&#125;;</span><br><span class="line">alert(foo); // <span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span></span> &#123;&#125;</span><br><span class="line">alert(bar); // <span class="function"><span class="keyword">function</span> <span class="title">bar_fn</span><span class="params">()</span></span> &#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>可以看到 foo 的声明是写在 alert 之后，仍然可以被正确调用，因为 JavaScript 解释器会将其提升到 alert 前面，而以函数表达式创建的函数 bar 则不享受此待遇。</p>
-<p>那么bar 究竟有没有被提升呢，其实用 var 声明的变量都会被提升，只不过是被先赋值为 undefined 罢了，所以第二个 alert 弹出了 undefined。这具体要涉及到js的<em>变量对象</em>和<em>执行环境</em>概念</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hereOrThere</span><span class="params">()</span> </span>&#123; <span class="comment">//function statement</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">'here'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(hereOrThere()); <span class="comment">// alerts 'there'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hereOrThere</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'there'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上代码hereOrThere函数声明两次，声明首先提升了优先级，并且第二次声明覆盖了第一次声明。</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hereOrThere = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123; <span class="comment">// function expression</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">'here'</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">alert(hereOrThere()); <span class="comment">// alerts 'here'</span></span><br><span class="line"></span><br><span class="line">hereOrThere = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'there'</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>以上代码hereOrThere表达式写法两次。</p>
-<p>执行顺序是解释器先声明hereOrThere变量，此时值是undefined，然后将返回here的函数赋值，接着alert调用。这里因为是声明的变量，而js中不会对变量提升优先级，所以是顺序执行。</p>
+    <title><![CDATA[PHP的Cookie删除问题]]></title>
+    <link href="http://robbinhan.github.io/2016/03/16/2016-03-16/"/>
+    <id>http://robbinhan.github.io/2016/03/16/2016-03-16/</id>
+    <published>2016-03-16T05:27:19.000Z</published>
+    <updated>2016-03-16T05:13:00.000Z</updated>
+    <content type="html"><![CDATA[<p>正常情况下删除cookie就是调用setcookie方法，并且将过期时间设置为之前的时间；但是如果添加cookie的时候设置了path或者domain参数的话可能就会产生问题。<br>比方：</p>
+<pre><code>setcookie<span class="list">(<span class="quoted">'test</span>',<span class="quoted">'a</span>',time<span class="list">()</span><span class="number">+3600</span>,<span class="quoted">'/</span>')</span><span class="comment">;</span>
+</code></pre><p>设置test一个小时后过期，路径在’/‘，域名默认是当前的域名，比如是’www.explame.com’，然后当去删除的时候</p>
+<pre><code>setcookie(<span class="string">'test'</span>,<span class="string">'a'</span>,<span class="keyword">time</span>()-<span class="number">24</span>*<span class="number">3600</span>,<span class="string">'/'</span>,<span class="string">'www.explame.com'</span>);
+</code></pre><p>如果这样写是无法删除的，因为setcookie时默认会在域名前加“.”号，就变成’.www.explame.com’，所以这样写会去删除’.www.explame.com’域名下的test的cookie，而之前添加的并没有删除，解决方法其实就是添加的时候怎么写，删除的时候也怎么写，就是过期时间修改下。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>表面上的差异是“先与后”，使用函数表达式的方式，调用必须在表达式之后，而函数声明则无关前后问题。</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">]]>
+    <![CDATA[<p>正常情况下删除cookie就是调用setcookie方法，并且将过期时间设置为之前的时间；但是如果添加cookie的时候设置了path或者domain参数的话可能就会产生问题。<br>比方：</p>
+<pre><code>setcookie<span class="list]]>
     </summary>
     
   </entry>
   
   <entry>
-    <title><![CDATA[Node技术进阶脑图]]></title>
-    <link href="http://robbinhan.github.io/2015/12/23/2015-12-23/"/>
-    <id>http://robbinhan.github.io/2015/12/23/2015-12-23/</id>
-    <published>2015-12-23T07:27:19.000Z</published>
-    <updated>2015-12-23T07:41:31.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="http://i.imgur.com/nvmHDJ4.jpg" alt="Nodejs"></p>
+    <title><![CDATA[Redux架构总结]]></title>
+    <link href="http://robbinhan.github.io/2015/12/25/2015-12-26/"/>
+    <id>http://robbinhan.github.io/2015/12/25/2015-12-26/</id>
+    <published>2015-12-25T07:27:19.000Z</published>
+    <updated>2015-12-26T06:21:34.000Z</updated>
+    <content type="html"><![CDATA[<p>社区内比较受推崇，因为用起来相对比较简单<br><img src="media/2869996312-56737fb328792_articlex.png" alt="2869996312-56737fb328792_articlex"></p>
+<p>特性：</p>
+<ul>
+<li>分层设计，职责清晰。</li>
+<li>要求store reducer都是页面单例，易于管理。</li>
+<li>action为请求dto对象，是请求类型，请求数据的载体。</li>
+<li>reducer是处理请求的方法。不允许有状态，必须是纯方法。必须严格遵守输入输出，中间不允许有异步调用。不允许对state直接进行修改，要想修改必须返回新对象。</li>
+<li>store</li>
+<li>维持应用的state；</li>
+<li>提供 getState() 方法获取 state；</li>
+<li>提供 dispatch(action) 方法分发请求来更新 state；门面模式，要求所有的请求满足统一的格式【可以进行路由、监控、日志等】，统一的调用方式。</li>
+<li>通过 subscribe(listener) 注册监听器监听state的变化。</li>
+<li>官方文档写的较为详细，从设计到开发都有，比flux要好</li>
+</ul>
+<p>redux的原则:</p>
+<ol>
+<li><p>state不能被修改。</p>
+<ul>
+<li>其实这个用react的state也会有同样的问题，最好把state设计的没有冗余，尽量少出这种情况</li>
+<li>解决方案：参考官方：因为我们不能直接修改却要更新数组中指定的一项数据，这里需要先把前面和后面都切开。如果经常需要这类的操作，可以选择使用帮助类 React.addons.update，updeep，或者使用原生支持深度更新的库 Immutable。最后，时刻谨记永远不要在克隆 state 前修改它。</li>
+</ul>
+</li>
+<li><p>单一的庞大的reducer的拆分</p>
+<ul>
+<li>这块设计也不好做，会让人疑惑</li>
+<li>官方给的demo中直接按state的内容区分，我觉得这样做不好，如果后期有跨内容的情况，就比较奇怪了。官方给的combineReducers方案，也只是减少代码量，本质没有变化，state还是拆分处理，路由还是业务逻辑自己来做。</li>
+<li>解决方案：还是处理一整个state，可以按照约定写reducer类而不是方法，类里按照actionType建方法，架构自动路由并调用。</li>
+<li>以前做java架构，路由一定是架构来调用的，目前感觉各大flux框架都是解决问题不彻底。</li>
+</ul>
+</li>
+<li><p>官方建议设计模式：顶层容器组件才对redux有依赖，组件间通过props来传递数据。按照这样设计还是没有解决组件间交互和数据传递的问题。官方react设计建议：react的设计建议：<a href="http://camsong.github.io/redux-in-chinese/docs/basics/UsageWithReact.html" target="_blank" rel="external">http://camsong.github.io/redux-in-chinese/docs/basics/UsageWithReact.html</a></p>
+</li>
+<li><p>使用connect将state绑定到component。此处有些黑盒了。</p>
+</li>
+<li><p>异步action用来请求服务端数据,利用middleware增强createStore的dispatch后即支持。</p>
+</li>
+</ol>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p><img src="http://i.imgur.com/nvmHDJ4.jpg" alt="Nodejs"></p>
-]]>
+    <![CDATA[<p>社区内比较受推崇，因为用起来相对比较简单<br><img src="media/2869996312-56737fb328792_articlex.png" alt="2869996312-56737fb328792_articlex"></p>
+<p>特性：</p>
+<u]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[JavaScript函数声明与函数表达式写法的区别]]></title>
+    <link href="http://robbinhan.github.io/2015/12/25/2015-12-25/"/>
+    <id>http://robbinhan.github.io/2015/12/25/2015-12-25/</id>
+    <published>2015-12-25T07:27:19.000Z</published>
+    <updated>2016-01-16T04:43:14.000Z</updated>
+    <content type="html"><![CDATA[<p>表面上的差异是“先与后”，使用函数表达式的方式，调用必须在表达式之后，而函数声明则无关前后问题。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">alert(foo); <span class="comment">// function foo() &#123;&#125;</span></span><br><span class="line">alert(bar); <span class="comment">// undefined</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> bar = <span class="function"><span class="keyword">function</span> <span class="title">bar_fn</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">alert(foo); <span class="comment">// function foo() &#123;&#125;</span></span><br><span class="line">alert(bar); <span class="comment">// function bar_fn() &#123;&#125;</span></span><br></pre></td></tr></table></figure>
+<p>可以看到 foo 的声明是写在 alert 之后，仍然可以被正确调用，因为 JavaScript 解释器会将其提升到 alert 前面，而以函数表达式创建的函数 bar 则不享受此待遇。</p>
+<p>那么bar 究竟有没有被提升呢，其实用 var 声明的变量都会被提升，只不过是被先赋值为 undefined 罢了，所以第二个 alert 弹出了 undefined。这具体要涉及到js的<em>变量对象</em>和<em>执行环境</em>概念</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hereOrThere</span>(<span class="params"></span>) </span>&#123; <span class="comment">//function statement</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">'here'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(hereOrThere()); <span class="comment">// alerts 'there'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hereOrThere</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'there'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上代码hereOrThere函数声明两次，声明首先提升了优先级，并且第二次声明覆盖了第一次声明。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hereOrThere = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">// function expression</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">'here'</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">alert(hereOrThere()); <span class="comment">// alerts 'here'</span></span><br><span class="line"></span><br><span class="line">hereOrThere = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'there'</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>以上代码hereOrThere表达式写法两次。</p>
+<p>执行顺序是解释器先声明hereOrThere变量，此时值是undefined，然后将返回here的函数赋值，接着alert调用。这里因为是声明的变量，而js中不会对变量提升优先级，所以是顺序执行。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>表面上的差异是“先与后”，使用函数表达式的方式，调用必须在表达式之后，而函数声明则无关前后问题。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class=]]>
     </summary>
     
   </entry>
@@ -70,6 +126,21 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p>看到一篇讲解Redis数据清理导致连接超时的问题的文章，之前开发系统时也出现过类似问题，但是一直没有确定具体的原因，当时的情况是crontab下有个每分钟都在执行的php脚本，脚本中是通过redis来做锁的控制，起初一切正常，突然有天脚本“卡住”了，redis中的锁没有删除]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Node技术进阶脑图]]></title>
+    <link href="http://robbinhan.github.io/2015/12/23/2015-12-23/"/>
+    <id>http://robbinhan.github.io/2015/12/23/2015-12-23/</id>
+    <published>2015-12-23T07:27:19.000Z</published>
+    <updated>2015-12-23T07:41:31.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://i.imgur.com/nvmHDJ4.jpg" alt="Nodejs"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://i.imgur.com/nvmHDJ4.jpg" alt="Nodejs"></p>
+]]>
     </summary>
     
   </entry>
@@ -434,37 +505,6 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class=]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[ruby的二维hash数组实现]]></title>
-    <link href="http://robbinhan.github.io/2014/05/07/2014-05-07-two-dimensional-array-of-hash-implementation-of-ruby/"/>
-    <id>http://robbinhan.github.io/2014/05/07/2014-05-07-two-dimensional-array-of-hash-implementation-of-ruby/</id>
-    <published>2014-05-07T05:08:00.000Z</published>
-    <updated>2015-10-01T07:01:42.000Z</updated>
-    <content type="html"><![CDATA[<p>ruby中不能像PHP一样直接赋值二维数组，PHP的数组实质是hashmap，ruby中可以使用二维hash实现，例如</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="constant">Hash</span>&#123;<span class="string">"a"</span>=&gt;&#123;<span class="string">"b"</span>=&gt;c&#125;&#125;</span><br></pre></td></tr></table></figure>
-<p>一个hash中有个叫a得key，a的value又是一个hash</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>ruby中不能像PHP一样直接赋值二维数组，PHP的数组实质是hashmap，ruby中可以使用二维hash实现，例如</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span c]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[神马是程序员]]></title>
-    <link href="http://robbinhan.github.io/2014/03/29/2014-03-29-smarter-programmers/"/>
-    <id>http://robbinhan.github.io/2014/03/29/2014-03-29-smarter-programmers/</id>
-    <published>2014-03-28T22:52:00.000Z</published>
-    <updated>2015-10-01T07:01:42.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="http://user-image.logdown.io/user/3339/blog/3382/post/191516/V54Yfk8yRjKCAkDKifz1_%E5%B1%B1%E9%A1%B6code.jpg" alt="山顶code.jpg"></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="http://user-image.logdown.io/user/3339/blog/3382/post/191516/V54Yfk8yRjKCAkDKifz1_%E5%B1%B1%E9%A1%B6code.jpg" alt="山顶code.jpg">]]>
     </summary>
     
   </entry>

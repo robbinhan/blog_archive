@@ -170,6 +170,311 @@
           
           
             
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84672/" itemprop="url">
+                PHP发送邮件的随想
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p> &nbsp;今天要写邮件发送的功能，其实这玩意以前也写过，但是很久没用了，也淡忘了。所以想写下来记录了。<br> &nbsp;PHP里用的多的实现方式无非就几种：mail函数，smtp，sendmail。最常用的可能就是smtp了，这玩意儿相对安全，而且配置起来也方便，主要适用socket技术实现，只是碰到一些特殊的邮箱会比较麻烦，如：gmail。mail函数在程序里使用是很方便，但是上线后会经常有问题，而且这个函数好像是将执行脚本的服务器当作邮件服务器来发送的，所以配置起来一定相当麻烦，所以用的人也相对少了。sendmail不太了解，应该是一个Linux下的应用，php通过命令函数来执行其操作。</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84671/" itemprop="url">
+                PHP的OB缓冲区
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>&nbsp; &nbsp;其实之前也看过OB库的缓存使用，但是当时并没有真正理解这个的真正作用是什么，直到前两天项目上出了问题，才真正使用到它，才大概了解到他是用处。</p><p>&nbsp; &nbsp; 这个函数库用的最多的地方可能是在大多数框架的模板模块中，它将从ob_start()开启后的所有输出（echo,print,var_dump等）缓存到内存中，并不直接输出；当你需要缓冲区的内容时可以使用ob_get_contents()函数来获取其所有内容，它将以字符串形式返回，但同样不会自动输出；如果你想要其自动输出缓冲区里的内容可以使用ob_flush()或ob_end_flush()，前者只是将之前的内容输出，后者除了输出还会关闭当前缓冲区，则之后的输出都会正常输出。ob_end_clean() 函数会清空缓冲区，并关闭，但是不会将内容输出 ；他同样也有ob_clean函数。</p><p><br></p><p>详细使用请参考：<a href="http://www.chhua.com/web-note1781" target="_blank" rel="external">http://www.chhua.com/web-note1781</a></p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84670/" itemprop="url">
+                用sae写GTD简易系统
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p> &nbsp;&nbsp;&nbsp;今天有兴致写个GTD的系统，虽然很简易，但基本的GTD概念也都涉及了，设计思路是在网页上安排时间规划，后端有程序执行监控，发现当前时间内有任务则发短信通知到我手机。</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84669/" itemprop="url">
+                看《那些年》读《那些年》
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p><br>看了《那些年》，读了《那些年》，感觉柯腾可能喜欢的沈佳宜并非真正的沈佳宜，而只是的他理想中的沈佳宜，而沈佳宜可能喜欢的是真正的柯腾吧。无论如何，逝去的时光已不可能再追回，我们自己当年的“沈佳宜”可能已经成为了陪你走完下半生的人，也可能已经如小说中那样，另嫁他人，但是还是会偶尔会一起那段懵懂的时光。</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84668/" itemprop="url">
+                PHP pack二进制压缩笔记
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>在之前的与C++交互中，我们使用PHP先做二进制压缩，再将压缩内容通过socket发送。<br>pack中的压缩参数根据字节的大小分为多种情况。<br>长度 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;参数</p><p>1个字节 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C</p><p>2个字节整型 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n</p><p>2个字节字串 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v</p><p>4个字节整型 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N</p><p>4个字节字串 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V</p><p>超过4个字节的字串 &nbsp;&nbsp;a+字串长度<br><br>整型的压缩比较特殊，因为在网络中传输整型时，每台主机存在高低位的差异，所以必需要有网络字节序的转换，n和N就是针对16位和32位字节做转换的。</p><p>&nbsp;</p><p>如果遇到8字节整形传输，并且不使用网络字节序的话，需要做特殊转换</p><pre config="brush:php;toolbar:false;">//拆分64位id，分成2个32位的高低位<br>$int_32 = 4294967295;<br>$low = $id &amp; $int_32;<br>$high = $uid &gt;&gt; 32;<br>$uid_bin_64 = pack(&quot;VV&quot;,$low,$high);</pre><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2013/08/11/2013-08-11-84667/" itemprop="url">
                 PHP socket笔记
               </a>
@@ -464,316 +769,11 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84662/" itemprop="url">
-                No Title
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84661/" itemprop="url">
-                rails migration
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p>这两天研究了下rails的migration，他可以通过命令行几个简单的参数创建一个数据库表，并且整合上ActiveRecord可以灰常简单快速的完成开发。</p><p>当需要对已经创建的表做修改时需要新建一个migration，旧的类会因为版本太低不会被执行，每一次的rake db:migrate只会执行最新版的类，但是在类中可以对类本身的数据表，或其他已存在的表做任何表结构的操作。</p><p>具体看guide：<a href="http://guides.rubyonrails.org/migrations.html" target="_blank" rel="external">http://guides.rubyonrails.org/migrations.html</a></p><p>还有migration的api<a href="http://api.rubyonrails.org/classes/ActiveRecord/Migration.html" target="_blank" title="migration api">http://api.rubyonrails.org/classes/ActiveRecord/Migration.html</a></p><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84660/" itemprop="url">
-                active record
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用了rails的active record才知道什么叫强大，那代码写的就是舒服，就是以一个正常的思维来写代码。</p><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PHP的框架我算是也见过不少了，不管国内国外，不管主流或非主流基本都有看过点，真没有在active record上做好的，总感觉和orm没差。但是根据<a href="http://zh.wikipedia.org/wiki/Active_Record" target="_blank" title="维基">http://zh.wikipedia.org/wiki/Active_Record</a>上说active record其实和orm还是有差别的，他是有orm的功能，但不仅仅是orm。国外有个<a href="http://www.akelos.org/" target="_blank" title="框架">http://www.akelos.org/</a>是抄的rails，但是09年后就没更新了，估计也是无法做到rails这么强大了。php的active record会让人觉得为何还需要这个东西，有orm不就行了，这样的误导实在。。。。</p><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我个人在学习方面是这样考虑的，首先会知道一个概念，然后会尝试着使用，发现其不同或特别之处，再深入研究，但是php的active record曾经让我止步在使用阶段。</p><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;据维基上说，php比较好的就是Yii了，但也未发现特别之处。</p><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84659/" itemprop="url">
-                orm的各种实现的理解
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p><span>我们讨论的问题目的在于如何让我们系统中的对象与数据库进行交互。由于数据库与对象之间存在着结构上的差异，Mapping是相当困难的。作者不推荐开发人员自己进行Mapping Layer的开发，这是危险的也是及其可能失败的。作者推荐购买专业的工具，虽然这些工具通常很昂贵。我没见过这种工具，到目前为止，我所接触的项目确实有Mapping layer，但它并不是典型的Mapping layer between Relational Database and Object，它是处于JSP页面与Database之间的Mapping，用于自动地将用户在页面上填写的数据更新到数据库中。这在Web项目中是很好用的，但目前这个Mapping Layer还不能做到general，它只能适用与特定的Web Application架构。(:^), 跑题了!!!!)下面开始与大家聊聊三种Database Mapping层的常用的系统架构。 </span><br><br><span><strong>1. 网关模式（Gateway）</strong></span><span> </span><br><span>之所以称之“网关”，顾名思义，Mapping层扮演着一个代理的角色，应用逻辑层无需知道具体Mapping的细节，而只需通过网关的公共接口，提交数据更新或者数据加载请求，由网关去执行具体的Object到Record或者Record到Object的转换。从而实现了数据层的透明。应用逻辑层所要了解的只有网关的信息和其公共接口。使用公共接口同时有助应用逻辑代码在不同的数据层的复用：无需改变应用逻辑层的任何代码，只需为特定的数据层实现特定的网关。网关模式具体分为两种：Row Data Gateway &amp; Table Data Gateway </span><br><strong><span>共同的特点</span></strong><span>： </span><br><span>对应于数据库中的每个Table，有一个Mapping Class，并且在这个class中每个column有其对应的字段；所有的数据库mapping代码都存在于在Mapping Class之中，使数据库访问代码与应用逻辑完全分离； </span><br><strong><span>Row Data Gateway</span></strong><span> </span><br><span>Mapping Class是一个对应于数据库中某张表格的一条记录。记录的每个字段对应于Class中的一个Field。所有访问数据的细节都被封装在这个接口中。Row Data Gateway与Transaction Script配合使用，效果很好 </span><br><strong>典型案例</strong><span>: Java中的SessionBean（Transaction Script）和EntityBean（Row Data Gateway） </span><br><strong>适用情况</strong><span>：应用逻辑相对复杂，对象与对象之间交互繁多的大规模系统； </span><br><br><span><strong>Table Data Gateway</strong></span><span>： </span><br><span>这个接口定义了关于某个Table的所有查询（find），更新，插入和删除代码。Table Data Gateway将输入的参数mapping成对应的SQL，并执行SQL，最后返回适当的数据结构。如何返回Query的信息是一个具有欺骗性的决策问题。当需要返回多个记录并且函数只允许返回一个结果时，你将面临着多种选择：Map &amp; Data Transfer Object &amp; Record Set。 </span><br><span>Map：不是一个好方法，map中的Key常常是一种HardCode； </span><br><span>Data Transfer Object：是避免map的一个方法，并且可以被重用； </span><br><span>Record Set：虽然会使Business Logic Layer不能完全与数据库访问层相分离，但是如果我们的开发平台有很多基于Record Set的工具，采用它不失为一个好方法（.NET）。 </span><br><strong>典型案例</strong><span>：Window DNA架构； </span><br><strong>适用情况</strong><span>：以显示信息，修改信息为功能的MIS（信息管理系统）； </span><br><br><span><strong>2. 活动记录模式（Active Record）</strong></span><span> </span><br><span>将Business Logic与数据库访问放置于同一个Business Object中。这种模式出现的原因是业务逻辑与数据库模型非常相似。Active Record同时负责数据库存取和基于这些数据的应用逻辑的执行。应用程序的所有逻辑可以都在Active Record中，也可以是部分。有一点是默认前提，Active Record的数据结构和数据库Schema必须保持一致（在我看来这是个缺点！） </span><br><br><span>Active Record中通常有以下方法： </span><br><strong><em></em></strong><span> 从SQL数据集创建Active Record的构建方法； </span><br><strong></strong><span> 静态的finder方法用于封装SQL查询并且返回Active Record记录； </span><br><strong><em></em></strong><span> 用Active Record中的数据更新数据库的方法； </span><br><strong></strong><span> 所有字段getting和settting方法； </span><br><strong><em></em></strong><span> 实现应用逻辑的方法； </span><br><br><span>活动记录模式的优点在于简单，其缺点在于没有隐藏数据库层，从而导致很难应用其他OR Mapping模式在活动记录模式之上。另外一方面，活动记录模式与Row Data Gateway的区别在于数据库存取代码是在Business Object中（Active Record）还是在一个单独的Mapping Class中（Row Data Gateway），当然也有同时存在于两者的情况；如果应用逻辑的复杂程度迫使你适用面向对象的一些机制（Direct relationships，collections and Inheritance），这时直接将数据库存取代码置于Business Object中，由于有大量的转换，会使事情变得混乱，这时应该适用Data Mapper。 </span><br><span>但这并不是个好方法，因为它将面向对象设计和数据库设计紧密耦合在一起，这随着项目进展会使对设计的重构工作变得及其困难。通常我们会将数据库访问代码分离到一个Gateway中。有一种情况例外，当你对Transaction Script &amp; Row Data Gateway的架构进行重构的时候，为了去除Transaction Script中的重复代码，将其放进Row Data Gateway中，这是就转变成Active Record了。 </span><br><br><span>适用情况：当应用逻辑不复杂，主要是创建，更新，插入，删除操作，而且操作主要是针对单条记录时； </span><br><br><span><strong>3. 数据映射模式（Data Mapper）</strong></span><span> </span><br><span>这是最复杂，但最灵活的一种架构模式。使用Data Mapper，Business Objects可以与数据库结构完全的分离，他们无需知道数据库的结构和数据更新的细节。Data Mapper对于那些无法在关系型数据库表示的对象系统特性非常有效，例如Collection成员结构和继承关系。Data Mapper是内存中对象与数据库之间的媒介。它负责双方之间的数据传输。数据映射模式（Data Mapper）与网关模式最大的（Gateway）最大的区别在于依赖和控制的位置相反。在网关模式中，应用逻辑层需要了解数据库中的数据结构，二在数据映射模式中，应用逻辑无需了解数据库设计，提高了应用层（business logic）和数据层（data source）的分离，便于两者的开发和测试。 </span><br><span>面向对象的对象系统与面向关系的关系型数据库是两种异构的结构，因此在对象系统中的很多机制（collections, inheritance等）都无法在关系型数据库中得到直接的表示，这就是数据映射模式产生的原因。在这种情况下，在两种模式下的数据转换变得相当复杂，因此我们有必要将它分层，否则任何一方（对象系统和数据库）的改变都将波及对方。 </span><br><span>数据映射层的最大目标就是将业务逻辑（domain）和数据层（data source）分离。整个数据映射层（Data Mapper）完全独立于系统其他部分，可以被完全替换或者允许一个逻辑层重用于不同的数据层上。但要实现它有很多重要的问题必须解决，而且不同人可以采用不同的方法实现这个数据映射模式（Data Mapper）。因此这里只介绍几个重要的实现问题。 </span><br><br><span><strong>① Finder方法的处理</strong></span><span> </span><br><span>处理方法： </span><br><span>在一个独立的Package中，为Finder方法定义一个接口，然后在数据映射层实现这个接口。逻辑层通过接口调用Finder方法，后者通过数据映射层加载数据。 </span><br><span>原因：之所以使用接口的原因，在于使Finder方法标准化，这样应用逻辑层虽然可能在任何地方都会调用Finder方法取得带有数据的Business Object，但却不依赖于数据映射层。 </span><br><span>Finder方法：将方法调用转换成SQL查询； </span><br><span>数据映射层：从数据集中获得数据并创建Business Object； </span><br><br><span>遗留问题： </span><br><strong></strong><span> 数据映射层如何知道那些Object被更新了，哪些被创建，哪些被删除了？ </span><br><strong><em></em></strong><span> 如何控制每次查询获得的记录数，以尽量减少查询的数目？ </span><br><strong></strong><span> 其他模式如何用在数据映射层（Lazy Load, Registry, Identity Map）? </span><br><br><span><strong>② 如何将数据映射到Business Object的字段中</strong></span><span> </span><br><span>数据映射层需要访问Business Object的所有字段，因此这些方法必须被设置为public，但这不不是我们所预想的。这个问题没有明确的答案，几种可选的方法都有两面性。 </span><br><strong><em></em></strong><span> 将数据映射层于逻辑层放置于同一个包下 </span><br><span>缺点：有可能使事情变得更混乱； </span><br><strong></strong><span> 使用Reflection方法来访问Object的字段 </span><br><span>缺点：速度慢； </span><br><strong><em></em></strong><span> 增加状态标志来保证在数据库加载环境下访问这些字段 </span><br><br><span>针对这个问题，在创建Business Object的时候，你有两个选择，使用胖构造函数（这个名词是我自己取的:^)）空构造函数。 </span><br><span>胖构造函数（Rich Constructor） </span><br><span>优点：保证Object至少包含必须的数据；对于常量字段，无需setting方法； </span><br><span>缺点：必须考虑循环引用问题（cyclic reference）； </span><br><br><span>空构造函数（Empty Constructor） </span><br><span>优点：不会出现循环引用问题（cyclic reference）； </span><br><span>缺点：对于常量字段，仍然需要setting方法，可能引入潜在错误； </span><br><br><span>③ 基于元数据的映射（Metadata based Mapping） </span><br><strong></strong><span> 显式代码：这要求每个Business Object有一个Mapping class； </span><br><strong>*</strong><span> Metadata Mapping：元数据被存储在单独的class和文件中，我倾向于文件，随着xml的广泛使用，以XML形式存储元数据会增强移植性； </span><br><br><span><strong>3种OR Mapping架构模式的取舍和选用</strong></span><span> </span><br><span>OR Mapping架构取决于应用逻辑层的架构。如果使用表模式（Table Module）来组织应用逻辑，那么Table Data Gateway是你的最佳选择；如果使用Transaction Script模式来组织应用逻辑，那么如果开发平台提供了使用数据集的方便就采用Table Data Gateway，否则采用Row Data Gateway；如果是使用Domain Model来建立应用逻辑模型，那么对于复杂的大系统，颖毫不犹豫地选择数据映射模式，对于逻辑简单的小系统，Active Record也是一个可选方案。</span><br></p><p><span><br></span></p><p><span><span>摘自：</span><a href="http://epubcn.rubypdf.com/read-htm-tid-12435-uid-10830.html" target="_blank">http://epubcn.rubypdf.com/read-htm-tid-12435-uid-10830.html</a><br></span></p><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84658/" itemprop="url">
-                NSIS使用
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p> &nbsp;昨天项目组提出需要需要将webgame打包成exe文件，来进行安装。简单使用了下NSIS,做下总结。</p><p> &nbsp;总体来说还是比较简单的，就是被windows的gbk编码坑了。本来脚本是utf8编码的，中文总是编译不了。后来在高手的指点下尝试了gbk，瞬间解决。。。。</p><p> &nbsp;还有就是创建快捷方式的问题（CreateShortCut），此命令的参数里可以填图标，但是必须是绝对路径，并且你必须把图标一起打包，否则到别的机器上安装就没有图标显示了。</p><pre></pre><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/7/">&raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/5/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/7/">&raquo;</a>
   </nav>
 
  </div>
@@ -807,7 +807,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">170</span>
+              <span class="site-state-item-count">172</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -862,7 +862,7 @@
       <div class="footer-inner"> <div class="copyright" >
   
   &copy; &nbsp; 
-  <span itemprop="copyrightYear">2015</span>
+  <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="icon-next-heart"></i>
   </span>

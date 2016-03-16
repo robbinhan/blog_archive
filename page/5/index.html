@@ -170,6 +170,311 @@
           
           
             
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84682/" itemprop="url">
+                史上最强VIM配置（备份）
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>de&gt; &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; Maintainer: amix the lucky stiff &quot; <a href="http://amix.dk" target="_blank" rel="external">http://amix.dk</a> - amix@amix.dk &quot; &quot; Version: 3.6 - 25/08/10 14:40:30 &quot; &quot; Blog_post: &quot; <a href="http://amix.dk/blog/post/19486#The-ultimate-vim-configuration-vimrc" target="_blank" rel="external">http://amix.dk/blog/post/19486#The-ultimate-vim-configuration-vimrc</a> &quot; Syntax_highlighted: &quot; <a href="http://amix.dk/vim/vimrc.html" target="_blank" rel="external">http://amix.dk/vim/vimrc.html</a> &quot; Raw_version: &quot; <a href="http://amix.dk/vim/vimrc.txt" target="_blank" rel="external">http://amix.dk/vim/vimrc.txt</a> &quot; &quot; How_to_Install_on_Unix: &quot; $ mkdir ~/.vim_runtime &quot; $ svn co svn://orangoo.com/vim ~/.vim_runtime &quot; $ cat ~/.vim_runtime/install.sh &quot; $ sh ~/.vim_runtime/install.sh &quot; can be <code>mac</code>, <code>linux</code> or <code>windows</code> &quot; &quot; How_to_Upgrade: &quot; $ svn update ~/.vim_runtime &quot; &quot; Sections: &quot; -&lt; General &quot; -&lt; VIM user interface &quot; -&lt; Colors and Fonts &quot; -&lt; Files and backups &quot; -&lt; Text, tab and indent related &quot; -&lt; Visual mode related &quot; -&lt; Command mode related &quot; -&lt; Moving around, tabs and buffers &quot; -&lt; Statusline &quot; -&lt; Parenthesis/bracket expanding &quot; -&lt; General Abbrevs &quot; -&lt; Editing mappings &quot; &quot; -&lt; Cope &quot; -&lt; Minibuffer plugin &quot; -&lt; Omni complete functions &quot; -&lt; Python section &quot; -&lt; JavaScript section &quot; &quot; &quot; Plugins_Included: &quot; &lt; minibufexpl.vim - <a href="http://www.vim.org/scripts/script.php?script_id=159" target="_blank" rel="external">http://www.vim.org/scripts/script.php?script_id=159</a> &quot; Makes it easy to get an overview of buffers: &quot; info -&lt; :e ~/.vim_runtime/plugin/minibufexpl.vim &quot; &quot; &lt; bufexplorer - <a href="http://www.vim.org/scripts/script.php?script_id=42" target="_blank" rel="external">http://www.vim.org/scripts/script.php?script_id=42</a> &quot; Makes it easy to switch between buffers: &quot; info -&lt; :help bufExplorer &quot; &quot; &lt; yankring.vim - <a href="http://www.vim.org/scripts/script.php?script_id=1234" target="_blank" rel="external">http://www.vim.org/scripts/script.php?script_id=1234</a> &quot; Emacs’s killring, useful when using the clipboard: &quot; info -&lt; :help yankring &quot; &quot; &lt; surround.vim - <a href="http://www.vim.org/scripts/script.php?script_id=1697" target="_blank" rel="external">http://www.vim.org/scripts/script.php?script_id=1697</a> &quot; Makes it easy to work with surrounding text: &quot; info -&lt; :help surround &quot; &quot; &lt; snipMate.vim - <a href="http://www.vim.org/scripts/script.php?script_id=2540" target="_blank" rel="external">http://www.vim.org/scripts/script.php?script_id=2540</a> &quot; Snippets for many languages (similar to TextMate’s): &quot; info -&lt; :help snipMate &quot; &quot; &lt; mru.vim - <a href="http://www.vim.org/scripts/script.php?script_id=521" target="_blank" rel="external">http://www.vim.org/scripts/script.php?script_id=521</a> &quot; Plugin to manage Most Recently Used (MRU) files: &quot; info -&lt; :e ~/.vim_runtime/plugin/mru.vim &quot; &quot; &lt; Command-T - <a href="http://www.vim.org/scripts/script.php?script_id=3025" target="_blank" rel="external">http://www.vim.org/scripts/script.php?script_id=3025</a> &quot; Command-T plug-in provides an extremely fast, intuitive mechanism for opening filesa: &quot; info -&lt; :help CommandT &quot; screencast and web-help -&lt; <a href="http://amix.dk/blog/post/19501" target="_blank" rel="external">http://amix.dk/blog/post/19501</a> &quot; &quot; &quot; Revisions: &quot; &lt; 3.6: Added lots of stuff (colors, Command-T, Vim 7.3 persistent undo etc.) &quot; &lt; 3.5: Paste mode is now shown in status line if you are in paste mode &quot; &lt; 3.4: Added mru.vim &quot; &lt; 3.3: Added syntax highlighting for Mako mako.vim &quot; &lt; 3.2: Turned on python_highlight_all for better syntax &quot; highlighting for Python &quot; &lt; 3.1: Added revisions ;) and bufexplorer.vim &quot; &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; General &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; set encoding=utf-8 set fileencodings=ucs-bom,utf-8,gbk,default,latin1 &quot; use chinese help set helplang=cn &quot; Sets how many lines of history VIM has to remember set history=700 &quot; Enable filetype plugin filetype plugin on filetype indent on &quot; Set to auto read when a file is changed from the outside set autoread &quot; With a map leader it’s possible to do extra key combinations &quot; like w saves the current file let mapleader = &quot;,&quot; let g:mapleader = &quot;,&quot; &quot; Fast saving nmap w :w! &quot; Fast editing of the .vimrc map e :e! ~/.vim_runtime/vimrc &quot; When vimrc is edited, reload it autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; VIM user interface &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; Set 7 lines to the curors - when moving vertical.. set so=7 set wildmenu &quot;Turn on WiLd menu set ruler &quot;Always show current position set cmdheight=2 &quot;The commandbar height set hid &quot;Change buffer - without saving &quot; Set backspace config set backspace=eol,start,indent set whichwrap+=&lt;,&gt;,h,l set ignorecase &quot;Ignore case when searching set smartcase set hlsearch &quot;Highlight search things set incsearch &quot;Make search act like search in modern browsers set nolazyredraw &quot;Don’t redraw while executing macros set magic &quot;Set magic on, for regular expressions set showmatch &quot;Show matching bracets when text indicator is over them set mat=2 &quot;How many tenths of a second to blink &quot; No sound on errors set noerrorbells set novisualbell set t_vb= set tm=500 &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Colors and Fonts &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; syntax enable &quot;Enable syntax hl &quot; Set font according to system if MySys() == &quot;mac&quot; set gfn=Menlo:h14 set shell=/bin/bash elseif MySys() == &quot;windows&quot; set gfn=Bitstream\ Vera\ Sans\ Mono:h10 elseif MySys() == &quot;linux&quot; set gfn=Monospace\ 10 set shell=/bin/bash endif if has(&quot;gui_running&quot;) set guioptions-=T set t_Co=256 set background=dark colorscheme peaksea set nonu else colorscheme zellner set background=dark set nonu endif set encoding=utf8 try lang en_US catch endtry set ffs=unix,dos,mac &quot;Default file types &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Files, backups and undo &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; Turn backup off, since most stuff is in SVN, git anyway… set nobackup set nowb set noswapfile &quot;Persistent undo try if MySys() == &quot;windows&quot; set undodir=C:\Windows\Temp else set undodir=~/.vim_runtime/undodir endif set undofile catch endtry &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Text, tab and indent related &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; set expandtab set shiftwidth=4 set tabstop=4 set smarttab set lbr set tw=500 set ai &quot;Auto indent set si &quot;Smart indet set wrap &quot;Wrap lines &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Visual mode related &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; Really useful! &quot; In visual mode when you press <em> or # to search for the current selection vnoremap </em> :call VisualSearch(‘f’) vnoremap # :call VisualSearch(‘b’) &quot; When you press gv you vimgrep after the selected text vnoremap gv :call VisualSearch(‘gv’) map g :vimgrep // <strong>/<em>. function! CmdLine(str) exe &quot;menu Foo.Bar :&quot; . a:str emenu Foo.Bar unmenu Foo endfunction &quot; From an idea by Michael Naumann function! VisualSearch(direction) range let l:saved_reg = @&quot; execute &quot;normal! vgvy&quot; let l:pattern = escape(@&quot;, ‘\/.</em>$^~[]’) let l:pattern = substitute(l:pattern, &quot;\n$&quot;, &quot;&quot;, &quot;&quot;) if a:direction == ‘b’ execute &quot;normal ?&quot; . l:pattern . &quot;^M&quot; elseif a:direction == ‘gv’ call CmdLine(&quot;vimgrep &quot; . ‘/‘. l:pattern . ‘/‘ . ‘ </strong>/<em>.’) elseif a:direction == ‘f’ execute &quot;normal /&quot; . l:pattern . &quot;^M&quot; endif let @/ = l:pattern let @&quot; = l:saved_reg endfunction &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Command mode related &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; Smart mappings on the command line cno $h e ~/ cno $d e ~/Desktop/ cno $j e ./ cno $c e eCurrentFileDir(&quot;e&quot;) &quot; $q is super useful when browsing on the command line cno $q eDeleteTillSlash() &quot; Bash like keys for the command line cnoremap cnoremap cnoremap cnoremap cnoremap &quot; Useful on some European keyboards map ? $ imap ? $ vmap ? $ cmap ? $ func! Cwd() let cwd = getcwd() return &quot;e &quot; . cwd endfunc func! DeleteTillSlash() let g:cmd = getcmdline() if MySys() == &quot;linux&quot; || MySys() == &quot;mac&quot; let g:cmd_edited = substitute(g:cmd, &quot;\(.</em>[/]\).<em>&quot;, &quot;\1&quot;, &quot;&quot;) else let g:cmd_edited = substitute(g:cmd, &quot;\(.</em>[\\]\).<em>&quot;, &quot;\1&quot;, &quot;&quot;) endif if g:cmd == g:cmd_edited if MySys() == &quot;linux&quot; || MySys() == &quot;mac&quot; let g:cmd_edited = substitute(g:cmd, &quot;\(.</em>[/]\).<em>/&quot;, &quot;\1&quot;, &quot;&quot;) else let g:cmd_edited = substitute(g:cmd, &quot;\(.</em>[\\]\).<em>[\\]&quot;, &quot;\1&quot;, &quot;&quot;) endif endif return g:cmd_edited endfunc func! CurrentFileDir(cmd) return a:cmd . &quot; &quot; . expand(&quot;%:p:h&quot;) . &quot;/&quot; endfunc &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Moving around, tabs and buffers &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; Map space to / (search) and c-space to ? (backgwards search) map / map ? map :noh &quot; Smart way to move btw. windows map j map k map h map l &quot; Close the current buffer map bd :Bclose &quot; Close all the buffers map ba :1,300 bd! &quot; Use the arrows to something usefull map :bn map :bp &quot; Tab configuration map tn :tabnew map te :tabedit map tc :tabclose map tm :tabmove &quot; When pressing cd switch to the directory of the open buffer map cd :cd %:p:h command! Bclose call BufcloseCloseIt() function! BufcloseCloseIt() let l:currentBufNum = bufnr(&quot;%&quot;) let l:alternateBufNum = bufnr(&quot;#&quot;) if buflisted(l:alternateBufNum) buffer # else bnext endif if bufnr(&quot;%&quot;) == l:currentBufNum new endif if buflisted(l:currentBufNum) execute(&quot;bdelete! &quot;.l:currentBufNum) endif endfunction &quot; Specify the behavior when switching between buffers try set switchbuf=usetab set stal=2 catch endtry &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Statusline &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; Always hide the statusline set laststatus=2 &quot; Format the statusline set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c function! CurDir() let curdir = substitute(getcwd(), ‘/Users/amir/‘, &quot;~/&quot;, &quot;g&quot;) return curdir endfunction function! HasPaste() if &amp;paste return ‘PASTE MODE ‘ else return ‘’ endif endfunction &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Parenthesis/bracket expanding &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; vnoremap $1 <code>&amp;lt;a)</code> vnoremap $2 <code>&amp;lt;a]</code> vnoremap $3 <code>&amp;lt;a}</code> vnoremap $$ <code>&amp;lt;a&amp;quot;</code> vnoremap $q <code>&amp;lt;a&#39;</code> vnoremap $e <code>&amp;lt;a&amp;quot;</code> &quot; Map auto complete of (, &quot;, ‘, [ inoremap $1 ()i inoremap $2 []i inoremap $3 {}i inoremap $4 {o}O inoremap $q ‘’i inoremap $e &quot;&quot;i inoremap $t &lt;&gt;i &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; General Abbrevs &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; iab xdate =strftime(&quot;%d/%m/%y %H:%M:%S&quot;) &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Editing mappings &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot;Remap VIM 0 map 0 ^ &quot;Move a line of text using ALT+[jk] or Comamnd+[jk] on mac nmap mz:m+<code>z nmap mz:m-2</code>z vmap :m’&lt;+<code>mzgv</code>yo<code>z vmap :m&#39;&amp;lt;2 cr&amp;gt;</code>&lt;my<code>nmap vmap vmap endif &amp;quot;Delete trailing white space, useful for Python ;) func! DeleteTrailingWS() exe &amp;quot;normal mz&amp;quot; %s/\s\+$//ge exe &amp;quot;normal</code>z&quot; endfunc autocmd BufWrite </em>.py :call DeleteTrailingWS() set guitablabel=%t &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Cope &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; Do :help cope if you are unsure what cope is. It’s super useful! map cc :botright cope map n :cn map p :cp &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; bufExplorer plugin &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; let g:bufExplorerDefaultHelp=0 let g:bufExplorerShowRelativePath=1 map o :BufExplorer &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Minibuffer plugin &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; let g:miniBufExplModSelTarget = 1 let g:miniBufExplorerMoreThanOne = 2 let g:miniBufExplModSelTarget = 0 let g:miniBufExplUseSingleClick = 1 let g:miniBufExplMapWindowNavVim = 1 let g:miniBufExplVSplit = 25 let g:miniBufExplSplitBelow=1 let g:bufExplorerSortBy = &quot;name&quot; autocmd BufRead,BufNew :call UMiniBufExplorer map u :TMiniBufExplorer &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Omni complete functions &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; autocmd FileType css set omnifunc=csscomplete#CompleteCSS &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Spell checking &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot;Pressing ,ss will toggle and untoggle spell checking map ss :setlocal spell! &quot;Shortcuts using map sn ]s map sp [s map sa zg map s? z= &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Python section &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; let python_highlight_all = 1 au FileType python syn keyword pythonDecorator True None False self au BufNewFile,BufRead <em>.jinja set syntax=htmljinja au BufNewFile,BufRead </em>.mako set ft=mako au FileType python inoremap $r return au FileType python inoremap $i import au FileType python inoremap $p print au FileType python inoremap $f #— PH ———————————————-FP2xi au FileType python map 1 /class au FileType python map 2 /def au FileType python map C ?class au FileType python map D ?def &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; JavaScript section &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; au FileType javascript call JavaScriptFold() au FileType javascript setl fen au FileType javascript setl nocindent au FileType javascript imap AJS.log();hi au FileType javascript imap alert();hi au FileType javascript inoremap $r return au FileType javascript inoremap $f //— PH ———————————————-FP2xi function! JavaScriptFold() setl foldmethod=syntax setl foldlevelstart=1 syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend function! FoldText() return substitute(getline(v:foldstart), ‘{.<em>‘, ‘{…}’, ‘’) endfunction setl foldtext=FoldText() endfunction &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; MRU plugin &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; let MRU_Max_Entries = 400 map f :MRU &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Command-T &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; let g:CommandTMaxHeight = 15 set wildignore+=</em>.o,<em>.obj,.git,</em>.pyc noremap j :CommandT noremap y :CommandTFlush &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; Vim grep &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; let Grep_Skip_Dirs = ‘RCS CVS SCCS .svn generated’ set grepprg=/bin/grep\ -nH &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; =&lt; MISC &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; &quot; Remove the Windows ^M - when the encodings gets messed up noremap m mmHmt:%s///ge’tzt’m &quot;Quickly open a buffer for scripbble map q :e ~/buffer au BufRead,BufNewFile ~/buffer iab xh1 =========================================== map pp :setlocal paste! map bb :cd .. de&gt;</p><p>本文使用Blog_Backup未注册版本导出，请到soft.pt42.com注册。</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84681/" itemprop="url">
+                传说中的Lost又出现了
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>不经意间浏览了土豆，惊奇的发现了Lost,土豆居然买了版权，又有一年的时间看了 <a href="http://zone.tudou.com/lost/" target="_blank" rel="external">http://zone.tudou.com/lost/</a></p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84680/" itemprop="url">
+                Ubuntu 下编译PHP源码
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>PHP版本：5.3.3 </p><p>1.确保以安装build-essential,如果没有则执行 sudo apt-get install build-essential </p><p>2.执行 tar -zxvf php-5.3.3.tar.bz2 </p><p>3.cd php-5.3.3 </p><p>4. ./buidconf </p><p> &nbsp;&nbsp;&nbsp;如果出现一下错误： You should not run buildconf in a release package. use buildconf –force to override this check. </p><p> &nbsp;&nbsp;&nbsp;执行 ./buildconf –force </p><p> &nbsp;&nbsp;&nbsp;可能会提示： Forcing buildconf buildconf: checking installation… buildconf: autoconf not found. You need autoconf version 2.13 or newer installed to build PHP from SVN. make: <em>*</em> [buildmk.stamp] 错误 1 </p><p> &nbsp;&nbsp;&nbsp;则说明没有安装autoconf，需要安装再执行buildconf，但是必须安装2.13版，如果从源上安装高版本肯能会报： Forcing buildconf buildconf: checking installation… buildconf: autoconf version 2.65 (ok) buildconf: Your version of autoconf likely contains buggy cache code. Running vcsclean for you. To avoid this, install autoconf-2.13. Can’t figure out your VCS, not cleaning. </p><p> &nbsp;&nbsp;&nbsp;从<a href="http://mirrors.kernel.org/gnu/autoconf/autoconf-2.13.tar.gz" target="_blank" rel="external">autoconf－2.13</a>下载，然后执行</p><p> &nbsp;&nbsp;&nbsp;tar -xzf autoconf-2.13.tar.gz </p><p> &nbsp;&nbsp;&nbsp;cd autoconf-2.13 </p><p> &nbsp;&nbsp;./configure </p><p> &nbsp;&nbsp;&nbsp;make </p><p> &nbsp;&nbsp;&nbsp;make install </p><p> &nbsp;&nbsp;&nbsp;安装完成后执行： ./buildconf –force 成功！ </p><p> &nbsp;&nbsp;&nbsp;然后执行： ./configure 如果没有安装libxml2，可能会提示需要安装，</p><p> &nbsp;&nbsp;&nbsp;执行： sudo apt-get install libxml2-dev </p><p> &nbsp;&nbsp;&nbsp;然后再执行./configure 成功。 执行make </p><p> &nbsp;&nbsp;ok!结束!! make test测试下吧</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84679/" itemprop="url">
+                发布豆瓣抓0.1版－－－－豆瓣一下你想要的东西
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>豆瓣现在越来越牛了，当发现新的东西也许已经不会直接Google或百度，而是先豆瓣一下，所以我觉得可能真的需要这样一个浏览器的扩展，直接搜索，目前只有chrome的扩展，firefox的可能以后会发布。 地址：<a href="http://code.google.com/p/doubanscrape/" target="_blank" rel="external">豆瓣抓</a></p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84678/" itemprop="url">
+                x86_64的CentOS5.4安装字体
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>虚拟机中安装64位的Centos5.4版，但是中文乱码，网上找了解决方法，先用yum安装字体包，发现完全没用，然后尝试下载rpm包编译，发现下载一个包要4小时，直接放弃。后来自己去下了文泉驿字体，自己编译安装，OK，搞定。看来这年头网上的东西果然不太靠谱了（除了我的）。</p><p>本文使用Blog_Backup未注册版本导出，请到soft.pt42.com注册。</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2013/08/11/2013-08-11-84677/" itemprop="url">
                 复旦大学陈果老师 孤独论 朋友论 学习论 生存论
               </a>
@@ -464,316 +769,11 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84672/" itemprop="url">
-                PHP发送邮件的随想
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p> &nbsp;今天要写邮件发送的功能，其实这玩意以前也写过，但是很久没用了，也淡忘了。所以想写下来记录了。<br> &nbsp;PHP里用的多的实现方式无非就几种：mail函数，smtp，sendmail。最常用的可能就是smtp了，这玩意儿相对安全，而且配置起来也方便，主要适用socket技术实现，只是碰到一些特殊的邮箱会比较麻烦，如：gmail。mail函数在程序里使用是很方便，但是上线后会经常有问题，而且这个函数好像是将执行脚本的服务器当作邮件服务器来发送的，所以配置起来一定相当麻烦，所以用的人也相对少了。sendmail不太了解，应该是一个Linux下的应用，php通过命令函数来执行其操作。</p><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84671/" itemprop="url">
-                PHP的OB缓冲区
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p>&nbsp; &nbsp;其实之前也看过OB库的缓存使用，但是当时并没有真正理解这个的真正作用是什么，直到前两天项目上出了问题，才真正使用到它，才大概了解到他是用处。</p><p>&nbsp; &nbsp; 这个函数库用的最多的地方可能是在大多数框架的模板模块中，它将从ob_start()开启后的所有输出（echo,print,var_dump等）缓存到内存中，并不直接输出；当你需要缓冲区的内容时可以使用ob_get_contents()函数来获取其所有内容，它将以字符串形式返回，但同样不会自动输出；如果你想要其自动输出缓冲区里的内容可以使用ob_flush()或ob_end_flush()，前者只是将之前的内容输出，后者除了输出还会关闭当前缓冲区，则之后的输出都会正常输出。ob_end_clean() 函数会清空缓冲区，并关闭，但是不会将内容输出 ；他同样也有ob_clean函数。</p><p><br></p><p>详细使用请参考：<a href="http://www.chhua.com/web-note1781" target="_blank" rel="external">http://www.chhua.com/web-note1781</a></p><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84670/" itemprop="url">
-                用sae写GTD简易系统
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p> &nbsp;&nbsp;&nbsp;今天有兴致写个GTD的系统，虽然很简易，但基本的GTD概念也都涉及了，设计思路是在网页上安排时间规划，后端有程序执行监控，发现当前时间内有任务则发短信通知到我手机。</p><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84669/" itemprop="url">
-                看《那些年》读《那些年》
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p><br>看了《那些年》，读了《那些年》，感觉柯腾可能喜欢的沈佳宜并非真正的沈佳宜，而只是的他理想中的沈佳宜，而沈佳宜可能喜欢的是真正的柯腾吧。无论如何，逝去的时光已不可能再追回，我们自己当年的“沈佳宜”可能已经成为了陪你走完下半生的人，也可能已经如小说中那样，另嫁他人，但是还是会偶尔会一起那段懵懂的时光。</p><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84668/" itemprop="url">
-                PHP pack二进制压缩笔记
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p>在之前的与C++交互中，我们使用PHP先做二进制压缩，再将压缩内容通过socket发送。<br>pack中的压缩参数根据字节的大小分为多种情况。<br>长度 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;参数</p><p>1个字节 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C</p><p>2个字节整型 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n</p><p>2个字节字串 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v</p><p>4个字节整型 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N</p><p>4个字节字串 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V</p><p>超过4个字节的字串 &nbsp;&nbsp;a+字串长度<br><br>整型的压缩比较特殊，因为在网络中传输整型时，每台主机存在高低位的差异，所以必需要有网络字节序的转换，n和N就是针对16位和32位字节做转换的。</p><p>&nbsp;</p><p>如果遇到8字节整形传输，并且不使用网络字节序的话，需要做特殊转换</p><pre config="brush:php;toolbar:false;">//拆分64位id，分成2个32位的高低位<br>$int_32 = 4294967295;<br>$low = $id &amp; $int_32;<br>$high = $uid &gt;&gt; 32;<br>$uid_bin_64 = pack(&quot;VV&quot;,$low,$high);</pre><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/6/">&raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/6/">&raquo;</a>
   </nav>
 
  </div>
@@ -807,7 +807,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">170</span>
+              <span class="site-state-item-count">172</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -862,7 +862,7 @@
       <div class="footer-inner"> <div class="copyright" >
   
   &copy; &nbsp; 
-  <span itemprop="copyrightYear">2015</span>
+  <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="icon-next-heart"></i>
   </span>
