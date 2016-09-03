@@ -2,8 +2,6 @@
 <html class="theme-next use-motion ">
 <head>
   
-    
-
 
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -195,6 +193,13 @@ setcookie(&amp;apos;test&amp;apos;,&amp;apos;a&amp;apos;,time()+3600,&amp;apos;/
 
         
           
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2016/03/16/2016-03-16/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/16/2016-03-16/" itemprop="commentsCount"></span>
+            </a>
+          </span>
+          
         
       </div>
     </header>
@@ -251,6 +256,10 @@ setcookie(&amp;apos;test&amp;apos;,&amp;apos;a&amp;apos;,time()+3600,&amp;apos;/
 
         
           <div class="comments" id="comments">
+            
+              <div id="disqus_thread">
+                <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+              </div>
             
           </div>
         
@@ -397,6 +406,27 @@ var _hmt = _hmt || [];
     
     
 
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'robbinhan';
+      var disqus_identifier = '2016/03/16/2016-03-16/';
+      var disqus_title = 'PHP的Cookie删除问题';
+      var disqus_url = 'http://robbinhan.github.io/2016/03/16/2016-03-16/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
   
 
 
