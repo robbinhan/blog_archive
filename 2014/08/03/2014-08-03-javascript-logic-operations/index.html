@@ -127,7 +127,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             <i class="menu-item-icon icon-next-home"></i> <br />
-            首頁
+            Startseite
           </a>
         </li>
       
@@ -135,7 +135,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             <i class="menu-item-icon icon-next-archives"></i> <br />
-            歸檔
+            Archiv
           </a>
         </li>
       
@@ -143,7 +143,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             <i class="menu-item-icon icon-next-tags"></i> <br />
-            標籤
+            Tags
           </a>
         </li>
       
@@ -183,7 +183,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          Veröffentlicht am
           <time itemprop="dateCreated" datetime="2014-08-03T11:03:00+08:00" content="2014-08-03">
             2014-08-03
           </time>
@@ -204,7 +204,7 @@
 
       
         <span itemprop="articleBody"><p>周末两天参加PHP Conf China活动，无意间看到某公司出了一道JS题，现场没有答出，回来后Google了才知道原因。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">function <span class="title">show</span><span class="params">(a)</span></span><br><span class="line"> </span>&#123;</span><br><span class="line"> 	alert(<span class="number">2</span>&lt;a&lt;<span class="number">3</span>)</span><br><span class="line"> &#125;</span><br><span class="line"> show(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span><span class="params">(a)</span></span></div><div class="line"> <span class="comment">&#123;</span></div><div class="line"> 	alert(2&lt;a&lt;3)</div><div class="line"> &#125;</div><div class="line"> <span class="title">show</span><span class="params">(1)</span></div></pre></td></tr></table></figure>
 <p>此段代码看着应该返回FALSE，因为逻辑上1\&lt;2，但是最终结果却是TRUE，其实JS解析的时候是看成先解析2\&lt;1，此时结果是FALSE，但是FALSE对于JS来说是会转成int型的0（TRUE就是1），然后0\&lt;3的结果就是TRUE了。</p>
 </span>
       
@@ -268,10 +268,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
+            Übersicht
           </li>
         </ul>
       
@@ -285,22 +285,22 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">172</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-count">175</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">8</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">Kategorien</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">標籤</span>
+              <span class="site-state-item-name">Tags</span>
               </a>
           </div>
 
@@ -334,7 +334,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -359,11 +359,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 強力驅動
+  Erstellt mit  <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主題 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
     NexT
   </a>

@@ -121,7 +121,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             <i class="menu-item-icon icon-next-home"></i> <br />
-            首頁
+            Startseite
           </a>
         </li>
       
@@ -129,7 +129,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             <i class="menu-item-icon icon-next-archives"></i> <br />
-            歸檔
+            Archiv
           </a>
         </li>
       
@@ -137,7 +137,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             <i class="menu-item-icon icon-next-tags"></i> <br />
-            標籤
+            Tags
           </a>
         </li>
       
@@ -177,7 +177,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          Veröffentlicht am
           <time itemprop="dateCreated" datetime="2014-01-21T15:44:00+08:00" content="2014-01-21">
             2014-01-21
           </time>
@@ -197,7 +197,7 @@
       
 
       
-        <span itemprop="articleBody"><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$dh</span> = opendir(<span class="variable">$dir</span>);</span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$dh</span>) &#123;</span><br><span class="line">	<span class="keyword">while</span> (<span class="keyword">false</span> !== (<span class="variable">$file</span> = readdir(<span class="variable">$dh</span>))) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable">$file</span> != <span class="string">'.'</span> &amp;&amp; <span class="variable">$file</span> != <span class="string">'..'</span> &amp;&amp; strpos(<span class="variable">$file</span>, <span class="string">"execute_dump"</span>) !== <span class="keyword">false</span>) &#123;</span><br><span class="line">      <span class="variable">$filename</span> = <span class="variable">$dir</span> . <span class="variable">$file</span>;</span><br><span class="line">      <span class="variable">$file_time</span> = filemtime(<span class="variable">$filename</span>);</span><br><span class="line">      <span class="keyword">if</span> (time() - <span class="variable">$file_time</span> &lt; <span class="number">60</span>) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="variable">$filelist</span>[<span class="variable">$file_time</span>] = <span class="variable">$file</span> . <span class="string">"\r\n"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	closedir(<span class="variable">$dh</span>);</span><br><span class="line">&#125;</span><br><span class="line">ksort(<span class="variable">$filelist</span>);</span><br></pre></td></tr></table></figure>
+        <span itemprop="articleBody"><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$dh = opendir($dir);</div><div class="line"><span class="keyword">if</span> ($dh) &#123;</div><div class="line">	<span class="keyword">while</span> (<span class="keyword">false</span> !== ($file = readdir($dh))) &#123;</div><div class="line">    <span class="keyword">if</span> ($file != <span class="string">'.'</span> &amp;&amp; $file != <span class="string">'..'</span> &amp;&amp; strpos($file, <span class="string">"execute_dump"</span>) !== <span class="keyword">false</span>) &#123;</div><div class="line">      $filename = $dir . $file;</div><div class="line">      $file_time = filemtime($filename);</div><div class="line">      <span class="keyword">if</span> (time() - $file_time &lt; <span class="number">60</span>) &#123;</div><div class="line">        <span class="keyword">continue</span>;</div><div class="line">      &#125;</div><div class="line">      $filelist[$file_time] = $file . <span class="string">"\r\n"</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	closedir($dh);</div><div class="line">&#125;</div><div class="line">ksort($filelist);</div></pre></td></tr></table></figure>
 <p>如果不对文件名进行排序，有时得到的可能会是无序的文件名数组，如果文件中需要按顺序读取分析神马，那这是非常重要的一步。</p>
 </span>
       
@@ -261,10 +261,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
+            Übersicht
           </li>
         </ul>
       
@@ -278,22 +278,22 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">172</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-count">175</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">8</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">Kategorien</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">標籤</span>
+              <span class="site-state-item-name">Tags</span>
               </a>
           </div>
 
@@ -327,7 +327,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -352,11 +352,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 強力驅動
+  Erstellt mit  <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主題 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
     NexT
   </a>

@@ -124,7 +124,7 @@ Google上说这其实就是加载 index 脚本，然后执行运行，并且传"
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             <i class="menu-item-icon icon-next-home"></i> <br />
-            首頁
+            Startseite
           </a>
         </li>
       
@@ -132,7 +132,7 @@ Google上说这其实就是加载 index 脚本，然后执行运行，并且传"
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             <i class="menu-item-icon icon-next-archives"></i> <br />
-            歸檔
+            Archiv
           </a>
         </li>
       
@@ -140,7 +140,7 @@ Google上说这其实就是加载 index 脚本，然后执行运行，并且传"
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             <i class="menu-item-icon icon-next-tags"></i> <br />
-            標籤
+            Tags
           </a>
         </li>
       
@@ -180,7 +180,7 @@ Google上说这其实就是加载 index 脚本，然后执行运行，并且传"
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          Veröffentlicht am
           <time itemprop="dateCreated" datetime="2013-09-14T05:44:00+08:00" content="2013-09-14">
             2013-09-14
           </time>
@@ -200,11 +200,11 @@ Google上说这其实就是加载 index 脚本，然后执行运行，并且传"
       
 
       
-        <span itemprop="articleBody"><p>最近学习 Node 的 Expressjs 框架，看到路由部分，研究了下多文件路由分发的设置方法，突然看到个写法有点搞不懂，不知道最后的小括号代表什么，就 Google 了下，发现还是 js 中比较重要的概念，所以整理记录。以下是 node 中的代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">'./routes/index'</span>)(app);</span><br></pre></td></tr></table></figure></p>
+        <span itemprop="articleBody"><p>最近学习 Node 的 Expressjs 框架，看到路由部分，研究了下多文件路由分发的设置方法，突然看到个写法有点搞不懂，不知道最后的小括号代表什么，就 Google 了下，发现还是 js 中比较重要的概念，所以整理记录。以下是 node 中的代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">'./routes/index'</span>)(app);</div></pre></td></tr></table></figure></p>
 <p>Google上说这其实就是加载 index 脚本，然后执行运行，并且传入 app 这个对象参数。所以右边小括号的作用其实就是直接执行前面加载进来的代码。再详细说明下</p>
-<p>比如一般我们定义和调用函数是这样的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func1</span>(<span class="params"></span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">	alert(<span class="string">"Hello"</span>);</span><br><span class="line">&#125;</span><br><span class="line">func1();</span><br></pre></td></tr></table></figure></p>
+<p>比如一般我们定义和调用函数是这样的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">func1</span>(<span class="params"></span>)</span></div><div class="line">&#123;</div><div class="line">	alert(<span class="string">"Hello"</span>);</div><div class="line">&#125;</div><div class="line">func1();</div></pre></td></tr></table></figure></p>
 <p>这时会弹出 alert 框，并输出 Hello 字符。下面我们换种写法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="string">"Hello"</span>);</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	alert(<span class="string">"Hello"</span>);</div><div class="line">&#125;)()</div></pre></td></tr></table></figure>
 <p>同样也是弹出 alert 框，并输出 Hello 字符。并且这里没有了函数名，这其实是个匿名函数，就是不需要函数名的函数（有点拗口。。。），总而言之吧，他还是个函数，就是有了个特殊的名字。<br>但是发现匿名函数外部还套了层括号，如果把这层括号去掉是否可以呢，答案是否定的。因为 js 会根据运算符的优先级来解析，去掉括号后，发现最右边的小括号优先级搞，他先去解析执行了，然后才会去解析匿名函数，自然是不可能成功的，而且会报错。</p>
 </span>
       
@@ -268,10 +268,10 @@ Google上说这其实就是加载 index 脚本，然后执行运行，并且传"
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
+            Übersicht
           </li>
         </ul>
       
@@ -285,22 +285,22 @@ Google上说这其实就是加载 index 脚本，然后执行运行，并且传"
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">172</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-count">175</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">8</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">Kategorien</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">標籤</span>
+              <span class="site-state-item-name">Tags</span>
               </a>
           </div>
 
@@ -334,7 +334,7 @@ Google上说这其实就是加载 index 脚本，然后执行运行，并且传"
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -359,11 +359,11 @@ Google上说这其实就是加载 index 脚本，然后执行运行，并且传"
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 強力驅動
+  Erstellt mit  <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主題 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
     NexT
   </a>

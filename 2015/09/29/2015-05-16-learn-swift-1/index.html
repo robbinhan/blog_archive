@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="ios,swift," />
+  <meta name="keywords" content="swift,ios," />
 
 
 
@@ -145,7 +145,7 @@ swift中的这点可能是借鉴了Ruby(或是其他语言，但是小弟懂的�
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             <i class="menu-item-icon icon-next-home"></i> <br />
-            首頁
+            Startseite
           </a>
         </li>
       
@@ -153,7 +153,7 @@ swift中的这点可能是借鉴了Ruby(或是其他语言，但是小弟懂的�
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             <i class="menu-item-icon icon-next-archives"></i> <br />
-            歸檔
+            Archiv
           </a>
         </li>
       
@@ -161,7 +161,7 @@ swift中的这点可能是借鉴了Ruby(或是其他语言，但是小弟懂的�
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             <i class="menu-item-icon icon-next-tags"></i> <br />
-            標籤
+            Tags
           </a>
         </li>
       
@@ -201,8 +201,8 @@ swift中的这点可能是借鉴了Ruby(或是其他语言，但是小弟懂的�
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2015-09-29T23:21:51+08:00" content="2015-09-29">
+          Veröffentlicht am
+          <time itemprop="dateCreated" datetime="2015-09-29T23:11:19+08:00" content="2015-09-29">
             2015-09-29
           </time>
         </span>
@@ -228,26 +228,26 @@ swift中的这点可能是借鉴了Ruby(或是其他语言，但是小弟懂的�
 <li>var 和 let的区别</li>
 <li>weak 和 unowned</li>
 </ul>
-<h2 id="?和！">?和！</h2><blockquote>
+<h2 id="和！"><a href="#和！" class="headerlink" title="?和！"></a>?和！</h2><blockquote>
 <p>swift中的这点可能是借鉴了Ruby(或是其他语言，但是小弟懂的少，还有就是Apple内部好像蛮喜欢Ruby，不然也不会有MacRuby O(∩<em>∩)O~~</em>)；问号代表Optional，也可以认为是将这个值初始化为nil(nil这个对象代表空)，再后面写代码逻辑时需要对此值做if判断是否是nil。而！基本正好相反，它代表强制做某件事。</p>
 <p>所以在开发时可能可能会遇到</p>
 </blockquote>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fatal error: unexpectedly found <span class="literal">nil</span> <span class="keyword">while</span> unwrapping an <span class="type">Optional</span> value</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fatal error: unexpectedly found <span class="literal">nil</span> <span class="keyword">while</span> unwrapping an <span class="type">Optional</span> value</div></pre></td></tr></table></figure>
 <blockquote>
 <p>这种错误一般是运行中发生，表示在处理一个Optional的值，但是这个是nil</p>
 </blockquote>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bound value <span class="keyword">in</span> a conditional binding must be of optional type</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bound value <span class="keyword">in</span> a conditional binding must be of <span class="keyword">optional</span> type</div></pre></td></tr></table></figure>
 <blockquote>
 <p>这种错误一般是编译时候发生，表示在if判断的时候遇到，因为判断的值不是Optional初始化过的。</p>
 </blockquote>
 <p><a href="http://letsswift.com/2014/06/swift-questionmark-exclamatorymark/" target="_blank" rel="external">详细讲解请看这篇转载</a></p>
-<h2 id="as向下转型">as向下转型</h2><blockquote>
+<h2 id="as向下转型"><a href="#as向下转型" class="headerlink" title="as向下转型"></a>as向下转型</h2><blockquote>
 <p>比方string to NSString 就用 as 转<br><a href="http://c.biancheng.net/cpp/html/2288.html" target="_blank" rel="external">Swift类型转换</a></p>
 </blockquote>
-<h2 id="var_和_let的区别">var 和 let的区别</h2><blockquote>
+<h2 id="var-和-let的区别"><a href="#var-和-let的区别" class="headerlink" title="var 和 let的区别"></a>var 和 let的区别</h2><blockquote>
 <p>var声明变量，let声明常量</p>
 </blockquote>
-<h2 id="weak_和_unowned">weak 和 unowned</h2><p><a href="http://swifter.tips/retain-cycle/" target="_blank" rel="external">内存管理，WEAK 和 UNOWNED</a></p>
+<h2 id="weak-和-unowned"><a href="#weak-和-unowned" class="headerlink" title="weak 和 unowned"></a>weak 和 unowned</h2><p><a href="http://swifter.tips/retain-cycle/" target="_blank" rel="external">内存管理，WEAK 和 UNOWNED</a></p>
 </span>
       
     </div>
@@ -256,9 +256,9 @@ swift中的这点可能是借鉴了Ruby(或是其他语言，但是小弟懂的�
       
         <div class="post-tags">
           
-            <a href="/tags/ios/" rel="tag">#ios</a>
-          
             <a href="/tags/swift/" rel="tag">#swift</a>
+          
+            <a href="/tags/ios/" rel="tag">#ios</a>
           
         </div>
       
@@ -267,13 +267,13 @@ swift中的这点可能是借鉴了Ruby(或是其他语言，但是小弟懂的�
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/29/2015-06-20-php-cli-exit/" rel="prev">php在cli环境下的exit调用问题</a>
+              <a href="/2015/09/29/Laravel-React-Redux/" rel="prev">Laravel+React+Redux</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/29/2015-05-28-chaogu-four-month-summary/" rel="next">炒股四月总结</a>
+              <a href="/2015/09/29/2015-06-20-php-cli-exit/" rel="next">php在cli环境下的exit调用问题</a>
             
           </div>
         </div>
@@ -318,10 +318,10 @@ swift中的这点可能是借鉴了Ruby(或是其他语言，但是小弟懂的�
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
+            Übersicht
           </li>
         </ul>
       
@@ -335,22 +335,22 @@ swift中的这点可能是借鉴了Ruby(或是其他语言，但是小弟懂的�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">172</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-count">175</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">8</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">Kategorien</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">標籤</span>
+              <span class="site-state-item-name">Tags</span>
               </a>
           </div>
 
@@ -384,7 +384,7 @@ swift中的这点可能是借鉴了Ruby(或是其他语言，但是小弟懂的�
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#?和！"><span class="nav-number">1.</span> <span class="nav-text">?和！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#as向下转型"><span class="nav-number">2.</span> <span class="nav-text">as向下转型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#var_和_let的区别"><span class="nav-number">3.</span> <span class="nav-text">var 和 let的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weak_和_unowned"><span class="nav-number">4.</span> <span class="nav-text">weak 和 unowned</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#和！"><span class="nav-number">1.</span> <span class="nav-text">?和！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#as向下转型"><span class="nav-number">2.</span> <span class="nav-text">as向下转型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#var-和-let的区别"><span class="nav-number">3.</span> <span class="nav-text">var 和 let的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weak-和-unowned"><span class="nav-number">4.</span> <span class="nav-text">weak 和 unowned</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -409,11 +409,11 @@ swift中的这点可能是借鉴了Ruby(或是其他语言，但是小弟懂的�
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 強力驅動
+  Erstellt mit  <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主題 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
     NexT
   </a>

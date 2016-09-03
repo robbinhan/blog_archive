@@ -41,15 +41,12 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Robbinhan's Blog">
 <meta property="og:url" content="http://robbinhan.github.io/index.html">
 <meta property="og:site_name" content="Robbinhan's Blog">
-<meta property="og:description">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Robbinhan's Blog">
-<meta name="twitter:description">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -122,7 +119,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             <i class="menu-item-icon icon-next-home"></i> <br />
-            首頁
+            Startseite
           </a>
         </li>
       
@@ -130,7 +127,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             <i class="menu-item-icon icon-next-archives"></i> <br />
-            歸檔
+            Archiv
           </a>
         </li>
       
@@ -138,7 +135,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             <i class="menu-item-icon icon-next-tags"></i> <br />
-            標籤
+            Tags
           </a>
         </li>
       
@@ -170,6 +167,210 @@
           
           
             
+              <a class="post-title-link" href="/2016/09/03/2016-09-03/" itemprop="url">
+                Unbenannt
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Veröffentlicht am
+          <time itemprop="dateCreated" datetime="2016-09-03T23:13:25+08:00" content="2016-09-03">
+            2016-09-03
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h1 id="JS优化"><a href="#JS优化" class="headerlink" title="JS优化"></a>JS优化</h1><p><a href="https://reaktor.com/blog/javascript-performance-fundamentals-make-bluebird-fast/?utm_source=javascriptweekly&amp;utm_medium=email" target="_blank" rel="external">参考链接</a></p>
+<p>##避免重复创建函数对象，分配过多的内存<br>Bad：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">readFileAsJson</span>(<span class="params">fileName, callback</span>) </span>&#123;</div><div class="line">    fs.readFile(fileName, <span class="string">'utf8'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">error, result</span>) </span>&#123;</div><div class="line">        <span class="comment">// This is a new function object created every time readFileAsJson is called</span></div><div class="line">        <span class="comment">// Since it's a closure, an internal Context object is also</span></div><div class="line">        <span class="comment">// allocated for the closure state</span></div><div class="line">        <span class="keyword">if</span> (error) &#123;</div><div class="line">            <span class="keyword">return</span> callback(error);</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// The try-catch block is needed to handle a possible syntax error from invalid JSON</span></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">var</span> json = <span class="built_in">JSON</span>.parse(result);</div><div class="line">            callback(<span class="literal">null</span>, json);</div><div class="line">        &#125; <span class="keyword">catch</span> (e) &#123;</div><div class="line">            callback(e);</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Good:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs-modified'</span>);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">internalReadFileCallback</span>(<span class="params">error, result</span>) </span>&#123;</div><div class="line">    <span class="comment">// The modified readFile calls the callback with the context object set to `this`,</span></div><div class="line">    <span class="comment">// which is just the original client's callback function</span></div><div class="line">    <span class="keyword">if</span> (error) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>(error);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// The try-catch block is needed to handle a possible syntax error from invalid JSON</span></div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        <span class="keyword">var</span> json = <span class="built_in">JSON</span>.parse(result);</div><div class="line">        <span class="keyword">this</span>(<span class="literal">null</span>, json);</div><div class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</div><div class="line">        <span class="keyword">this</span>(e);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">readFileAsJson</span>(<span class="params">fileName, callback</span>) </span>&#123;</div><div class="line">    <span class="comment">// The modified fs.readFile would take the context object as 4th argument.</span></div><div class="line">    <span class="comment">// There is no need to create a separate plain object to contain `callback` so it</span></div><div class="line">    <span class="comment">// can just be made the context object directly.</span></div><div class="line">    fs.readFile(fileName, <span class="string">'utf8'</span>, internalReadFileCallback, callback);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="尽可能最小化对象大小"><a href="#尽可能最小化对象大小" class="headerlink" title="尽可能最小化对象大小"></a>尽可能最小化对象大小</h2><p>Bad:<br>对象用又创建了新的数组<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">EventEmitter</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>() &#123;</div><div class="line">        <span class="keyword">this</span>.listeners = [];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    addListener(fn) &#123;</div><div class="line">        <span class="keyword">this</span>.listeners.push(fn);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Good:<br>参数直接放入当前的属性<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">EventEmitter</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>() &#123;</div><div class="line">        <span class="keyword">this</span>.length = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    addListener(fn) &#123;</div><div class="line">        <span class="keyword">var</span> index = <span class="keyword">this</span>.length;</div><div class="line">        <span class="keyword">this</span>.length++;</div><div class="line">        <span class="keyword">this</span>[index] = fn;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2016/04/23/2016-04-23/" itemprop="url">
+                Unbenannt
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Veröffentlicht am
+          <time itemprop="dateCreated" datetime="2016-04-23T23:46:31+08:00" content="2016-04-23">
+            2016-04-23
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h1 id="技术学习的一些看法"><a href="#技术学习的一些看法" class="headerlink" title="技术学习的一些看法"></a>技术学习的一些看法</h1><p>近两年全栈开发的概念越发的火了，很多公司也都开始招聘这方面的人才，一人能做多种活，省成本啊。全栈是非常考研个人学习能力的，要会的东西多，范围广；我也做了这么多年技术，也简单总结下技术学习的看法。</p>
+<p>现在的技术圈发展太快，可以说每月都会有新的黑科技出现，对程序员的考验也是非常大；我们在面对这些新的技术时所要做的应该是先学会用，能开发，再考虑是否要深入学习底层知识；有时架构和底层的东西是有共通性的，例如web架构普遍都会采用MVC，httpserver都是基于tcp等，无论用哪种语言开发都离不开这些概念，但是使用的方式又是各不相同，需要我们能快速掌握，举一反三；而全栈技术需要各方面都会。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2016/04/13/2016-04-13/" itemprop="url">
+                Unbenannt
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Veröffentlicht am
+          <time itemprop="dateCreated" datetime="2016-04-13T15:38:05+08:00" content="2016-04-13">
+            2016-04-13
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h1 id="JS函数Curry化遇到的奇怪问题"><a href="#JS函数Curry化遇到的奇怪问题" class="headerlink" title="JS函数Curry化遇到的奇怪问题"></a>JS函数Curry化遇到的奇怪问题</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> f1 = <span class="function"><span class="keyword">function</span> (<span class="params">y</span>) </span>&#123;</div><div class="line">    x += y;</div><div class="line">    <span class="keyword">return</span> f1</div><div class="line">  &#125;</div><div class="line">  f1.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> f1;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(f(<span class="number">3</span>)(<span class="number">2</span>)(<span class="number">1</span>))</div></pre></td></tr></table></figure>
+<p>同样的代码在node下和chrome下执行的结果是不同的：<br>chrome下输出6，而node却是将整个function打出</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123; [<span class="built_in">Function</span>] toString: [<span class="built_in">Function</span>] &#125;</div></pre></td></tr></table></figure>
+<p>firefox下和node类似输出</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>/<span class="title">f1</span>(<span class="params"></span>)</span></div></pre></td></tr></table></figure>
+<p>可以在console下展开查看内容</p>
+<p>而我起初一直以为重写function的toString方法是必须在他的prototype上重写的，但是发现在prototype重写后尽然不是我想要的</p>
+<p>chrome下输出<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> (<span class="params">y</span>) </span>&#123;</div><div class="line">    x += y;</div><div class="line">    <span class="keyword">return</span> f1</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<p>node下输出<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[<span class="built_in">Function</span>]</div></pre></td></tr></table></figure></p>
+<p>firefox下和之前类似输出，只是这次toString方法在prototype属性中</p>
+<p>Google了下，发现prototype定义的方法是给他的实例或者他子类的实例用的，所以f1不会去调用，修改成这样后才会调用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</div><div class="line"> 	<span class="keyword">var</span> f1 = <span class="function"><span class="keyword">function</span> (<span class="params">y</span>) </span>&#123;</div><div class="line">    x += y;</div><div class="line">    <span class="keyword">return</span> f1</div><div class="line">  &#125;</div><div class="line">  f1.prototype.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">123</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">var</span> f2 = <span class="function"><span class="keyword">function</span> (<span class="params">y</span>) </span>&#123;</div><div class="line">    x += y;</div><div class="line">    <span class="keyword">return</span> f2</div><div class="line">  &#125;</div><div class="line">  f2.__proto__ = f1.prototype</div><div class="line">  f1.call(f2)</div><div class="line">  <span class="keyword">return</span> f2;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(f(<span class="number">3</span>)(<span class="number">2</span>)(<span class="number">1</span>))</div></pre></td></tr></table></figure>
+<p>当然此代码在node和firefox下仍然不能正常输出结果，也不知道是为什么!</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2016/03/16/2016-03-16/" itemprop="url">
                 PHP的Cookie删除问题
               </a>
@@ -180,7 +381,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          Veröffentlicht am
           <time itemprop="dateCreated" datetime="2016-03-16T13:27:19+08:00" content="2016-03-16">
             2016-03-16
           </time>
@@ -202,10 +403,80 @@
       
         
           <span itemprop="articleBody"><p>正常情况下删除cookie就是调用setcookie方法，并且将过期时间设置为之前的时间；但是如果添加cookie的时候设置了path或者domain参数的话可能就会产生问题。<br>比方：</p>
-<pre><code>setcookie<span class="list">(<span class="quoted">'test</span>',<span class="quoted">'a</span>',time<span class="list">()</span><span class="number">+3600</span>,<span class="quoted">'/</span>')</span><span class="comment">;</span>
+<pre><code>setcookie(&apos;test&apos;,&apos;a&apos;,time()+3600,&apos;/&apos;);
 </code></pre><p>设置test一个小时后过期，路径在’/‘，域名默认是当前的域名，比如是’www.explame.com’，然后当去删除的时候</p>
-<pre><code>setcookie(<span class="string">'test'</span>,<span class="string">'a'</span>,<span class="keyword">time</span>()-<span class="number">24</span>*<span class="number">3600</span>,<span class="string">'/'</span>,<span class="string">'www.explame.com'</span>);
+<pre><code>setcookie(&apos;test&apos;,&apos;a&apos;,time()-24*3600,&apos;/&apos;,&apos;www.explame.com&apos;);
 </code></pre><p>如果这样写是无法删除的，因为setcookie时默认会在域名前加“.”号，就变成’.www.explame.com’，所以这样写会去删除’.www.explame.com’域名下的test的cookie，而之前添加的并没有删除，解决方法其实就是添加的时候怎么写，删除的时候也怎么写，就是过期时间修改下。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/12/25/2015-12-25/" itemprop="url">
+                JavaScript函数声明与函数表达式写法的区别
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Veröffentlicht am
+          <time itemprop="dateCreated" datetime="2015-12-25T15:27:19+08:00" content="2015-12-25">
+            2015-12-25
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>表面上的差异是“先与后”，使用函数表达式的方式，调用必须在表达式之后，而函数声明则无关前后问题。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">alert(foo); <span class="comment">// function foo() &#123;&#125;</span></div><div class="line">alert(bar); <span class="comment">// undefined</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"><span class="keyword">var</span> bar = <span class="function"><span class="keyword">function</span> <span class="title">bar_fn</span>(<span class="params"></span>) </span>&#123;&#125;;</div><div class="line">alert(foo); <span class="comment">// function foo() &#123;&#125;</span></div><div class="line">alert(bar); <span class="comment">// function bar_fn() &#123;&#125;</span></div></pre></td></tr></table></figure>
+<p>可以看到 foo 的声明是写在 alert 之后，仍然可以被正确调用，因为 JavaScript 解释器会将其提升到 alert 前面，而以函数表达式创建的函数 bar 则不享受此待遇。</p>
+<p>那么bar 究竟有没有被提升呢，其实用 var 声明的变量都会被提升，只不过是被先赋值为 undefined 罢了，所以第二个 alert 弹出了 undefined。这具体要涉及到js的<em>变量对象</em>和<em>执行环境</em>概念</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hereOrThere</span>(<span class="params"></span>) </span>&#123; <span class="comment">//function statement</span></div><div class="line">  <span class="keyword">return</span> <span class="string">'here'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">alert(hereOrThere()); <span class="comment">// alerts 'there'</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hereOrThere</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">'there'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以上代码hereOrThere函数声明两次，声明首先提升了优先级，并且第二次声明覆盖了第一次声明。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> hereOrThere = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">// function expression</span></div><div class="line">  <span class="keyword">return</span> <span class="string">'here'</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">alert(hereOrThere()); <span class="comment">// alerts 'here'</span></div><div class="line"></div><div class="line">hereOrThere = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">'there'</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>以上代码hereOrThere表达式写法两次。</p>
+<p>执行顺序是解释器先声明hereOrThere变量，此时值是undefined，然后将返回here的函数赋值，接着alert调用。这里因为是声明的变量，而js中不会对变量提升优先级，所以是顺序执行。</p>
 </span>
         
       
@@ -246,7 +517,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          Veröffentlicht am
           <time itemprop="dateCreated" datetime="2015-12-25T15:27:19+08:00" content="2015-12-25">
             2015-12-25
           </time>
@@ -334,8 +605,8 @@
           
           
             
-              <a class="post-title-link" href="/2015/12/25/2015-12-25/" itemprop="url">
-                JavaScript函数声明与函数表达式写法的区别
+              <a class="post-title-link" href="/2015/12/23/2015-12-23/" itemprop="url">
+                Node技术进阶脑图
               </a>
             
           
@@ -344,9 +615,9 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2015-12-25T15:27:19+08:00" content="2015-12-25">
-            2015-12-25
+          Veröffentlicht am
+          <time itemprop="dateCreated" datetime="2015-12-23T15:27:19+08:00" content="2015-12-23">
+            2015-12-23
           </time>
         </span>
 
@@ -365,15 +636,7 @@
 
       
         
-          <span itemprop="articleBody"><p>表面上的差异是“先与后”，使用函数表达式的方式，调用必须在表达式之后，而函数声明则无关前后问题。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">alert(foo); <span class="comment">// function foo() &#123;&#125;</span></span><br><span class="line">alert(bar); <span class="comment">// undefined</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> bar = <span class="function"><span class="keyword">function</span> <span class="title">bar_fn</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">alert(foo); <span class="comment">// function foo() &#123;&#125;</span></span><br><span class="line">alert(bar); <span class="comment">// function bar_fn() &#123;&#125;</span></span><br></pre></td></tr></table></figure>
-<p>可以看到 foo 的声明是写在 alert 之后，仍然可以被正确调用，因为 JavaScript 解释器会将其提升到 alert 前面，而以函数表达式创建的函数 bar 则不享受此待遇。</p>
-<p>那么bar 究竟有没有被提升呢，其实用 var 声明的变量都会被提升，只不过是被先赋值为 undefined 罢了，所以第二个 alert 弹出了 undefined。这具体要涉及到js的<em>变量对象</em>和<em>执行环境</em>概念</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hereOrThere</span>(<span class="params"></span>) </span>&#123; <span class="comment">//function statement</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">'here'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(hereOrThere()); <span class="comment">// alerts 'there'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hereOrThere</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'there'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上代码hereOrThere函数声明两次，声明首先提升了优先级，并且第二次声明覆盖了第一次声明。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hereOrThere = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">// function expression</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">'here'</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">alert(hereOrThere()); <span class="comment">// alerts 'here'</span></span><br><span class="line"></span><br><span class="line">hereOrThere = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'there'</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>以上代码hereOrThere表达式写法两次。</p>
-<p>执行顺序是解释器先声明hereOrThere变量，此时值是undefined，然后将返回here的函数赋值，接着alert调用。这里因为是声明的变量，而js中不会对变量提升优先级，所以是顺序执行。</p>
+          <span itemprop="articleBody"><p><img src="http://i.imgur.com/nvmHDJ4.jpg" alt="Nodejs"></p>
 </span>
         
       
@@ -414,7 +677,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          Veröffentlicht am
           <time itemprop="dateCreated" datetime="2015-12-23T15:27:19+08:00" content="2015-12-23">
             2015-12-23
           </time>
@@ -474,68 +737,6 @@
           
           
             
-              <a class="post-title-link" href="/2015/12/23/2015-12-23/" itemprop="url">
-                Node技术进阶脑图
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2015-12-23T15:27:19+08:00" content="2015-12-23">
-            2015-12-23
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p><img src="http://i.imgur.com/nvmHDJ4.jpg" alt="Nodejs"></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
               <a class="post-title-link" href="/2015/12/22/2015-12-22/" itemprop="url">
                 加密算法
               </a>
@@ -546,7 +747,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          Veröffentlicht am
           <time itemprop="dateCreated" datetime="2015-12-22T20:11:19+08:00" content="2015-12-22">
             2015-12-22
           </time>
@@ -633,7 +834,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          Veröffentlicht am
           <time itemprop="dateCreated" datetime="2015-12-21T14:11:19+08:00" content="2015-12-21">
             2015-12-21
           </time>
@@ -659,224 +860,6 @@
 <li>学习能力，尤其是快速的学习并掌握的能力，技术日新月异，程序员需要每天都吸取养分，不断接收新的信息，不断学习新的技术；比如当你开发项目时领导交给你个任务，但是你之前从没接触过此类技术，不知道从何入手，于是你google了，查到了些解决方法，但是他是个新的东西，时间又比较紧，你就需要快速学习并简单掌握他。</li>
 <li>表达能力，也就是能否与其他同事朋友有效的沟通，注意是有效沟通，就是指用最精简的语言表达出100%的意思，表达能力少若些的也能表达自己的意思，但可能就需要花十几分钟或更久；最基础的是与同是技术人员的表达要清楚，快速；其次是同行业的非技术人员，比如产品，运营等；再就是非同行业的完全不懂的人，比如你的爸妈，爷爷奶奶等。</li>
 </ol>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/10/30/技术迭代/" itemprop="url">
-                技术迭代
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2015-10-30T17:45:31+08:00" content="2015-10-30">
-            2015-10-30
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>有段时间没写了，至于之前的react+redux项目后来就实现了右键菜单，然后在好雨云的日本亚马逊节点部署了下，因为我的代码中用到了Google的API，之前也一直在找海外节点的云服务商，正好在v2ex上看到，基本部署还是免费，客服支持也很及时，好评，好评，好评。</p>
-<p>进入正题，今天看到之前关注的一个rails大牛表示放弃rails，而转到meteor，rails的社区好像正在走向末路，前几年还是很火的社区，这两年随着各种海外公司的应用，再弃之，包括rails框架本身的一些问题，有些停步不前，人气越来越少；感觉就像几年前的PHP社区，好在PHP现在有个laravel，社区的人气好像有多了起来，github上的star数也是近2w，在PHP框架中排最前，而且仅仅用了2两年不到的时间，所以也许rails或者说Ruby社区也会重新归来。</p>
-<p>现在的服务端技术越来越多，热点也在不断的变化，以前是PHP、后来是rails，然后是nodejs，再来是golang，近期又是react、meteor等，这样频繁的变化，作为程序员的我们该怎么选择？像这样的问题大家网上Google下一大把，各种社区论坛都会有，每人都有自己的建议；在我看来不用去过多的猜测将来什么会火，什么会成为主流技术，只要跟随趋势，就和股票市场一样，尽量不要去抄底，博反弹，行情不好，怎么抄都不是底，而是应该跟随趋势，等到趋势、热点都确认了，你抄进去跟着吃点肉就好，大多数投资股票失败的都是想要抄底，但是也都死在『抄底』；当然技术圈可能不存在大行情不好的情况，但是热点确实不断在变的，我们要做的是热点确认后能快速掌握，灵活切换，这才是程序员的核心价值，能做到这点应该已经是大牛；但是作为兴趣爱好或者时间充裕多掌握些自然也不是坏事。^_^</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/10/01/Redux学习总结2/" itemprop="url">
-                Redux学习总结2
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2015-10-01T16:23:19+08:00" content="2015-10-01">
-            2015-10-01
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><div id="badge-container-robbinhan-master-undefined" class="hexo-github" style="width: 100%"></div>
-<script src="/hexo-github/badge.js"></script>
-<script type="text/javascript">
-  loadStyle("/hexo-github/style.css");
-  loadStyle("/hexo-github/octicons/octicons.css");
-  new Badge("#badge-container-robbinhan-master-undefined", "robbinhan", "master", "", false);
-</script>
-
-<p>今天看到laracasts上的react视频，用react实现了一个简单的GistBox，正好我又在学redux，就试着react+redux做了个小Demo，顺便总结下遇到的坑。</p>
-<p><img src="http://ww3.sinaimg.cn/large/6e0aaaa0gw1ewlpvh6nvxj205n0gz74v.jpg" alt="目录结构"></p>
-<p>在<code>assets</code>目录下写代码，再通过gulp将代码实时编译到<code>public/js</code>下的<code>app.js</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Provider &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./containers/App'</span>;</span><br><span class="line"><span class="keyword">import</span> configureStore <span class="keyword">from</span> <span class="string">'./store/store'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = configureStore;</span><br><span class="line"></span><br><span class="line">React.render(</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="title">Provider</span> <span class="attribute">store</span>=<span class="value">&#123;store&#125;</span> &gt;</span></span><br><span class="line">        &#123;() =&gt; <span class="tag">&lt;<span class="title">App</span> /&gt;</span> &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="title">Provider</span>&gt;</span>,</span><br><span class="line">    document.getElementById('app'));</span></span><br></pre></td></tr></table></figure>
-<p><code>index.js</code>中将store传入<code>App</code>组件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; fetchGists,changeUserName &#125; <span class="keyword">from</span> <span class="string">'../actions/user'</span>;</span><br><span class="line"><span class="keyword">import</span> UserBox <span class="keyword">from</span> <span class="string">'../components/UserBox'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mapStateToProps</span>(<span class="params">state</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'connet state'</span>,state)</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    username: state.gists.username,</span><br><span class="line">    items: state.gists.items || []</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mapDispatchToProps</span>(<span class="params">dispatch</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    handlerSubmit: (username) =&gt; dispatch(fetchGists(username)),</span><br><span class="line">    handlerChange: (username) =&gt; dispatch(changeUserName(username))</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(</span><br><span class="line">  mapStateToProps,</span><br><span class="line">  mapDispatchToProps</span><br><span class="line">)(UserBox);</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span>;</span><br><span class="line"><span class="comment">/*</span><br><span class="line"> * action types</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">showGistsRequest</span> (<span class="params">username</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        type: <span class="string">'SHOW_GISTS_REQUEST'</span>,</span><br><span class="line">        username</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">showGistsSuccess</span> (<span class="params">username,json</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        type: <span class="string">'SHOW_GISTS_SUCCESS'</span>,</span><br><span class="line">        username,</span><br><span class="line">        posts: json.map(child =&gt; child.html_url),<span class="comment">//function(child)&#123;return child.data&#125;</span></span><br><span class="line">            receivedAt: <span class="built_in">Date</span>.now()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">showGistsFail</span> (<span class="params">username</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        type: <span class="string">'SHOW_GISTS_FAIL'</span>,</span><br><span class="line">        username</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">changeUserName</span> (<span class="params">username</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    type: <span class="string">'CHANGE_USER_NAME'</span>,</span><br><span class="line">    username</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 来看一下我们写的第一个 thunk action creator！</span></span><br><span class="line"><span class="comment">// 虽然内部操作不同，你可以像其它 action creator 一样使用它：</span></span><br><span class="line"><span class="comment">// store.dispatch(fetchPosts('reactjs'));</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">fetchGists</span>(<span class="params">username</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Thunk middleware 知道如何处理函数。</span></span><br><span class="line">  <span class="comment">// 这里把 dispatch 方法通过参数的形式参给函数，</span></span><br><span class="line">  <span class="comment">// 以此来让它自己也能 dispatch action。</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">dispatch</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 首次 dispatch：更新应用的 state 来通知</span></span><br><span class="line">    <span class="comment">// API 请求发起了。</span></span><br><span class="line"></span><br><span class="line">    dispatch(showGistsRequest(username));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// thunk middleware 调用的函数可以有返回值，</span></span><br><span class="line">    <span class="comment">// 它会被当作 dispatch 方法的返回值传递。</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 这个案例中，我们返回一个等待处理的 promise。</span></span><br><span class="line">    <span class="comment">// 这并不是 redux middleware 所必须的，但是我们的一个约定。</span></span><br><span class="line">    <span class="comment">// </span></span><br><span class="line">    axios.get(<span class="string">`https://api.github.com/users/<span class="subst">$&#123;username&#125;</span>/gists`</span>)</span><br><span class="line">    .then(response =&gt; response.data)</span><br><span class="line">    .then(<span class="function"><span class="keyword">function</span>(<span class="params">json</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'response json'</span>,json); </span><br><span class="line">      dispatch(showGistsSuccess(username, json)); </span><br><span class="line">    &#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">ex</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'parsing failed'</span>, ex)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 在实际应用中，还需要</span></span><br><span class="line">      <span class="comment">// 捕获网络请求的异常。</span></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>connect</code>会将UserBox和store连接；在mapStateToProps中的state参数就是store.getState方法的返回值，mapDispatchToProps方法中定义了一些方法与dispatch绑定，这些方法和state都会通过props传递给子组件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> GistForm <span class="keyword">from</span> <span class="string">'./GistForm'</span>;</span><br><span class="line"><span class="keyword">import</span> GistDiv <span class="keyword">from</span> <span class="string">'./GistDiv'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; fetchGists &#125; <span class="keyword">from</span> <span class="string">'../actions/user'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">UserBox</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"userBox"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">h1</span>&gt;</span>GistBox<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">GistForm</span> <span class="attribute">username</span>=<span class="value">&#123;this.props.username&#125;</span> </span><br><span class="line">        <span class="attribute">handlerSubmit</span>=<span class="value">&#123;this.props.handlerSubmit&#125;</span>   </span><br><span class="line">        <span class="attribute">handlerChange</span>=<span class="value">&#123;this.props.handlerChange&#125;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">GistDiv</span> <span class="attribute">items</span>=<span class="value">&#123;this.props.items&#125;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    )</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>UserBox中将上层通过props传递的方法和参数传递给子组件处理</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">UserList</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">let</span> self = <span class="keyword">this</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'gistform'</span>,self.props)</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">onSubmit</span>=<span class="value">&#123;</span> <span class="attribute">function</span>(<span class="attribute">e</span>) &#123; <span class="attribute">e.preventDefault</span>(); <span class="attribute">self.props.handlerSubmit</span>(<span class="attribute">self.props.username</span>) &#125; &#125; &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"username"</span> </span><br><span class="line">        <span class="attribute">value</span>=<span class="value">&#123;this.props.username&#125;</span> </span><br><span class="line">        <span class="attribute">onChange</span>=<span class="value">&#123;(e)</span> =&gt;</span> self.props.handlerChange(e.target.value)&#125; /&gt;</span><br><span class="line">        <span class="tag">&lt;<span class="title">button</span>&gt;</span>获取<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br><span class="line">    )</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; showGistsRequest,showGistsSuccess,showGistsFail &#125; <span class="keyword">from</span> <span class="string">'../actions/user'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; combineReducers &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * reducer中写每个action的业务逻辑</span><br><span class="line"> * @param  &#123;[type]&#125; state  [description]</span><br><span class="line"> * @param  &#123;[type]&#125; action [description]</span><br><span class="line"> * @return &#123;[type]&#125;        [description]</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">gets</span>(<span class="params">state = &#123;</span><br><span class="line">  isFetching: false,</span><br><span class="line">  items: []</span><br><span class="line">&#125;, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'SHOW_GISTS_REQUEST'</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">      isFetching: <span class="literal">true</span></span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'SHOW_GISTS_SUCCESS'</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">      isFetching: <span class="literal">false</span>,</span><br><span class="line">      items: action.posts,</span><br><span class="line">      lastUpdated: action.receivedAt</span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'SHOW_GISTS_FAIL'</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">      isFetching: <span class="literal">false</span></span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getGists</span>(<span class="params">state = &#123;username:'robbinhan',items:[]&#125;, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'SHOW_GISTS_REQUEST'</span>:</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'SHOW_GISTS_SUCCESS'</span>:</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'SHOW_GISTS_FAIL'</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, gets(state[action.username], action) );</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'CHANGE_USER_NAME'</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state,&#123;</span><br><span class="line">        username: action.username</span><br><span class="line">      &#125;);</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> gistReducer = combineReducers(&#123;</span><br><span class="line">  gists : getGists</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> gistReducer;</span><br></pre></td></tr></table></figure>
-<p>GistForm组件中在input修改输入内容时触发onChange事件，将value传给之前mapDispatchToProps中定义的handlerChange方法，handlerChange方法dispatch给action中的changeUserName方法，并通过reducer来修改state中的属性，onSubmit事件同理，只是其中使用了异步的处理方式，有关异步处理的具体说明请看<a href="http://camsong.github.io/redux-in-chinese/docs/advanced/AsyncActions.html" target="_blank" rel="external">官方手册</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">GistDiv</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">let</span> self = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">let</span> row = self.props.items.map(<span class="function"><span class="keyword">function</span> (<span class="params">url,index</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span>  <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">&#123;url&#125;</span> <span class="attribute">target</span>=<span class="value">"_blank"</span>&gt;</span>&#123;index&#125;<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    &#125;)</span><br><span class="line">    console.log(row)</span><br><span class="line">    return (</span><br><span class="line">     <span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">      &#123; row &#125;</span><br><span class="line">     <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    )</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>GistDiv</code>组件就没什么好说的了，map处理items的数据，渲染出链接</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/30/Redux学习总结1/" itemprop="url">
-                Redux学习总结1
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2015-09-30T07:31:27+08:00" content="2015-09-30">
-            2015-09-30
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>首先Redux是flux思想的一种实现，他的概念中整个APP在runtime中只有一个全局的<code>store</code>，所有的<code>state</code>都存储在这个<code>store</code>，通过<code>action</code>来改变状态，当状态改变时触发对应的<code>reducer</code>，<code>reducer</code>函数实现对应<code>action</code>的业务逻辑，然后返回一个新的<code>state</code>对象，直接上示例代码解释。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//components/UserBox.js</span></span><br><span class="line"><span class="keyword">import</span> React, &#123; Component,PropTypes &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> UserList <span class="keyword">from</span> <span class="string">'../components/UserList'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">UserBox</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"userBox"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">h1</span>&gt;</span>用户列表<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">UserList</span> <span class="attribute">data</span>=<span class="value">&#123;this.props.data&#125;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    )</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Userbox是其中的一个子组件，再下一层的子组件就不一一贴出来了，学过react的应该都能理解UserList那行代码，那么其中的<code>this.props.data</code>这个数据从哪里来呢</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//containers/UserBox.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span>;</span><br><span class="line"><span class="keyword">import</span> UserBox <span class="keyword">from</span> <span class="string">'../components/UserBox'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Which part of the Redux global state does our component want to receive as props?</span></span><br><span class="line"><span class="comment">// 给子组件的props对象定义数据</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mapStateToProps</span>(<span class="params">state</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'mapStateToProps'</span>,state)</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    data: state.users</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Which action creators does it want to receive by props?</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mapDispatchToProps</span>(<span class="params">dispatch</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(</span><br><span class="line">  mapStateToProps,</span><br><span class="line">  mapDispatchToProps</span><br><span class="line">)(UserBox);</span><br></pre></td></tr></table></figure>
-<p>这里通过<code>react-redux</code>的<code>connect</code>模块与react的components连接，并传入<code>mapStateToProps</code>和<code>mapDispatchToProps</code>方法(关于connect的详细说明<a href="https://github.com/rackt/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options" target="_blank" rel="external">看这里</a>)，<code>mapStateToProps</code>方法返回一个对象，<code>connet</code>会把这个对象的属性都map到子组件的<code>this.props</code>对象中，所以我在子组件可以通过<code>this.props.data</code>获取到这里的<code>state.users</code>；那么<code>mapStateToProps</code>方法接收的state参数是从哪里来的？</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//reducers/user.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; SET_VISIBILITY_FILTER,VisibilityFilters &#125; <span class="keyword">from</span> <span class="string">'../actions/user'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; combineReducers &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"><span class="keyword">const</span> &#123; SHOW_ALL &#125; = VisibilityFilters;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * reducer中写每个action的业务逻辑</span><br><span class="line"> * @param  &#123;[type]&#125; state  [description]</span><br><span class="line"> * @param  &#123;[type]&#125; action [description]</span><br><span class="line"> * @return &#123;[type]&#125;        [description]</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">visibilityFilter</span>(<span class="params">state = SHOW_ALL, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">  <span class="keyword">case</span> SET_VISIBILITY_FILTER:</span><br><span class="line">    <span class="keyword">return</span> action.filter;</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    state = [&#123;name:<span class="string">'robbin'</span>,id:<span class="number">1</span>&#125;,&#123;name:<span class="string">'moke'</span>,id:<span class="number">2</span>&#125;]</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> userApp = combineReducers(&#123;</span><br><span class="line">  users : visibilityFilter</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> userApp;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//store/store.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"><span class="keyword">import</span> userReducer <span class="keyword">from</span> <span class="string">'../reducers/user'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> userStore = createStore(userReducer);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> userStore;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//im.js</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Provider &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span>;</span><br><span class="line"><span class="keyword">import</span> UserBox <span class="keyword">from</span> <span class="string">'./containers/UserBox'</span>;</span><br><span class="line"><span class="keyword">import</span> userStore <span class="keyword">from</span> <span class="string">'./store/store'</span>;</span><br><span class="line"></span><br><span class="line">React.render(</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="title">Provider</span> <span class="attribute">store</span>=<span class="value">&#123;userStore&#125;</span> &gt;</span></span><br><span class="line">        &#123;() =&gt; <span class="tag">&lt;<span class="title">UserBox</span> /&gt;</span> &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="title">Provider</span>&gt;</span>,</span><br><span class="line">    document.getElementById('im'));</span></span><br></pre></td></tr></table></figure>
-<p>state其实就是reducer中返回的对象，我在user的reducer中返回了userApp，其中就包含了users属性，根据不同的action的type处理业务逻辑后，返回新的state对象；在store中将它封装起来，在im.js中import进来，render时通过provider将他传入组件。</p>
 </span>
         
       
@@ -934,22 +917,22 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">172</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-count">175</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">8</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">Kategorien</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">標籤</span>
+              <span class="site-state-item-name">Tags</span>
               </a>
           </div>
 
@@ -997,11 +980,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 強力驅動
+  Erstellt mit  <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主題 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
     NexT
   </a>

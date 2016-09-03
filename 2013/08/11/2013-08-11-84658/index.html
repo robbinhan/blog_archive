@@ -41,16 +41,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="&amp;nbsp;昨天项目组提出需要需要将webgame打包成exe文件，来进行安装。简单使用了下NSIS,做下总结。 &amp;nbsp;总体来说还是比较简单的，就是被windows的gbk编码坑了。本来脚本是utf8编码的，中文总是编译不了。后来在高手的指点下尝试了gbk，瞬间解决。。。。 &amp;nbsp;还有就是创建快捷方式的问题（CreateShortCut），此命令的参数里可以填图标，但是必须是绝对路径，">
+<meta name="description" content="&amp;nbsp;昨天项目组提出需要需要将webgame打包成exe文件，来进行安装。简单使用了下NSIS,做下总结。 &amp;nbsp;总体来说还是比较简单的，就是被windows的gbk编码坑了。本来脚本是utf8编码的，中文总是编译不了。后来在高手的指点下尝试了gbk，瞬间解决。。。。 &amp;nbsp;还有就是创建快捷方式的问题（CreateShortCut），此命令的参数里可以填图标，但是必须是绝对路径">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NSIS使用">
 <meta property="og:url" content="http://robbinhan.github.io/2013/08/11/2013-08-11-84658/index.html">
 <meta property="og:site_name" content="Robbinhan's Blog">
-<meta property="og:description" content="&amp;nbsp;昨天项目组提出需要需要将webgame打包成exe文件，来进行安装。简单使用了下NSIS,做下总结。 &amp;nbsp;总体来说还是比较简单的，就是被windows的gbk编码坑了。本来脚本是utf8编码的，中文总是编译不了。后来在高手的指点下尝试了gbk，瞬间解决。。。。 &amp;nbsp;还有就是创建快捷方式的问题（CreateShortCut），此命令的参数里可以填图标，但是必须是绝对路径，">
+<meta property="og:description" content="&amp;nbsp;昨天项目组提出需要需要将webgame打包成exe文件，来进行安装。简单使用了下NSIS,做下总结。 &amp;nbsp;总体来说还是比较简单的，就是被windows的gbk编码坑了。本来脚本是utf8编码的，中文总是编译不了。后来在高手的指点下尝试了gbk，瞬间解决。。。。 &amp;nbsp;还有就是创建快捷方式的问题（CreateShortCut），此命令的参数里可以填图标，但是必须是绝对路径">
 <meta property="og:updated_time" content="2015-10-01T07:01:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NSIS使用">
-<meta name="twitter:description" content="&amp;nbsp;昨天项目组提出需要需要将webgame打包成exe文件，来进行安装。简单使用了下NSIS,做下总结。 &amp;nbsp;总体来说还是比较简单的，就是被windows的gbk编码坑了。本来脚本是utf8编码的，中文总是编译不了。后来在高手的指点下尝试了gbk，瞬间解决。。。。 &amp;nbsp;还有就是创建快捷方式的问题（CreateShortCut），此命令的参数里可以填图标，但是必须是绝对路径，">
+<meta name="twitter:description" content="&amp;nbsp;昨天项目组提出需要需要将webgame打包成exe文件，来进行安装。简单使用了下NSIS,做下总结。 &amp;nbsp;总体来说还是比较简单的，就是被windows的gbk编码坑了。本来脚本是utf8编码的，中文总是编译不了。后来在高手的指点下尝试了gbk，瞬间解决。。。。 &amp;nbsp;还有就是创建快捷方式的问题（CreateShortCut），此命令的参数里可以填图标，但是必须是绝对路径">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -121,7 +121,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             <i class="menu-item-icon icon-next-home"></i> <br />
-            首頁
+            Startseite
           </a>
         </li>
       
@@ -129,7 +129,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             <i class="menu-item-icon icon-next-archives"></i> <br />
-            歸檔
+            Archiv
           </a>
         </li>
       
@@ -137,7 +137,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             <i class="menu-item-icon icon-next-tags"></i> <br />
-            標籤
+            Tags
           </a>
         </li>
       
@@ -177,7 +177,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          Veröffentlicht am
           <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
             2013-08-11
           </time>
@@ -208,13 +208,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2013/08/11/2013-08-11-84659/" rel="prev">orm的各种实现的理解</a>
+              <a href="/2013/08/11/2013-08-11-84657/" rel="prev">浮点数的精确性</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2013/08/11/2013-08-11-84657/" rel="next">浮点数的精确性</a>
+              <a href="/2013/08/11/2013-08-11-84660/" rel="next">active record</a>
             
           </div>
         </div>
@@ -259,10 +259,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
+            Übersicht
           </li>
         </ul>
       
@@ -276,22 +276,22 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">172</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-count">175</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">8</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">Kategorien</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">標籤</span>
+              <span class="site-state-item-name">Tags</span>
               </a>
           </div>
 
@@ -325,7 +325,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -350,11 +350,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 強力驅動
+  Erstellt mit  <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主題 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
     NexT
   </a>

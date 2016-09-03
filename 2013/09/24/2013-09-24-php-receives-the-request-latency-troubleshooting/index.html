@@ -121,7 +121,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             <i class="menu-item-icon icon-next-home"></i> <br />
-            首頁
+            Startseite
           </a>
         </li>
       
@@ -129,7 +129,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             <i class="menu-item-icon icon-next-archives"></i> <br />
-            歸檔
+            Archiv
           </a>
         </li>
       
@@ -137,7 +137,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             <i class="menu-item-icon icon-next-tags"></i> <br />
-            標籤
+            Tags
           </a>
         </li>
       
@@ -177,7 +177,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          Veröffentlicht am
           <time itemprop="dateCreated" datetime="2013-09-24T13:44:00+08:00" content="2013-09-24">
             2013-09-24
           </time>
@@ -185,7 +185,7 @@
 
         
           <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
+            &nbsp; | &nbsp; in
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                 <a href="/categories/php/" itemprop="url" rel="index">
@@ -195,7 +195,7 @@
 
               
               
-                ， 
+                . 
               
 
             
@@ -207,7 +207,7 @@
 
               
               
-                ， 
+                . 
               
 
             
@@ -219,7 +219,7 @@
 
               
               
-                ， 
+                . 
               
 
             
@@ -249,9 +249,9 @@
 
       
         <span itemprop="articleBody"><p>近期项目中突然出现 PHP 接收到请求延迟或者程序里根本收不到，导致用户体验很差。起初怀疑是机房网关转发的问题，后来考虑是内网转发不应该存在延迟问题；之后因为机房有被流量攻击，所以又猜测是因为流量攻击导致带宽过少，请求就收不到，可是每天都有出现这样的情况，所以还是决定要彻底找到原因并解决。<br>因为我们的环境是LAMP，所以首先开启 nginx 访问日志，记录每一条请求的时间，请求路径，请求 body 参数值， fpm 响应时间，nginx 处理请求的整个响应时间。<br>开启一个小时后查看日志已经收到非常多的请求，但是具体哪条请求有问题还不知道，所以使用强大的 awk + grep + sort 命令过滤处理出最慢的前10条请求，再去 PHP 日志里对应查询，突然发现有些请求在 nginx 端已经收到，但是到了 PHP 端却没有执行，或者是一两分钟后才收到；起初我怀疑是否是 nginx 进程太少，来不及转发到 fpm，就 Google 了号就 nginx 配置问题，发现配置基本都正常，和网上推荐的基本一致，甚至进程还比一般开的还多。这时我把思路放到 fpm 上，我发现服务器正好记录了 fpm 的错误日志，立即查看，看到这么一段警告信息</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">Sep</span> <span class="number">23</span> <span class="number">00</span>:<span class="number">01</span>:<span class="number">54</span>.<span class="number">559027</span> [WARNING] [pool www] server reached max_children setting (<span class="number">40</span>), consider raising it</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">Sep</span> <span class="number">23</span> <span class="number">00</span>:<span class="number">01</span>:<span class="number">54</span>.<span class="number">559027</span> [WARNING] [pool www] server reached max_children setting (<span class="number">40</span>), consider raising it</div></pre></td></tr></table></figure>
 <p>这时知道 fpm 子进程可能太少，只有40个子进程；立即查看配置，果然，配置中只开了40个进程，立马调整到100，reload 配置，观察一段时间果然不再有上面的警告出现，但是出现了些如下警告</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">Sep</span> <span class="number">23</span> <span class="number">00</span>:<span class="number">09</span>:<span class="number">12</span>.<span class="number">319416</span> [WARNING] [pool www] seems busy (you may need to increase start_servers, or min/max_spare_servers), spawning <span class="number">8</span> children, there are <span class="number">1</span> idle, and <span class="number">13</span> total children</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">Sep</span> <span class="number">23</span> <span class="number">00</span>:<span class="number">09</span>:<span class="number">12</span>.<span class="number">319416</span> [WARNING] [pool www] seems busy (you may need to increase start_servers, or min/max_spare_servers), spawning <span class="number">8</span> children, there are <span class="number">1</span> idle, and <span class="number">13</span> total children</div></pre></td></tr></table></figure>
 <p>原来是进程开多了，服务器内存不够了，关闭其他进程，不再出现上面警告，观察一段时间 nginx 日志，fpm 响应时间和 nginx 响应时间基本一致，当中不存在延迟问题，至此解决延迟和接收不到请求的问题。</p>
 <p>此次发现分析 nginx 日志和 fpm能得到很多信息，也许网站的并发量上不去就能够解决了，之后考虑做个完整的分析系统。</p>
 </span>
@@ -316,10 +316,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
+            Übersicht
           </li>
         </ul>
       
@@ -333,22 +333,22 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">172</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-count">175</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">8</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">Kategorien</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">標籤</span>
+              <span class="site-state-item-name">Tags</span>
               </a>
           </div>
 
@@ -382,7 +382,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -407,11 +407,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 強力驅動
+  Erstellt mit  <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主題 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
     NexT
   </a>

@@ -42,21 +42,21 @@
 
 
 <meta name="description" content="读取Redis里的值，判断写的是
-= $redis-&amp;gt;get(&apos;key&apos;);1if&amp;#65288;!$ret&amp;#65289;&amp;#123;&amp;#10;  $value = &amp;#39;no key&amp;#39;;&amp;#10;&amp;#125;
-结果当key不存在时，ret返回-1，但是value也永远不会是no key，因为判断条件永远不会成立，除非设置了key的值，因为PHP里-1也为真。目前测试下来5.5、5.">
+= $redis-&amp;gt;get(&apos;key&apos;);123if（!$ret）&amp;#123;  $value = &amp;apos;no key&amp;apos;;&amp;#125;
+结果当key不存在时，ret返回-1，但是value也永远不会是no key，因为判断条件永远不会成立，除非设置了key的值，因为PHP里-1也为真。目前测试下来5.5、5.6都是如此">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PHP的负数也是TRUE">
 <meta property="og:url" content="http://robbinhan.github.io/2013/08/09/2013-08-09-84472/index.html">
 <meta property="og:site_name" content="Robbinhan's Blog">
 <meta property="og:description" content="读取Redis里的值，判断写的是
-= $redis-&amp;gt;get(&apos;key&apos;);1if&amp;#65288;!$ret&amp;#65289;&amp;#123;&amp;#10;  $value = &amp;#39;no key&amp;#39;;&amp;#10;&amp;#125;
-结果当key不存在时，ret返回-1，但是value也永远不会是no key，因为判断条件永远不会成立，除非设置了key的值，因为PHP里-1也为真。目前测试下来5.5、5.">
+= $redis-&amp;gt;get(&apos;key&apos;);123if（!$ret）&amp;#123;  $value = &amp;apos;no key&amp;apos;;&amp;#125;
+结果当key不存在时，ret返回-1，但是value也永远不会是no key，因为判断条件永远不会成立，除非设置了key的值，因为PHP里-1也为真。目前测试下来5.5、5.6都是如此">
 <meta property="og:updated_time" content="2015-12-24T03:08:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP的负数也是TRUE">
 <meta name="twitter:description" content="读取Redis里的值，判断写的是
-= $redis-&amp;gt;get(&apos;key&apos;);1if&amp;#65288;!$ret&amp;#65289;&amp;#123;&amp;#10;  $value = &amp;#39;no key&amp;#39;;&amp;#10;&amp;#125;
-结果当key不存在时，ret返回-1，但是value也永远不会是no key，因为判断条件永远不会成立，除非设置了key的值，因为PHP里-1也为真。目前测试下来5.5、5.">
+= $redis-&amp;gt;get(&apos;key&apos;);123if（!$ret）&amp;#123;  $value = &amp;apos;no key&amp;apos;;&amp;#125;
+结果当key不存在时，ret返回-1，但是value也永远不会是no key，因为判断条件永远不会成立，除非设置了key的值，因为PHP里-1也为真。目前测试下来5.5、5.6都是如此">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -127,7 +127,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             <i class="menu-item-icon icon-next-home"></i> <br />
-            首頁
+            Startseite
           </a>
         </li>
       
@@ -135,7 +135,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             <i class="menu-item-icon icon-next-archives"></i> <br />
-            歸檔
+            Archiv
           </a>
         </li>
       
@@ -143,7 +143,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             <i class="menu-item-icon icon-next-tags"></i> <br />
-            標籤
+            Tags
           </a>
         </li>
       
@@ -183,7 +183,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          Veröffentlicht am
           <time itemprop="dateCreated" datetime="2013-08-09T09:31:00+08:00" content="2013-08-09">
             2013-08-09
           </time>
@@ -204,7 +204,7 @@
 
       
         <span itemprop="articleBody"><p>读取Redis里的值，判断写的是</p>
-<figure class="highlight"><figcaption><span>= $redis->get('key');</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if&#65288;!$ret&#65289;&#123;&#10;  $value = &#39;no key&#39;;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>= $redis->get('key');</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if（!$ret）&#123;</div><div class="line">  $value = &apos;no key&apos;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>结果当key不存在时，ret返回-1，但是value也永远不会是no key，因为判断条件永远不会成立，除非设置了key的值，因为PHP里-1也为真。目前测试下来5.5、5.6都是如此</p>
 </span>
       
@@ -217,13 +217,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2013/08/09/2013-08-09-84473/" rel="prev">中国合伙人</a>
+              <a href="/2013/08/09/2013-08-09-84476/" rel="prev">PHP的==判断</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2013/08/09/2013-08-09-84471/" rel="next">Mysql主键重复导致主从挂掉</a>
+              <a href="/2013/08/09/2013-08-09-84473/" rel="next">中国合伙人</a>
             
           </div>
         </div>
@@ -268,10 +268,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
+            Übersicht
           </li>
         </ul>
       
@@ -285,22 +285,22 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">172</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-count">175</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">8</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">Kategorien</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">標籤</span>
+              <span class="site-state-item-name">Tags</span>
               </a>
           </div>
 
@@ -334,7 +334,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -359,11 +359,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 強力驅動
+  Erstellt mit  <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主題 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
     NexT
   </a>

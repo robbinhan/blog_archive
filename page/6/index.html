@@ -41,15 +41,12 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Robbinhan's Blog">
 <meta property="og:url" content="http://robbinhan.github.io/page/6/index.html">
 <meta property="og:site_name" content="Robbinhan's Blog">
-<meta property="og:description">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Robbinhan's Blog">
-<meta name="twitter:description">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -122,7 +119,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             <i class="menu-item-icon icon-next-home"></i> <br />
-            首頁
+            Startseite
           </a>
         </li>
       
@@ -130,7 +127,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             <i class="menu-item-icon icon-next-archives"></i> <br />
-            歸檔
+            Archiv
           </a>
         </li>
       
@@ -138,7 +135,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             <i class="menu-item-icon icon-next-tags"></i> <br />
-            標籤
+            Tags
           </a>
         </li>
       
@@ -170,8 +167,8 @@
           
           
             
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84672/" itemprop="url">
-                PHP发送邮件的随想
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84601/" itemprop="url">
+                2013-02-08 （雪）
               </a>
             
           
@@ -180,7 +177,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          Veröffentlicht am
           <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
             2013-08-11
           </time>
@@ -201,7 +198,7 @@
 
       
         
-          <span itemprop="articleBody"><p></p><p> &nbsp;今天要写邮件发送的功能，其实这玩意以前也写过，但是很久没用了，也淡忘了。所以想写下来记录了。<br> &nbsp;PHP里用的多的实现方式无非就几种：mail函数，smtp，sendmail。最常用的可能就是smtp了，这玩意儿相对安全，而且配置起来也方便，主要适用socket技术实现，只是碰到一些特殊的邮箱会比较麻烦，如：gmail。mail函数在程序里使用是很方便，但是上线后会经常有问题，而且这个函数好像是将执行脚本的服务器当作邮件服务器来发送的，所以配置起来一定相当麻烦，所以用的人也相对少了。sendmail不太了解，应该是一个Linux下的应用，php通过命令函数来执行其操作。</p><p></p></span>
+          <span itemprop="articleBody"><p></p><h1>今天早上6点45分的从上海开往南京的高铁上有她，她回家了。</h1><h1>今天帮她打了卡，她不需要请假。</h1><h1>下午她联系我，其实只是换个号码，但是我就可以和她聊天了，很开心。</h1><h1>她说她在家3个人一起吃饭，我很开心，至少她安全到家，至少有父母在身边。</h1><p></p></span>
         
       
     </div>
@@ -231,8 +228,8 @@
           
           
             
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84671/" itemprop="url">
-                PHP的OB缓冲区
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84602/" itemprop="url">
+                2013-02-07 (雨夹雪)
               </a>
             
           
@@ -241,7 +238,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          Veröffentlicht am
           <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
             2013-08-11
           </time>
@@ -262,7 +259,7 @@
 
       
         
-          <span itemprop="articleBody"><p></p><p>&nbsp; &nbsp;其实之前也看过OB库的缓存使用，但是当时并没有真正理解这个的真正作用是什么，直到前两天项目上出了问题，才真正使用到它，才大概了解到他是用处。</p><p>&nbsp; &nbsp; 这个函数库用的最多的地方可能是在大多数框架的模板模块中，它将从ob_start()开启后的所有输出（echo,print,var_dump等）缓存到内存中，并不直接输出；当你需要缓冲区的内容时可以使用ob_get_contents()函数来获取其所有内容，它将以字符串形式返回，但同样不会自动输出；如果你想要其自动输出缓冲区里的内容可以使用ob_flush()或ob_end_flush()，前者只是将之前的内容输出，后者除了输出还会关闭当前缓冲区，则之后的输出都会正常输出。ob_end_clean() 函数会清空缓冲区，并关闭，但是不会将内容输出 ；他同样也有ob_clean函数。</p><p><br></p><p>详细使用请参考：<a href="http://www.chhua.com/web-note1781" target="_blank" rel="external">http://www.chhua.com/web-note1781</a></p><p></p></span>
+          <span itemprop="articleBody"><p></p><h1>今天是年前最后一天和她一起上班，她迟到了半小时。</h1><h1>今天聊天不是很多，断断续续，不知道是对我有点反感还是怎么的，但是晚上一起下班的时候又感觉并没有对我不好，还对我笑。</h1><h1>她说她过年期间不上线，我很难过，说不好；她说上线，我说好。他问我不好在哪，我说联系不到她，她说联系她干嘛，其实我听到这句话很难过，我其实很想分分中都能和她聊，和她说话，见到她；我也有猜测她是在逼我像她表白，可能是我想太多，太自作多情了。</h1><p></p></span>
         
       
     </div>
@@ -292,8 +289,8 @@
           
           
             
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84670/" itemprop="url">
-                用sae写GTD简易系统
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84604/" itemprop="url">
+                2013-02-06 （阴）
               </a>
             
           
@@ -302,7 +299,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          Veröffentlicht am
           <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
             2013-08-11
           </time>
@@ -323,7 +320,7 @@
 
       
         
-          <span itemprop="articleBody"><p></p><p> &nbsp;&nbsp;&nbsp;今天有兴致写个GTD的系统，虽然很简易，但基本的GTD概念也都涉及了，设计思路是在网页上安排时间规划，后端有程序执行监控，发现当前时间内有任务则发短信通知到我手机。</p><p></p></span>
+          <span itemprop="articleBody"><p></p><h1>今天她来的很晚，中午到的，上午她短信和我说她不想来上班，还说打电话给她妈，告诉她妈不想上班。</h1><h1>中午她让别人给她带了饭，但是她早饭没吃。</h1><h1>下午她有点生气，其实我更气，那个混蛋居然对她那样，我真想打他一顿。</h1><h1>晚上我们一起加班，我感觉很开心。</h1><p></p></span>
         
       
     </div>
@@ -353,373 +350,7 @@
           
           
             
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84669/" itemprop="url">
-                看《那些年》读《那些年》
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p><br>看了《那些年》，读了《那些年》，感觉柯腾可能喜欢的沈佳宜并非真正的沈佳宜，而只是的他理想中的沈佳宜，而沈佳宜可能喜欢的是真正的柯腾吧。无论如何，逝去的时光已不可能再追回，我们自己当年的“沈佳宜”可能已经成为了陪你走完下半生的人，也可能已经如小说中那样，另嫁他人，但是还是会偶尔会一起那段懵懂的时光。</p><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84668/" itemprop="url">
-                PHP pack二进制压缩笔记
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p>在之前的与C++交互中，我们使用PHP先做二进制压缩，再将压缩内容通过socket发送。<br>pack中的压缩参数根据字节的大小分为多种情况。<br>长度 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;参数</p><p>1个字节 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C</p><p>2个字节整型 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n</p><p>2个字节字串 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v</p><p>4个字节整型 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N</p><p>4个字节字串 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V</p><p>超过4个字节的字串 &nbsp;&nbsp;a+字串长度<br><br>整型的压缩比较特殊，因为在网络中传输整型时，每台主机存在高低位的差异，所以必需要有网络字节序的转换，n和N就是针对16位和32位字节做转换的。</p><p>&nbsp;</p><p>如果遇到8字节整形传输，并且不使用网络字节序的话，需要做特殊转换</p><pre config="brush:php;toolbar:false;">//拆分64位id，分成2个32位的高低位<br>$int_32 = 4294967295;<br>$low = $id &amp; $int_32;<br>$high = $uid &gt;&gt; 32;<br>$uid_bin_64 = pack(&quot;VV&quot;,$low,$high);</pre><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84667/" itemprop="url">
-                PHP socket笔记
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p>经过两次使用PHP的socket与c++交互，感觉需要备份记录。<br>其实，简单来说socket就是以网络形式来操作文件的协议。<br>首先，socket的分阻塞与非阻塞。其概念与同步与异步有相同之处，但也不完全相同。<br>所谓阻塞方式block，顾名思义，就是进程或是线程执行到这些函数时必须等 待某个事件的发生，如果事件没有发生，进程或线程就被阻塞，函数不能立即返回。<br>所谓非阻塞方式non- block，就是进程或线程执行此函数时不必非要等待事件的发生，一旦执行肯定返回，以返回值的不同来反映函数的执行情况，如果事件发生则与阻塞方式相同，若事件没有发生则返回一个代码来告知事件未发生，而进程或线程继续执行，所以效率较高。<br>PHP中有fsockopen的函数，手册上说他也是创建一个socket链接，但是他创建的链接并不能够做监听，并且链接是阻塞执行的；还有个socket函数库，类似socket_connect这样的函数，这个函数库少许复杂，但是功能很齐全，可以支持阻塞与非阻塞。<br></p><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//建立连接</span></span><br><span class="line"><span class="variable">$fsock</span> = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);</span><br><span class="line"><span class="keyword">if</span>(!<span class="variable">$fsock</span>) &#123; </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125; </span><br><span class="line">@socket_set_option(<span class="variable">$fsock</span>, SOL_SOCKET, SO_SNDTIMEO, <span class="keyword">array</span>(sec,<span class="variable">$connectTimeout</span>, <span class="string">"usec"</span> = <span class="number">0</span> ) ); </span><br><span class="line"><span class="variable">$a</span> = @socket_connect(<span class="variable">$fsock</span>, <span class="variable">$hostIp</span>, <span class="variable">$urlInfo</span>[<span class="string">"port"</span>]);</span><br><span class="line"><span class="variable">$ret</span> = socket_select(<span class="variable">$fd_read</span> = <span class="keyword">array</span>(<span class="variable">$fsock</span>), <span class="variable">$fd_write</span>=<span class="keyword">array</span>(<span class="variable">$fsock</span>), <span class="variable">$except</span> = <span class="keyword">NULL</span>, <span class="variable">$connectTimeout</span>, <span class="number">0</span>);</span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$ret</span> != <span class="number">1</span>)&#123; </span><br><span class="line">	trigger_error(<span class="string">"connect error or timeout"</span>);</span><br><span class="line">	@socket_close(<span class="variable">$fsock</span>); </span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">false</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br><p>resource socket_create ( int $domain , int $type , int $protocol )<br><br>这个函数用来创建一个socket资源（此时还没有建立连接），的三个参数是主要用来确认此次连接的网络协议类型（IPV4，传输方式，是否是TCP）<br><br>boolean socket_set_option(resource socket, integer level, integer option, integer value) socket_set_option函数给socket设置一个选项。Level参数设置一个标志级别的常量。有效的值包括：SOL_SOCKET, SOL_TCP和SOL_UDP。Option参数可以参考手册socket_get_option的说明。<br><br>socket_connect函数开始建立连接<br><br>int socket_select ( array &amp;$read , array &amp;$write , array &amp;$except , int $tv_sec [, int $tv_usec = 0 ] )socket_select函数可以完成非阻塞方式工作的程序。<br>$read就是一组资源集合，这个集合中应该包括文件描述符，我们是要监视这些文件描述符的读变化的，即我们关心是否可以从这些文件中读取数据了，如果这个集合中有一个文件可读，select就会返回一个大于0的值，表示有文件可读，如果没有可读的文件，则根据timeout参数再判断是否超时，若超出timeout的时间，select返回0，若发生错误返回负值。可以传入NULL值，表示不关心任何文件的读变化。<br>$write就是一组资源集合，这个集合中应该包括文件描述符，我们是要监视这些文件描述符的写变化的，即我们关心是否可以向这些文件 中写入数据了，如果这个集合中有一个文件可写，select就会返回一个大于0的值，表示有文件可写，如果没有可写的文件，则根据timeout参数再判 断是否超时，若超出timeout的时间，select返回0，若发生错误返回负值。可以传入NULL值，表示不关心任何文件的写变化。<br><br>$except用来监视文件错误异常。<br><br>$tv_sec与$tv_usec是select的超时时间(前面是秒，后面是毫秒)，这个参数至关重要，它可以使select处于三种状态，第一，若将NULL以形参传入，即不传入时间结构，就是将select置于阻塞状态，一定等到监视文件描述符集合中某个文件描述符发生变化为止；第二，若将时间值设为0秒0毫秒，就变成一个纯粹的非阻塞函数，不管文件描述符是否有变化，都立刻返回继续执行，文件无变化返回0，有变化返回一个正值；第三，timeout的值大于0，这就是等待的超时时间，即select在timeout时间内阻塞，超时时间之内有事件到来就返回了，否则在超时后不管怎样一定返回，返回值同上述。</p><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84666/" itemprop="url">
-                PCNTL 函数
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p>pcntl_fork函数是用的最多的，一般用这个库的都是要用这函数的。<br>此函数是用来创造当前进程的子进程的，手册的说法是：“在当前进程当前位置产生分支（子进程）”；此函数成功时，在父进程执行线程内返回产生的子进程的PID，在子进程执行线程内返回0。失败时，在父进程上下文返回-1，不会创建子进程，并且会引发一个PHP错误。<br>&lt;?php<br>$pid = pcntl_fork();//父进程和子进程都会执行下面代码if ($pid == -1) { &nbsp;&nbsp;&nbsp;//错误处理：创建子进程失败时返回-1. &nbsp;&nbsp;&nbsp;&nbsp;die(‘could not fork’);} else if ($pid) { &nbsp;&nbsp;&nbsp;&nbsp;//父进程会得到子进程号，所以这里是父进程执行的逻辑 &nbsp;&nbsp;&nbsp;&nbsp;pcntl_wait($status); //等待子进程中断，防止子进程成为僵尸进程。} else { &nbsp;&nbsp;&nbsp;&nbsp;//子进程得到的$pid为0, 所以这里是子进程执行的逻辑。}<br>?&gt;</p><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84665/" itemprop="url">
-                $_POST与php://input的区别
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p>$_POST 与 php://input可以取到值，$HTTP_RAW_POST_DATA 为空$_POST 以关联数组方式组织提交的数据，并对此进行编码处理，如urldecode，甚至编码转换。php://input 可通过输入流以文件读取方式取得未经处理的POST原始数据</p><p>php://input 允许读取 POST 的原始数据。和 $HTTP_RAW_POST_DATA 比起来，它给内存带来的压力较小，并且不需要任何特殊的 php.ini 设置。php://input 不能用于 enctype=&quot;multipart/form-data&quot;。</p><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84664/" itemprop="url">
-                学习Rails
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
-            2013-08-11
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p></p><p>决定花一月时间学习下Rails，这两天看了点Ruby的语法，感觉也差不多了，就准备学习Rails了，发现Rails这玩意儿确实十分强大，突然感觉，一门语言的强大不仅仅只是性能，在性能不是很差的时候更多应该考虑的是可维护性和快速开发上了。<br></p><p></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2013/08/11/2013-08-11-84663/" itemprop="url">
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84603/" itemprop="url">
                 No Title
               </a>
             
@@ -729,7 +360,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          Veröffentlicht am
           <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
             2013-08-11
           </time>
@@ -750,7 +381,373 @@
 
       
         
-          <span itemprop="articleBody"><p></p></span>
+          <span itemprop="articleBody"><p></p><p>让阅读成为享受</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84606/" itemprop="url">
+                2013-02-05 (雨)
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Veröffentlicht am
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><h1>今天她来的时候快中午了，她说她有点头痛，但是她不知道，她头痛，我心痛。</h1><h1>前天替她买的蝴蝶结到货了，下班后和她一起走，顺便拿给她的。</h1><h1>晚上回来，她说晚饭没吃饱，订的饭都太辣，没怎么吃，早知我就下班再和她去吃东西了。</h1><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84605/" itemprop="url">
+                No Title
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Veröffentlicht am
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>你的情绪需要梳理一下</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84607/" itemprop="url">
+                No Title
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Veröffentlicht am
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>有了钱，你游山玩水流连忘返。</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84608/" itemprop="url">
+                2013-02-04 （阴）
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Veröffentlicht am
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><h1>今天本来以为没什么工作，结果又有新任务，本来可以帮她把对账的功能做好，可是耽搁了，只能明天做好。</h1><h1>晚上她出去和别人吃饭了，人家还放鸽子了，让她饿肚子了。</h1><h1>她说他要让我认她当干姐姐，我没有答应，我很纠结，是不是该就这样一份不可能的爱放在心理，还是等我表白了，再做决定。</h1><h1>她说年前可能会和我出去吃饭。</h1><h1>其实我很喜欢现在和她嘻嘻哈哈的时光，但是我不知道我什么会失去它，如果我无法和她在一起，我只求不会失去它。</h1><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84610/" itemprop="url">
+                No Title
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Veröffentlicht am
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>放弃等于理智的拥有幸福</p><p></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2013/08/11/2013-08-11-84609/" itemprop="url">
+                No Title
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Veröffentlicht am
+          <time itemprop="dateCreated" datetime="2013-08-11T05:49:00+08:00" content="2013-08-11">
+            2013-08-11
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p></p><p>你把地主杀了不是你就富起来</p><p></p></span>
         
       
     </div>
@@ -807,22 +804,22 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">172</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-count">175</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">8</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">Kategorien</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">標籤</span>
+              <span class="site-state-item-name">Tags</span>
               </a>
           </div>
 
@@ -870,11 +867,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 強力驅動
+  Erstellt mit  <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主題 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
     NexT
   </a>

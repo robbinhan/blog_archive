@@ -41,16 +41,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="近期新开发的系统使用了主从来确保线上业务稳定可靠，但是有一次恢复数据时却遇到主从同步挂掉，一查原因才发现原来是插入的主键重复导致主从挂了。  因为从库中已经有数据，其并未丢失，当主库中恢复了数据要往从库同步时发现报主键重复的错误，主从就被停止了。Mysql 配置里可以忽略错误，可是如果忽略了会导致之后数据不一致。  但是平时程序上正常插入数据时如果是在主库就已经主键重复则主库就会报错不会把数据插入">
+<meta name="description" content="近期新开发的系统使用了主从来确保线上业务稳定可靠，但是有一次恢复数据时却遇到主从同步挂掉，一查原因才发现原来是插入的主键重复导致主从挂了。  因为从库中已经有数据，其并未丢失，当主库中恢复了数据要往从库同步时发现报主键重复的错误，主从就被停止了。Mysql 配置里可以忽略错误，可是如果忽略了会导致之后数据不一致。  但是平时程序上正常插入数据时如果是在主库就已经主键重复则主库就会报错不会把数据">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL 主从复制时遇到主键重复问题">
 <meta property="og:url" content="http://robbinhan.github.io/2013/11/23/2013-11-23-mysql-master-slave-replication-problems-encountered-a-duplicate-primary-key/index.html">
 <meta property="og:site_name" content="Robbinhan's Blog">
-<meta property="og:description" content="近期新开发的系统使用了主从来确保线上业务稳定可靠，但是有一次恢复数据时却遇到主从同步挂掉，一查原因才发现原来是插入的主键重复导致主从挂了。  因为从库中已经有数据，其并未丢失，当主库中恢复了数据要往从库同步时发现报主键重复的错误，主从就被停止了。Mysql 配置里可以忽略错误，可是如果忽略了会导致之后数据不一致。  但是平时程序上正常插入数据时如果是在主库就已经主键重复则主库就会报错不会把数据插入">
+<meta property="og:description" content="近期新开发的系统使用了主从来确保线上业务稳定可靠，但是有一次恢复数据时却遇到主从同步挂掉，一查原因才发现原来是插入的主键重复导致主从挂了。  因为从库中已经有数据，其并未丢失，当主库中恢复了数据要往从库同步时发现报主键重复的错误，主从就被停止了。Mysql 配置里可以忽略错误，可是如果忽略了会导致之后数据不一致。  但是平时程序上正常插入数据时如果是在主库就已经主键重复则主库就会报错不会把数据">
 <meta property="og:updated_time" content="2015-10-01T07:01:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL 主从复制时遇到主键重复问题">
-<meta name="twitter:description" content="近期新开发的系统使用了主从来确保线上业务稳定可靠，但是有一次恢复数据时却遇到主从同步挂掉，一查原因才发现原来是插入的主键重复导致主从挂了。  因为从库中已经有数据，其并未丢失，当主库中恢复了数据要往从库同步时发现报主键重复的错误，主从就被停止了。Mysql 配置里可以忽略错误，可是如果忽略了会导致之后数据不一致。  但是平时程序上正常插入数据时如果是在主库就已经主键重复则主库就会报错不会把数据插入">
+<meta name="twitter:description" content="近期新开发的系统使用了主从来确保线上业务稳定可靠，但是有一次恢复数据时却遇到主从同步挂掉，一查原因才发现原来是插入的主键重复导致主从挂了。  因为从库中已经有数据，其并未丢失，当主库中恢复了数据要往从库同步时发现报主键重复的错误，主从就被停止了。Mysql 配置里可以忽略错误，可是如果忽略了会导致之后数据不一致。  但是平时程序上正常插入数据时如果是在主库就已经主键重复则主库就会报错不会把数据">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -121,7 +121,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             <i class="menu-item-icon icon-next-home"></i> <br />
-            首頁
+            Startseite
           </a>
         </li>
       
@@ -129,7 +129,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             <i class="menu-item-icon icon-next-archives"></i> <br />
-            歸檔
+            Archiv
           </a>
         </li>
       
@@ -137,7 +137,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             <i class="menu-item-icon icon-next-tags"></i> <br />
-            標籤
+            Tags
           </a>
         </li>
       
@@ -177,7 +177,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          Veröffentlicht am
           <time itemprop="dateCreated" datetime="2013-11-23T03:55:00+08:00" content="2013-11-23">
             2013-11-23
           </time>
@@ -260,10 +260,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
+            Übersicht
           </li>
         </ul>
       
@@ -277,22 +277,22 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">172</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-count">175</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">8</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">Kategorien</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">標籤</span>
+              <span class="site-state-item-name">Tags</span>
               </a>
           </div>
 
@@ -326,7 +326,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -351,11 +351,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 強力驅動
+  Erstellt mit  <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主題 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
     NexT
   </a>

@@ -7,6 +7,27 @@
     </url>
 
     <url>
+        <loc>http://robbinhan.github.io/2016/09/03/2016-09-03/</loc>
+        <lastmod>2016-09-03T15:13:25.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2016/04/13/2016-04-13/</loc>
+        <lastmod>2016-05-01T09:42:27.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2016/04/23/2016-04-23/</loc>
+        <lastmod>2016-05-01T09:41:53.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
         <loc>http://robbinhan.github.io/2016/03/16/2016-03-16/</loc>
         <lastmod>2016-03-16T05:13:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -91,987 +112,63 @@
     </url>
 
     <url>
-        <loc>http://robbinhan.github.io/2014/10/25/2014-10-25-westward-journey/</loc>
+        <loc>http://robbinhan.github.io/2013/08/09/2013-08-09-84469/</loc>
         <lastmod>2015-10-01T07:01:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>http://robbinhan.github.io/2014/08/03/2014-08-03-javascript-logic-operations/</loc>
+        <loc>http://robbinhan.github.io/2013/08/09/2013-08-09-84468/</loc>
         <lastmod>2015-10-01T07:01:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>http://robbinhan.github.io/2014/07/26/2014-07-26-rails-development-summary/</loc>
+        <loc>http://robbinhan.github.io/2013/08/09/2013-08-09-84470/</loc>
         <lastmod>2015-10-01T07:01:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>http://robbinhan.github.io/2014/05/07/2014-05-07-two-dimensional-array-of-hash-implementation-of-ruby/</loc>
+        <loc>http://robbinhan.github.io/2013/08/09/2013-08-09-84471/</loc>
         <lastmod>2015-10-01T07:01:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>http://robbinhan.github.io/2014/05/07/2014-05-07-ruby-block-scope/</loc>
+        <loc>http://robbinhan.github.io/2013/08/09/2013-08-09-84474/</loc>
         <lastmod>2015-10-01T07:01:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>http://robbinhan.github.io/2014/03/29/2014-03-29-smarter-programmers/</loc>
+        <loc>http://robbinhan.github.io/2013/08/09/2013-08-09-84475/</loc>
         <lastmod>2015-10-01T07:01:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>http://robbinhan.github.io/2014/03/05/2014-03-05-signature/</loc>
+        <loc>http://robbinhan.github.io/2013/08/09/2013-08-09-84473/</loc>
         <lastmod>2015-10-01T07:01:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>http://robbinhan.github.io/2014/03/02/2014-03-02-summary-of-the-relationship/</loc>
+        <loc>http://robbinhan.github.io/2013/08/09/2013-08-09-84476/</loc>
         <lastmod>2015-10-01T07:01:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>http://robbinhan.github.io/2014/01/21/2014-01-21-php-on-linux-unsorted-traverse-file-directory-issues/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/12/08/2013-12-08-javascript-variable-types/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/12/07/2013-12-07-php-session-jam/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/11/24/2013-11-24-common-css/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/11/23/2013-11-23-php-urldecode/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/11/23/2013-11-23-mysql-master-slave-replication-problems-encountered-a-duplicate-primary-key/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/11/22/2013-11-22-watch-the-60-second-economics-of-exploration-notes/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/11/20/2013-11-20-stage-summary/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/11/15/2013-11-15-javascript-event-monitor/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/11/10/2013-11-10-achieving-the-http10-long-connection/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/10/25/2013-10-25-php-code-optimization-in-mind/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/09/24/2013-09-24-php-receives-the-request-latency-troubleshooting/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/09/14/2013-09-14-javascritp-anonymous-functions/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/09/12/2013-09-12-ie-in-the-href-attribute-of-the-a-tag-length-limit/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/13/2013-08-13-differences-between-php-and-ruby/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84683/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84682/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84681/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84680/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84679/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84678/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84677/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84676/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84675/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84674/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84673/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84672/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84671/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84670/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84669/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84668/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84667/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84666/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84665/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84664/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84663/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84662/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84661/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84660/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84659/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84658/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84657/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84656/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84655/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84654/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84653/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84652/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84651/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84650/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84649/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84648/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84647/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84646/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84645/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84643/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84642/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84641/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84640/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84639/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84638/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84637/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84636/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84635/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84634/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84633/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84632/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84631/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84630/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84629/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84628/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84627/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84626/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84625/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84624/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84623/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84622/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84621/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84620/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84619/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84618/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84617/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84616/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84615/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84614/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84613/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84612/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84611/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84610/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84609/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84608/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84607/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84606/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84605/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84604/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84603/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84602/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84601/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84600/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84599/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84598/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84597/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84596/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84595/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84594/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84593/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84592/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84591/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84590/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84589/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84588/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84587/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84586/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84585/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84584/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84583/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84582/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84581/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84580/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84579/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84578/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84577/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84576/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84575/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84574/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84573/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84572/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84571/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84570/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84569/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84568/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84567/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84566/</loc>
-        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84565/</loc>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84561/</loc>
         <lastmod>2015-10-01T07:01:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -1099,63 +196,987 @@
     </url>
 
     <url>
-        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84561/</loc>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84565/</loc>
         <lastmod>2015-10-01T07:01:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>http://robbinhan.github.io/2013/08/09/2013-08-09-84476/</loc>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84566/</loc>
         <lastmod>2015-10-01T07:01:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>http://robbinhan.github.io/2013/08/09/2013-08-09-84475/</loc>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84568/</loc>
         <lastmod>2015-10-01T07:01:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>http://robbinhan.github.io/2013/08/09/2013-08-09-84474/</loc>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84569/</loc>
         <lastmod>2015-10-01T07:01:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>http://robbinhan.github.io/2013/08/09/2013-08-09-84473/</loc>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84567/</loc>
         <lastmod>2015-10-01T07:01:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>http://robbinhan.github.io/2013/08/09/2013-08-09-84471/</loc>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84570/</loc>
         <lastmod>2015-10-01T07:01:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>http://robbinhan.github.io/2013/08/09/2013-08-09-84470/</loc>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84571/</loc>
         <lastmod>2015-10-01T07:01:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>http://robbinhan.github.io/2013/08/09/2013-08-09-84469/</loc>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84573/</loc>
         <lastmod>2015-10-01T07:01:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>http://robbinhan.github.io/2013/08/09/2013-08-09-84468/</loc>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84572/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84574/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84575/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84578/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84576/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84577/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84580/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84579/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84581/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84582/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84583/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84584/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84585/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84587/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84586/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84588/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84589/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84590/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84591/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84592/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84593/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84594/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84596/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84595/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84597/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84598/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84599/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84600/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84601/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84602/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84604/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84603/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84606/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84605/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84607/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84608/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84610/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84609/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84611/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84613/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84612/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84614/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84615/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84616/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84617/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84618/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84619/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84620/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84621/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84622/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84623/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84624/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84625/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84626/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84627/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84628/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84629/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84630/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84631/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84632/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84633/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84634/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84636/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84635/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84638/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84637/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84639/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84640/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84641/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84642/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84645/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84643/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84646/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84647/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84648/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84649/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84650/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84651/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84652/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84653/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84654/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84655/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84656/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84657/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84658/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84660/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84661/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84659/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84662/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84663/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84664/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84665/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84666/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84667/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84668/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84669/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84670/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84671/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84672/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84673/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84674/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84675/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84676/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84677/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84678/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84679/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84680/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84681/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84683/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/09/12/2013-09-12-ie-in-the-href-attribute-of-the-a-tag-length-limit/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/11/2013-08-11-84682/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/08/13/2013-08-13-differences-between-php-and-ruby/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/09/14/2013-09-14-javascritp-anonymous-functions/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/11/10/2013-11-10-achieving-the-http10-long-connection/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/09/24/2013-09-24-php-receives-the-request-latency-troubleshooting/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/10/25/2013-10-25-php-code-optimization-in-mind/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/11/20/2013-11-20-stage-summary/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/11/15/2013-11-15-javascript-event-monitor/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/11/22/2013-11-22-watch-the-60-second-economics-of-exploration-notes/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/11/23/2013-11-23-mysql-master-slave-replication-problems-encountered-a-duplicate-primary-key/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/11/24/2013-11-24-common-css/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/11/23/2013-11-23-php-urldecode/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/12/07/2013-12-07-php-session-jam/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2013/12/08/2013-12-08-javascript-variable-types/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2014/01/21/2014-01-21-php-on-linux-unsorted-traverse-file-directory-issues/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2014/03/02/2014-03-02-summary-of-the-relationship/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2014/03/05/2014-03-05-signature/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2014/03/29/2014-03-29-smarter-programmers/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2014/05/07/2014-05-07-ruby-block-scope/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2014/05/07/2014-05-07-two-dimensional-array-of-hash-implementation-of-ruby/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2014/07/26/2014-07-26-rails-development-summary/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2014/08/03/2014-08-03-javascript-logic-operations/</loc>
+        <lastmod>2015-10-01T07:01:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://robbinhan.github.io/2014/10/25/2014-10-25-westward-journey/</loc>
         <lastmod>2015-10-01T07:01:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -1197,14 +1218,14 @@
     </url>
 
     <url>
-        <loc>http://robbinhan.github.io/2015/09/29/2015-05-28-chaogu-four-month-summary/</loc>
+        <loc>http://robbinhan.github.io/2015/05/02/2015-05-02-api-to-jekyll/</loc>
         <lastmod>2015-09-29T15:11:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>http://robbinhan.github.io/2015/05/02/2015-05-02-api-to-jekyll/</loc>
+        <loc>http://robbinhan.github.io/2015/09/29/2015-05-28-chaogu-four-month-summary/</loc>
         <lastmod>2015-09-29T15:11:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

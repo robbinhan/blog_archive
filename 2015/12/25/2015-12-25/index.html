@@ -124,7 +124,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             <i class="menu-item-icon icon-next-home"></i> <br />
-            首頁
+            Startseite
           </a>
         </li>
       
@@ -132,7 +132,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             <i class="menu-item-icon icon-next-archives"></i> <br />
-            歸檔
+            Archiv
           </a>
         </li>
       
@@ -140,7 +140,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             <i class="menu-item-icon icon-next-tags"></i> <br />
-            標籤
+            Tags
           </a>
         </li>
       
@@ -180,7 +180,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          Veröffentlicht am
           <time itemprop="dateCreated" datetime="2015-12-25T15:27:19+08:00" content="2015-12-25">
             2015-12-25
           </time>
@@ -201,12 +201,12 @@
 
       
         <span itemprop="articleBody"><p>表面上的差异是“先与后”，使用函数表达式的方式，调用必须在表达式之后，而函数声明则无关前后问题。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">alert(foo); <span class="comment">// function foo() &#123;&#125;</span></span><br><span class="line">alert(bar); <span class="comment">// undefined</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> bar = <span class="function"><span class="keyword">function</span> <span class="title">bar_fn</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">alert(foo); <span class="comment">// function foo() &#123;&#125;</span></span><br><span class="line">alert(bar); <span class="comment">// function bar_fn() &#123;&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">alert(foo); <span class="comment">// function foo() &#123;&#125;</span></div><div class="line">alert(bar); <span class="comment">// undefined</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"><span class="keyword">var</span> bar = <span class="function"><span class="keyword">function</span> <span class="title">bar_fn</span>(<span class="params"></span>) </span>&#123;&#125;;</div><div class="line">alert(foo); <span class="comment">// function foo() &#123;&#125;</span></div><div class="line">alert(bar); <span class="comment">// function bar_fn() &#123;&#125;</span></div></pre></td></tr></table></figure>
 <p>可以看到 foo 的声明是写在 alert 之后，仍然可以被正确调用，因为 JavaScript 解释器会将其提升到 alert 前面，而以函数表达式创建的函数 bar 则不享受此待遇。</p>
 <p>那么bar 究竟有没有被提升呢，其实用 var 声明的变量都会被提升，只不过是被先赋值为 undefined 罢了，所以第二个 alert 弹出了 undefined。这具体要涉及到js的<em>变量对象</em>和<em>执行环境</em>概念</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hereOrThere</span>(<span class="params"></span>) </span>&#123; <span class="comment">//function statement</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">'here'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(hereOrThere()); <span class="comment">// alerts 'there'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hereOrThere</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'there'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hereOrThere</span>(<span class="params"></span>) </span>&#123; <span class="comment">//function statement</span></div><div class="line">  <span class="keyword">return</span> <span class="string">'here'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">alert(hereOrThere()); <span class="comment">// alerts 'there'</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hereOrThere</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">'there'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>以上代码hereOrThere函数声明两次，声明首先提升了优先级，并且第二次声明覆盖了第一次声明。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hereOrThere = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">// function expression</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">'here'</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">alert(hereOrThere()); <span class="comment">// alerts 'here'</span></span><br><span class="line"></span><br><span class="line">hereOrThere = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'there'</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> hereOrThere = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">// function expression</span></div><div class="line">  <span class="keyword">return</span> <span class="string">'here'</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">alert(hereOrThere()); <span class="comment">// alerts 'here'</span></div><div class="line"></div><div class="line">hereOrThere = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">'there'</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p>以上代码hereOrThere表达式写法两次。</p>
 <p>执行顺序是解释器先声明hereOrThere变量，此时值是undefined，然后将返回here的函数赋值，接着alert调用。这里因为是声明的变量，而js中不会对变量提升优先级，所以是顺序执行。</p>
 </span>
@@ -220,13 +220,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/12/25/2015-12-26/" rel="prev">Redux架构总结</a>
+              <a href="/2016/03/16/2016-03-16/" rel="prev">PHP的Cookie删除问题</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/23/2015-12-24/" rel="next">Redis数据清理导致连接超时</a>
+              <a href="/2015/12/25/2015-12-26/" rel="next">Redux架构总结</a>
             
           </div>
         </div>
@@ -271,10 +271,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
+            Übersicht
           </li>
         </ul>
       
@@ -288,22 +288,22 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">172</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-count">175</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">8</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">Kategorien</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">標籤</span>
+              <span class="site-state-item-name">Tags</span>
               </a>
           </div>
 
@@ -337,7 +337,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -362,11 +362,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 強力驅動
+  Erstellt mit  <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主題 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
     NexT
   </a>

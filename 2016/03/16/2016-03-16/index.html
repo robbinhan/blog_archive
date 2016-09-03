@@ -44,24 +44,21 @@
 
 
 <meta name="description" content="正常情况下删除cookie就是调用setcookie方法，并且将过期时间设置为之前的时间；但是如果添加cookie的时候设置了path或者domain参数的话可能就会产生问题。比方：
-setcookie(&apos;test&apos;,&apos;a&apos;,time()+3600,&apos;/&apos;);
-设置test一个小时后过期，路径在’/‘，域名默认是当前的域名，比如是’www.explame.com’，然后当去删除的时候
-setcoo">
+setcookie(&amp;apos;test&amp;apos;,&amp;apos;a&amp;apos;,time()+3600,&amp;apos;/&amp;apos;);
+设置test一个小时后过期，路径在’/‘，域名默认是当前的域名，比如是’www">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PHP的Cookie删除问题">
 <meta property="og:url" content="http://robbinhan.github.io/2016/03/16/2016-03-16/index.html">
 <meta property="og:site_name" content="Robbinhan's Blog">
 <meta property="og:description" content="正常情况下删除cookie就是调用setcookie方法，并且将过期时间设置为之前的时间；但是如果添加cookie的时候设置了path或者domain参数的话可能就会产生问题。比方：
-setcookie(&apos;test&apos;,&apos;a&apos;,time()+3600,&apos;/&apos;);
-设置test一个小时后过期，路径在’/‘，域名默认是当前的域名，比如是’www.explame.com’，然后当去删除的时候
-setcoo">
+setcookie(&amp;apos;test&amp;apos;,&amp;apos;a&amp;apos;,time()+3600,&amp;apos;/&amp;apos;);
+设置test一个小时后过期，路径在’/‘，域名默认是当前的域名，比如是’www">
 <meta property="og:updated_time" content="2016-03-16T05:13:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP的Cookie删除问题">
 <meta name="twitter:description" content="正常情况下删除cookie就是调用setcookie方法，并且将过期时间设置为之前的时间；但是如果添加cookie的时候设置了path或者domain参数的话可能就会产生问题。比方：
-setcookie(&apos;test&apos;,&apos;a&apos;,time()+3600,&apos;/&apos;);
-设置test一个小时后过期，路径在’/‘，域名默认是当前的域名，比如是’www.explame.com’，然后当去删除的时候
-setcoo">
+setcookie(&amp;apos;test&amp;apos;,&amp;apos;a&amp;apos;,time()+3600,&amp;apos;/&amp;apos;);
+设置test一个小时后过期，路径在’/‘，域名默认是当前的域名，比如是’www">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -132,7 +129,7 @@ setcoo">
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             <i class="menu-item-icon icon-next-home"></i> <br />
-            首頁
+            Startseite
           </a>
         </li>
       
@@ -140,7 +137,7 @@ setcoo">
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             <i class="menu-item-icon icon-next-archives"></i> <br />
-            歸檔
+            Archiv
           </a>
         </li>
       
@@ -148,7 +145,7 @@ setcoo">
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             <i class="menu-item-icon icon-next-tags"></i> <br />
-            標籤
+            Tags
           </a>
         </li>
       
@@ -188,7 +185,7 @@ setcoo">
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          Veröffentlicht am
           <time itemprop="dateCreated" datetime="2016-03-16T13:27:19+08:00" content="2016-03-16">
             2016-03-16
           </time>
@@ -209,9 +206,9 @@ setcoo">
 
       
         <span itemprop="articleBody"><p>正常情况下删除cookie就是调用setcookie方法，并且将过期时间设置为之前的时间；但是如果添加cookie的时候设置了path或者domain参数的话可能就会产生问题。<br>比方：</p>
-<pre><code>setcookie<span class="list">(<span class="quoted">'test</span>',<span class="quoted">'a</span>',time<span class="list">()</span><span class="number">+3600</span>,<span class="quoted">'/</span>')</span><span class="comment">;</span>
+<pre><code>setcookie(&apos;test&apos;,&apos;a&apos;,time()+3600,&apos;/&apos;);
 </code></pre><p>设置test一个小时后过期，路径在’/‘，域名默认是当前的域名，比如是’www.explame.com’，然后当去删除的时候</p>
-<pre><code>setcookie(<span class="string">'test'</span>,<span class="string">'a'</span>,<span class="keyword">time</span>()-<span class="number">24</span>*<span class="number">3600</span>,<span class="string">'/'</span>,<span class="string">'www.explame.com'</span>);
+<pre><code>setcookie(&apos;test&apos;,&apos;a&apos;,time()-24*3600,&apos;/&apos;,&apos;www.explame.com&apos;);
 </code></pre><p>如果这样写是无法删除的，因为setcookie时默认会在域名前加“.”号，就变成’.www.explame.com’，所以这样写会去删除’.www.explame.com’域名下的test的cookie，而之前添加的并没有删除，解决方法其实就是添加的时候怎么写，删除的时候也怎么写，就是过期时间修改下。</p>
 </span>
       
@@ -224,11 +221,13 @@ setcoo">
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2016/04/13/2016-04-13/" rel="prev"></a>
+            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/25/2015-12-26/" rel="next">Redux架构总结</a>
+              <a href="/2015/12/25/2015-12-25/" rel="next">JavaScript函数声明与函数表达式写法的区别</a>
             
           </div>
         </div>
@@ -273,10 +272,10 @@ setcoo">
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
+            Übersicht
           </li>
         </ul>
       
@@ -290,22 +289,22 @@ setcoo">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">172</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-count">175</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">8</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">Kategorien</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">標籤</span>
+              <span class="site-state-item-name">Tags</span>
               </a>
           </div>
 
@@ -339,7 +338,7 @@ setcoo">
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -364,11 +363,11 @@ setcoo">
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 強力驅動
+  Erstellt mit  <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主題 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
     NexT
   </a>
