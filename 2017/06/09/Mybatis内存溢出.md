@@ -19,9 +19,9 @@ at java.util.AbstractCollection.toString(AbstractCollection.java:462)
 at org.apache.ibatis.logging.jdbc.BaseJdbcLogger.getParameterValueString(BaseJdbcLogger.java:111)
 at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:52)
 ```
-看到最后是BaseJdbcLogger这个类的调用，看类名应该是记录logger的类，这个怎么会溢出呢？分析了源码（我们用的版本是3.3.1），`getParameterValueString`方法是获取执行sql的列的值拼接成字符串的方法，而这个过程中数组初始长度不够时会调用`Arrays.copyOf`申请更大的内存分配，由于数据量较大，多次分配后整个内存不够用了。
+看到最后是BaseJdbcLogger这个类的调用，看类名应该是记录logger的类，这个怎么会溢出呢？分析了源码（我们用的版本是3.3.1），`getParameterValueString`方法是获取执行sql的列的值拼接成字符串的方法，而这个过程中是调用`StringBuilder`的`append`方法将list的元素放入拼接（我们是传入了一个很大的list，有时可能会有几十万的对象元素），每次调用append方法，内部会判断当前数组空间是否还能放下插入的字符串的大小，如果长度不够时会调用`Arrays.copyOf`申请更大的内存分配，由于数据量较大，多次分配后整个内存不够用了。
 
-既然是logger的问题，我就把线上的mybatis的logger给关了（其实之前一直是关的，那时没出过这个问题，不记得是什么原因给开了）。
+既然是logger的问题，我就把线上的mybatis的logger给关了（其实之前一直是关的，那时没出过这个问题，不记得是什么原因给开了）；不过接口上的逻辑还是要调整。
 
 总结下：
 1. 线上logger千万要小心，不该记录的千万别记，尤其是大数据量的logger，或者通过level控制。
